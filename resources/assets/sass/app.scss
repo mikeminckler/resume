@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
+
+@import "categories";
+@import "timeline";
+
+:root {
+    --font: 'Cormorant', serif;
+    --font-size: 17px;
+    --font-weight: 400;
+
+    --text-color-top: rgba(0,0,0,0.95);
+    --bg-color-top: rgba(255,255,255,1);
+
+    --text-color-bottom: rgba(255,255,255,0.8);
+    --bg-color-bottom: rgba(0,0,0,0.95);
+
+    --timeline-border-color: rgba(255,255,255,1);
+
+    --timeline-transition-time: 1s;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: var(--text-weight);
+	font-family: var(--font);
+    font-size: var(--font-size);
+}
+
+div.app {
+    width: 100%;
+    min-height: 100vh;
+	min-width: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+div.content {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+h1, h2, h3, h4 {
+    font-weight: var(--font-weight);
+}
+
+div {
+    box-sizing: border-box;
+}
+
+div.flex {
+    display: flex;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+div.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(auto-fit, 100px);
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+}
+
+div.grid-item {
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+div.title {
+    font-size: 22px;
+}
+
+div.sub-title {
+    color: rgba(0,0,0,0.8);
+    border-top: 1px solid rgba(0,0,0,0.5);
+    padding-top: 5px;
+    margin-top: 2px;
+}
+
+div.top {
+    color: var(--text-color-top);
+    background-color: var(--bg-color-top);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+}
+
+div.middle {
+    color: var(--text-color-bottom);
+    background-color: var(--bg-color-bottom);
+    flex: 1;
+}

@@ -1,0 +1,19 @@
+div.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
+    justify-content: center;
+    align-content: center;
+}
+
+div.category {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    border: 1px solid var(--border-color);
+}
+
+div.category-name {
+    padding: 0px 10px;
+}
+

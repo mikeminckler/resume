@@ -4,19 +4,20 @@
 @import "timeline";
 
 :root {
+
     --font: 'Cormorant', serif;
     --font-size: 17px;
     --font-weight: 400;
+    --font-color: rgba(0,0,0,1);
+    --transition-time: 1s;
 
-    --text-color-top: rgba(0,0,0,0.95);
-    --bg-color-top: rgba(255,255,255,1);
+    --theme-light: hsla(0,0,100%,1);
+    --theme-dark: hsla(0,0,0,1);
+    --theme-highlight: hsla(0,0,50%,1);
 
-    --text-color-bottom: rgba(255,255,255,0.8);
-    --bg-color-bottom: rgba(0,0,0,0.95);
+    --timeline-border-color: rgba(0,0,0,1);
+    --border-color: rgba(0,0,0,0.3);
 
-    --timeline-border-color: rgba(255,255,255,1);
-
-    --timeline-transition-time: 1s;
 }
 
 body {
@@ -26,6 +27,7 @@ body {
     font-weight: var(--text-weight);
 	font-family: var(--font);
     font-size: var(--font-size);
+    background-color: rgba(255,255,255,1);
 }
 
 div.app {
@@ -90,8 +92,8 @@ div.sub-title {
 }
 
 div.top {
-    color: var(--text-color-top);
-    background-color: var(--bg-color-top);
+    color: hsl(0,0,0);
+    background-color: hsl(0,0,100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,7 +102,9 @@ div.top {
 }
 
 div.middle {
-    color: var(--text-color-bottom);
-    background-color: var(--bg-color-bottom);
+    color: var(--font-color);
+    background-color: var(--theme-light);
+    transition: background-color var(--transition-time);
     flex: 1;
+    border-top: 1px solid var(--border-color);
 }

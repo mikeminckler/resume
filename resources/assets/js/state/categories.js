@@ -2,27 +2,32 @@ const categories = [
     {
         name: 'coding',
         label: 'Web Developemnt',
-        visible: true
+        hue: 205,
+        visible: false
     }, 
     {
         name: 'photography',
         label: 'Photography',
-        visible: true
+        hue: 155,
+        visible: false
     }, 
     {
         name: 'video',
         label: 'Video',
-        visible: true
+        hue: 50,
+        visible: false
     }, 
     {
         name: 'design',
         label: 'Graphic Design',
-        visible: true
+        hue: 25,
+        visible: false
     }, 
     {
         name: '3d',
         label: '3D Animation',
-        visible: true
+        hue: 295,
+        visible: false
     }, 
 ];
 

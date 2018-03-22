@@ -5,13 +5,8 @@
             v-for="(category, index) in $store.state.categories" 
             :key="category.name"
             @click="updateCategories(category)"
+            :class="category.visible ? 'category-active' : ''"
         >
-            <div v-show="category.visible">
-                <div class="fas fa-check-circle"></div>
-            </div>
-            <div v-show="!category.visible">
-                <div class="far fa-circle"></div>
-            </div>
             <div class="category-name">{{ category.label }}</div>
         </div>
     </div>

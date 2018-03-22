@@ -1902,7 +1902,7 @@ function loadLocale(name) {
         try {
             oldLocale = globalLocale._abbr;
             var aliasedRequire = require;
-            __webpack_require__(139)("./" + name);
+            __webpack_require__(142)("./" + name);
             getSetGlobalLocale(oldLocale);
         } catch (e) {}
     }
@@ -4574,7 +4574,7 @@ return hooks;
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)(module)))
 
 /***/ }),
 /* 1 */
@@ -4605,34 +4605,6 @@ module.exports = g;
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports) {
-
-module.exports = function(module) {
-	if(!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-/* 3 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -4738,6 +4710,34 @@ module.exports = function normalizeComponent (
     options: options
   }
 }
+
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if(!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if(!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
 
 
 /***/ }),
@@ -16418,7 +16418,7 @@ return zhTw;
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(127);
-module.exports = __webpack_require__(141);
+module.exports = __webpack_require__(145);
 
 
 /***/ }),
@@ -16430,7 +16430,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__(132);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__(133);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__state_categories_js__ = __webpack_require__(149);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__state_categories_js__ = __webpack_require__(144);
 
 window.Vue = __webpack_require__(128);
 
@@ -16440,9 +16440,9 @@ Object.defineProperty(Vue.prototype, '$lodash', { value: __WEBPACK_IMPORTED_MODU
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */]);
 
-Vue.component('categories', __webpack_require__(146));
-Vue.component('timeline', __webpack_require__(134));
-Vue.component('timeline-date', __webpack_require__(137));
+Vue.component('categories', __webpack_require__(134));
+Vue.component('timeline', __webpack_require__(137));
+Vue.component('timeline-date', __webpack_require__(140));
 
 
 
@@ -16454,6 +16454,12 @@ var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
     mutations: {
         toggleCategory: function toggleCategory(state, index) {
             state.categories[index].visible = !state.categories[index].visible;
+        },
+        setCategory: function setCategory(state, index) {
+            app.$lodash.forEach(state.categories, function (category) {
+                category.visible = false;
+            });
+            state.categories[index].visible = true;
         }
     },
 
@@ -16465,8 +16471,22 @@ var store = new __WEBPACK_IMPORTED_MODULE_1_vuex__["a" /* default */].Store({
             var index = app.$lodash.findIndex(state.categories, function (item) {
                 return category.name == item.name;
             });
+
+            if (!state.categories[index].visible) {
+                document.documentElement.style.setProperty('--theme-light', 'hsla(' + category.hue + ', 100%, 95%, 0.75)');
+                document.documentElement.style.setProperty('--theme-dark', 'hsla(' + category.hue + ', 100%, 10%, 0.75)');
+                document.documentElement.style.setProperty('--theme-highlight', 'hsla(' + category.hue + ', 40%, 50%, 0.75)');
+            }
+
             if (index > -1) {
-                commit('toggleCategory', index);
+                //commit('toggleCategory', index);
+                commit('setCategory', index);
+            }
+
+            if (!app.$lodash.filter(state.categories, ['visible', true]).length) {
+                document.documentElement.style.setProperty('--theme-light', 'hsla(0, 0%, 100%, 1)');
+                document.documentElement.style.setProperty('--theme-dark', 'hsla(0, 0%, 0%, 1)');
+                document.documentElement.style.setProperty('--theme-highlight', 'hsla(0, 0%, 50%, 1)');
             }
         }
     }
@@ -44990,7 +45010,7 @@ process.umask = function() { return 0; };
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(2)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1), __webpack_require__(3)(module)))
 
 /***/ }),
 /* 133 */
@@ -45942,11 +45962,137 @@ var index_esm = {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(2)
 /* script */
 var __vue_script__ = __webpack_require__(135)
 /* template */
 var __vue_template__ = __webpack_require__(136)
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/Categories.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-09142593", Component.options)
+  } else {
+    hotAPI.reload("data-v-09142593", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 135 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+
+    methods: {
+
+        updateCategories: function updateCategories(category) {
+            this.$store.dispatch('toggleCategory', category);
+        }
+
+    }
+
+});
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "categories" },
+    _vm._l(_vm.$store.state.categories, function(category, index) {
+      return _c(
+        "div",
+        {
+          key: category.name,
+          staticClass: "category clickable",
+          class: category.visible ? "category-active" : "",
+          on: {
+            click: function($event) {
+              _vm.updateCategories(category)
+            }
+          }
+        },
+        [
+          _c("div", { staticClass: "category-name" }, [
+            _vm._v(_vm._s(category.label))
+          ])
+        ]
+      )
+    })
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-09142593", module.exports)
+  }
+}
+
+/***/ }),
+/* 137 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__(2)
+/* script */
+var __vue_script__ = __webpack_require__(138)
+/* template */
+var __vue_template__ = __webpack_require__(139)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -45985,11 +46131,17 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 135 */
+/* 138 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -46156,149 +46308,179 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 136 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "timeline-container" }, [
-    _c(
-      "div",
-      { staticClass: "timeline" },
-      [
-        _c(
-          "transition-group",
-          {
-            staticClass: "timeline-left",
-            attrs: { name: "timeline-group", tag: "div", appear: "" }
-          },
-          _vm._l(_vm.leftEvents, function(event, index) {
-            return _c(
-              "div",
-              {
-                key: event.date,
-                staticClass: "timeline-event",
-                on: {
-                  click: function($event) {
-                    _vm.activeEvent = event
+  return _c(
+    "div",
+    { staticClass: "timeline-container" },
+    [
+      _c(
+        "div",
+        { staticClass: "timeline" },
+        [
+          _c(
+            "transition-group",
+            {
+              staticClass: "timeline-left",
+              attrs: { name: "timeline-group", tag: "div", appear: "" }
+            },
+            _vm._l(_vm.leftEvents, function(event, index) {
+              return _c(
+                "div",
+                {
+                  key: event.date,
+                  staticClass: "timeline-event",
+                  on: {
+                    click: function($event) {
+                      _vm.activeEvent = event
+                    }
                   }
-                }
-              },
-              [
-                _c("div", { staticClass: "timeline-event-item" }, [
-                  _c(
-                    "div",
-                    { staticClass: "timeline-event-details-container" },
-                    [
-                      _c(
-                        "div",
-                        { staticClass: "timeline-event-details" },
-                        [
-                          _c("div", { staticClass: "timeline-event-title" }, [
-                            _vm._v(_vm._s(event.title))
-                          ]),
-                          _vm._v(" "),
-                          _c("timeline-date", { attrs: { event: event } }),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "timeline-event-description" },
-                            [_vm._v(_vm._s(event.description))]
-                          )
-                        ],
-                        1
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "timeline-connection" }, [
-                    _c("div", { staticClass: "timeline-connection-left" })
+                },
+                [
+                  _c("div", { staticClass: "timeline-event-item" }, [
+                    _c(
+                      "div",
+                      { staticClass: "timeline-event-details-container" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "timeline-event-details" },
+                          [
+                            _c("div", { staticClass: "timeline-event-title" }, [
+                              _vm._v(_vm._s(event.title))
+                            ]),
+                            _vm._v(" "),
+                            _c("timeline-date", { attrs: { event: event } }),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "timeline-event-description" },
+                              [_vm._v(_vm._s(event.description))]
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "timeline-connection" }, [
+                      _c("div", { staticClass: "timeline-connection-left" })
+                    ])
                   ])
-                ])
-              ]
-            )
-          })
-        ),
-        _vm._v(" "),
-        _c(
-          "transition-group",
-          {
-            staticClass: "timeline-right",
-            class: !_vm.events.length ? "timeline-right-hidden" : "",
-            attrs: { name: "timeline-group", tag: "div", appear: "" }
-          },
-          _vm._l(_vm.rightEvents, function(event, index) {
-            return _c(
-              "div",
-              {
-                key: event.date,
-                staticClass: "timeline-event",
-                on: {
-                  click: function($event) {
-                    _vm.activeEvent = event
+                ]
+              )
+            })
+          ),
+          _vm._v(" "),
+          _c(
+            "transition-group",
+            {
+              staticClass: "timeline-right",
+              class: !_vm.events.length ? "timeline-right-hidden" : "",
+              attrs: { name: "timeline-group", tag: "div", appear: "" }
+            },
+            _vm._l(_vm.rightEvents, function(event, index) {
+              return _c(
+                "div",
+                {
+                  key: event.date,
+                  staticClass: "timeline-event",
+                  on: {
+                    click: function($event) {
+                      _vm.activeEvent = event
+                    }
                   }
-                }
-              },
+                },
+                [
+                  _c("div", { staticClass: "timeline-event-item" }, [
+                    _c("div", { staticClass: "timeline-connection" }, [
+                      _c("div", { staticClass: "timeline-connection-right" })
+                    ]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "timeline-event-details-container" },
+                      [
+                        _c(
+                          "div",
+                          { staticClass: "timeline-event-details" },
+                          [
+                            _c("div", { staticClass: "timeline-event-title" }, [
+                              _vm._v(_vm._s(event.title))
+                            ]),
+                            _vm._v(" "),
+                            _c("timeline-date", { attrs: { event: event } }),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "timeline-event-description" },
+                              [_vm._v(_vm._s(event.description))]
+                            )
+                          ],
+                          1
+                        )
+                      ]
+                    )
+                  ])
+                ]
+              )
+            })
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("transition", { attrs: { name: "event-info", mode: "out-in" } }, [
+        _vm.activeEvent
+          ? _c(
+              "div",
+              { staticClass: "event-info" },
               [
-                _c("div", { staticClass: "timeline-event-item" }, [
-                  _c("div", { staticClass: "timeline-connection" }, [
-                    _c("div", { staticClass: "timeline-connection-right" })
-                  ]),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "timeline-event-details-container" },
-                    [
-                      _c(
-                        "div",
-                        { staticClass: "timeline-event-details" },
-                        [
-                          _c("div", { staticClass: "timeline-event-title" }, [
-                            _vm._v(_vm._s(event.title))
-                          ]),
-                          _vm._v(" "),
-                          _c("timeline-date", { attrs: { event: event } }),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "timeline-event-description" },
-                            [_vm._v(_vm._s(event.description))]
-                          )
-                        ],
-                        1
-                      )
-                    ]
-                  )
-                ])
-              ]
+                _c(
+                  "transition",
+                  {
+                    attrs: {
+                      name: "event-info-item",
+                      mode: "out-in",
+                      appear: ""
+                    }
+                  },
+                  [
+                    _c(
+                      "div",
+                      { key: _vm.activeEvent.date },
+                      [
+                        _c("div", { staticClass: "timeline-event-title" }, [
+                          _vm._v(_vm._s(_vm.activeEvent.title))
+                        ]),
+                        _vm._v(" "),
+                        _c("timeline-date", {
+                          attrs: { event: _vm.activeEvent }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "timeline-event-description" },
+                          [_vm._v(_vm._s(_vm.activeEvent.description))]
+                        )
+                      ],
+                      1
+                    )
+                  ]
+                )
+              ],
+              1
             )
-          })
-        )
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _vm.activeEvent
-      ? _c(
-          "div",
-          { staticClass: "event-info" },
-          [
-            _c("div", { staticClass: "timeline-event-title" }, [
-              _vm._v(_vm._s(_vm.activeEvent.title))
-            ]),
-            _vm._v(" "),
-            _c("timeline-date", { attrs: { event: _vm.activeEvent } }),
-            _vm._v(" "),
-            _c("div", { staticClass: "timeline-event-description" }, [
-              _vm._v(_vm._s(_vm.activeEvent.description))
-            ])
-          ],
-          1
-        )
-      : _vm._e()
-  ])
+          : _vm._e()
+      ])
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -46311,15 +46493,15 @@ if (false) {
 }
 
 /***/ }),
-/* 137 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(3)
+var normalizeComponent = __webpack_require__(2)
 /* script */
-var __vue_script__ = __webpack_require__(138)
+var __vue_script__ = __webpack_require__(141)
 /* template */
-var __vue_template__ = __webpack_require__(140)
+var __vue_template__ = __webpack_require__(143)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -46358,7 +46540,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 138 */
+/* 141 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -46425,7 +46607,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 139 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -46688,10 +46870,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 139;
+webpackContext.id = 142;
 
 /***/ }),
-/* 140 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -46735,203 +46917,44 @@ if (false) {
 }
 
 /***/ }),
-/* 141 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var disposed = false
-var normalizeComponent = __webpack_require__(3)
-/* script */
-var __vue_script__ = __webpack_require__(147)
-/* template */
-var __vue_template__ = __webpack_require__(148)
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-var Component = normalizeComponent(
-  __vue_script__,
-  __vue_template__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "resources/assets/js/components/Categories.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-09142593", Component.options)
-  } else {
-    hotAPI.reload("data-v-09142593", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-module.exports = Component.exports
-
-
-/***/ }),
-/* 147 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-
-    methods: {
-
-        updateCategories: function updateCategories(category) {
-            this.$store.dispatch('toggleCategory', category);
-        }
-
-    }
-
-});
-
-/***/ }),
-/* 148 */
-/***/ (function(module, exports, __webpack_require__) {
-
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "categories" },
-    _vm._l(_vm.$store.state.categories, function(category, index) {
-      return _c(
-        "div",
-        {
-          key: category.name,
-          staticClass: "category clickable",
-          on: {
-            click: function($event) {
-              _vm.updateCategories(category)
-            }
-          }
-        },
-        [
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: category.visible,
-                  expression: "category.visible"
-                }
-              ]
-            },
-            [_c("div", { staticClass: "fas fa-check-circle" })]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              directives: [
-                {
-                  name: "show",
-                  rawName: "v-show",
-                  value: !category.visible,
-                  expression: "!category.visible"
-                }
-              ]
-            },
-            [_c("div", { staticClass: "far fa-circle" })]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "category-name" }, [
-            _vm._v(_vm._s(category.label))
-          ])
-        ]
-      )
-    })
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-module.exports = { render: render, staticRenderFns: staticRenderFns }
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-09142593", module.exports)
-  }
-}
-
-/***/ }),
-/* 149 */
+/* 144 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 var categories = [{
     name: 'coding',
     label: 'Web Developemnt',
-    visible: true
+    hue: 205,
+    visible: false
 }, {
     name: 'photography',
     label: 'Photography',
-    visible: true
+    hue: 155,
+    visible: false
 }, {
     name: 'video',
     label: 'Video',
-    visible: true
+    hue: 50,
+    visible: false
 }, {
     name: 'design',
     label: 'Graphic Design',
-    visible: true
+    hue: 25,
+    visible: false
 }, {
     name: '3d',
     label: '3D Animation',
-    visible: true
+    hue: 295,
+    visible: false
 }];
 
 /* harmony default export */ __webpack_exports__["a"] = (categories);
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

@@ -22,6 +22,12 @@ const store = new Vuex.Store({
         toggleCategory (state, index) {
             state.categories[index].visible = !state.categories[index].visible;
         },
+        setCategory (state, index) {
+            app.$lodash.forEach(state.categories, function(category) {
+                category.visible = false;
+            });
+            state.categories[index].visible = true;
+        },
     },
 
     actions: {
@@ -29,9 +35,24 @@ const store = new Vuex.Store({
             let index = app.$lodash.findIndex(state.categories, function(item) {
                 return category.name == item.name;
             });
-            if (index > -1) {
-                commit('toggleCategory', index);
+
+            if (!state.categories[index].visible) {
+                document.documentElement.style.setProperty('--theme-light', 'hsla(' + category.hue + ', 100%, 95%, 0.75)');
+                document.documentElement.style.setProperty('--theme-dark', 'hsla(' + category.hue + ', 100%, 10%, 0.75)');
+                document.documentElement.style.setProperty('--theme-highlight', 'hsla(' + category.hue + ', 40%, 50%, 0.75)');
             }
+
+            if (index > -1) {
+                //commit('toggleCategory', index);
+                commit('setCategory', index);
+            }
+
+            if (!app.$lodash.filter(state.categories, ['visible', true]).length) {
+                document.documentElement.style.setProperty('--theme-light', 'hsla(0, 0%, 100%, 1)');
+                document.documentElement.style.setProperty('--theme-dark', 'hsla(0, 0%, 0%, 1)');
+                document.documentElement.style.setProperty('--theme-highlight', 'hsla(0, 0%, 50%, 1)');
+            }
+
         },
     }
 

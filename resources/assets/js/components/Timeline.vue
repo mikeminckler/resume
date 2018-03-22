@@ -61,11 +61,17 @@
 
         </div>
 
-        <div class="event-info" v-if="activeEvent">
-            <div class="timeline-event-title">{{ activeEvent.title }}</div>
-            <timeline-date :event="activeEvent"></timeline-date>
-            <div class="timeline-event-description">{{ activeEvent.description }}</div>
-        </div>
+        <transition name="event-info" mode="out-in">
+            <div class="event-info" v-if="activeEvent">
+                <transition name="event-info-item" mode="out-in" appear>
+                    <div :key="activeEvent.date">
+                        <div class="timeline-event-title">{{ activeEvent.title }}</div>
+                        <timeline-date :event="activeEvent"></timeline-date>
+                        <div class="timeline-event-description">{{ activeEvent.description }}</div>
+                    </div>
+                </transition>
+            </div>
+        </transition>
 
     </div>
 

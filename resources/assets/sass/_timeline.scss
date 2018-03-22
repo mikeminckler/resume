@@ -2,6 +2,7 @@
 
 div.timeline-container {
     width: 100%;
+    display: flex;
 }
 
 div.timeline {
@@ -88,7 +89,7 @@ div.timeline-right {
     top: 50px;
 
     padding-bottom: 50px;
-    transition: padding-bottom var(--timeline-transition-time);
+    transition: padding-bottom var(--transition-time);
 
     & div.timeline-event-details-container {
         border-left-width: 1px;
@@ -151,7 +152,7 @@ div.timeline-connection {
     display: flex;
     align-items: center;
     flex: 0.5;
-    transition: flex calc( var(--timeline-transition-time) / 5 ) ease-out;
+    transition: flex calc( var(--transition-time) / 5 ) ease-out;
 }
 
 div.timeline-connection-left, div.timeline-connection-right {
@@ -160,11 +161,11 @@ div.timeline-connection-left, div.timeline-connection-right {
 }
 
 div.timeline-connection-left {
-    background: linear-gradient(to right, var(--timeline-border-color), rgba(255,255,255,0.5));
+    background: linear-gradient(to right, var(--timeline-border-color), rgba(0,0,0,0.75));
 }
 
 div.timeline-connection-right {
-    background: linear-gradient(to left, var(--timeline-border-color), rgba(255,255,255,0.5));
+    background: linear-gradient(to left, var(--timeline-border-color), rgba(0,0,0,0.75));
 }
 
 @keyframes timeline-group {
@@ -303,51 +304,83 @@ div.timeline-connection-right {
 }
 
 .timeline-group-enter-active {
-    animation: timeline-group var(--timeline-transition-time) ease-out;
+    animation: timeline-group var(--transition-time) ease-out;
 
     & .timeline-event-item {
-        animation: timeline-event var(--timeline-transition-time) ease-out;
+        animation: timeline-event var(--transition-time) ease-out;
     }
 
     & .timeline-connection-right, .timeline-connection-left {
-        animation: timeline-connection-enter var(--timeline-transition-time) ease-out;
+        animation: timeline-connection-enter var(--transition-time) ease-out;
     }
 
     & .timeline-event-details-container {
-        animation: timeline-event-details-container-enter var(--timeline-transition-time) ease-out;
+        animation: timeline-event-details-container-enter var(--transition-time) ease-out;
     }
 
     & .timeline-event-details {
-        animation: timeline-event-details-enter var(--timeline-transition-time) ease-out;
+        animation: timeline-event-details-enter var(--transition-time) ease-out;
     }
 
 }
 
 
 .timeline-group-leave-active {
-    animation: timeline-group var(--timeline-transition-time) reverse;
+    animation: timeline-group var(--transition-time) reverse;
 
     & .timeline-event-item {
-        animation: timeline-event var(--timeline-transition-time) reverse;
+        animation: timeline-event var(--transition-time) reverse;
     }
 
     & .timeline-connection-right, .timeline-connection-left {
-        animation: timeline-connection-leave var(--timeline-transition-time) ease-out;
+        animation: timeline-connection-leave var(--transition-time) ease-out;
     }
 
     & .timeline-event-details-container {
-        animation: timeline-event-details-container-leave var(--timeline-transition-time) ease-out;
+        animation: timeline-event-details-container-leave var(--transition-time) ease-out;
     }
 
     & .timeline-event-details {
-        animation: timeline-event-details-leave var(--timeline-transition-time) ease-out;
+        animation: timeline-event-details-leave var(--transition-time) ease-out;
     }
 
 }
 
-div.event-info {
-    background-color: rgba(255,255,255,0.9);
-    color: rgba(0,0,0,0.9);
-    padding: 10px;
+@keyframes event-info {
+    0% {
+        max-width: 0;
+    }
+    100%   {
+        max-width: 50vw;
+    }
 }
 
+@keyframes event-info-item {
+    0% {
+        opacity: 0;
+    }
+    100%   {
+        opacity: 1;
+    }
+}
+
+.event-info-enter-active {
+    animation: event-info var(--transition-time) ease-out;
+}
+
+.event-info-leave-active {
+    animation: event-info var(--transition-time) reverse;
+}
+
+.event-info-item-enter-active {
+    animation: event-info-item calc( var(--transition-time) / 4) ease-out;
+}
+
+.event-info-item-leave-active {
+    animation: event-info-item calc( var(--transition-time) / 4) reverse;
+}
+
+div.event-info {
+    padding: 10px;
+    flex: 1;
+}

@@ -1,8 +1,10 @@
 div.categories {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 150px));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     justify-content: center;
     align-content: center;
+    grid-gap: 10px;
+    margin: 10px;
 }
 
 div.category {
@@ -10,10 +12,14 @@ div.category {
     justify-content: center;
     align-items: center;
     min-height: 50px;
-    border: 1px solid var(--border-color);
+    transition: border-bottom calc( var(--transition-time) / 3) ease-out;
+    border-bottom: 2px solid transparent;
 }
 
 div.category-name {
     padding: 0px 10px;
 }
 
+div.category-active {
+    border-bottom: 2px solid var(--theme-dark);
+}

@@ -1,17 +1,22 @@
 div.categories {
+}
+
+div.category-menu {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     justify-content: center;
     align-content: center;
     grid-gap: 10px;
-    margin: 10px;
+    padding: 10px;
+    background-color: var(--theme-light);
+    transition: background-color var(--transition-time) ease-out;
 }
 
 div.category {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 50px;
+    padding: 5px;
     transition: border-bottom calc( var(--transition-time) / 3) ease-out;
     border-bottom: 2px solid transparent;
 }
@@ -21,5 +26,5 @@ div.category-name {
 }
 
 div.category-active {
-    border-bottom: 2px solid var(--theme-dark);
+    border-bottom: 2px solid var(--theme-highlight);
 }

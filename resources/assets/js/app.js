@@ -7,15 +7,51 @@ Object.defineProperty(Vue.prototype, '$lodash', { value: lodash });
 import Vuex from 'vuex';
 Vue.use(Vuex);
 
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
+
 Vue.component('categories', require('./components/Categories.vue'));
 Vue.component('timeline', require('./components/Timeline.vue'));
 Vue.component('timeline-date', require('./components/TimelineDate.vue'));
 
+
+const router = new VueRouter({
+    routes: [
+        {
+            path: 'web-development',
+            name: 'web-development',
+            component: require('./routes/WebDevelopment.vue')
+        },
+        {
+            path: 'photography',
+            name: 'photography',
+            component: require('./routes/Photography.vue')
+        },
+        {
+            path: 'video',
+            name: 'video',
+            component: require('./routes/video.vue')
+        },
+        {
+            path: 'design',
+            name: 'design',
+            component: require('./routes/Design.vue')
+        },
+        {
+            path: 'animation',
+            name: 'animation',
+            component: require('./routes/Animation.vue')
+        },
+    ]
+})
+
 import categories from './state/categories.js';
+import items from './state/items.js';
 
 const store = new Vuex.Store({
     state: {
-        categories: categories
+        categories: categories,
+        items: items
     },
 
     mutations: {
@@ -61,4 +97,5 @@ const store = new Vuex.Store({
 const app = new Vue({
     el: '#app',
     store,
+    router,
 });

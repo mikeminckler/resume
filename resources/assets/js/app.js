@@ -72,10 +72,10 @@ const store = new Vuex.Store({
                 return category.name == item.name;
             });
 
+            let hue = 0;
+
             if (!state.categories[index].visible) {
-                document.documentElement.style.setProperty('--theme-light', 'hsla(' + category.hue + ', 100%, 95%, 0.75)');
-                document.documentElement.style.setProperty('--theme-dark', 'hsla(' + category.hue + ', 100%, 10%, 0.75)');
-                document.documentElement.style.setProperty('--theme-highlight', 'hsla(' + category.hue + ', 40%, 50%, 0.75)');
+               hue = category.hue;
             }
 
             if (index > -1) {
@@ -83,11 +83,13 @@ const store = new Vuex.Store({
                 commit('setCategory', index);
             }
 
-            if (!app.$lodash.filter(state.categories, ['visible', true]).length) {
-                document.documentElement.style.setProperty('--theme-light', 'hsla(0, 0%, 100%, 1)');
-                document.documentElement.style.setProperty('--theme-dark', 'hsla(0, 0%, 0%, 1)');
-                document.documentElement.style.setProperty('--theme-highlight', 'hsla(0, 0%, 50%, 1)');
-            }
+            //} else if (!app.$lodash.filter(state.categories, ['visible', true]).length) {
+                //hue = 0;
+            //}
+
+            setTimeout(function() {
+                app.setThemeColor(hue);
+            }, 250);
 
         },
     }
@@ -98,4 +100,14 @@ const app = new Vue({
     el: '#app',
     store,
     router,
+
+    methods: {
+    
+        setThemeColor: function(hue) {
+            document.documentElement.style.setProperty('--theme-light', 'hsla(' + hue + ', 100%, 95%, 0.75)');
+            document.documentElement.style.setProperty('--theme-dark', 'hsla(' + hue + ', 100%, 10%, 0.75)');
+            document.documentElement.style.setProperty('--theme-highlight', 'hsla(' + hue + ', 40%, 50%, 0.75)');
+            document.documentElement.style.setProperty('--theme-soft', 'hsla(' + hue + ', 40%, 50%, 0.1)');
+        }
+    }
 });

@@ -1,15 +1,16 @@
 div.categories {
+    margin-bottom: 65px;
 }
 
 div.category-menu {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    justify-content: center;
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-content: space-evenly;
     align-content: center;
     grid-gap: 10px;
     padding: 10px;
     background-color: var(--theme-light);
-    transition: background-color var(--transition-time) ease-out;
+    transition: background-color var(--transition-time) ease;
 }
 
 div.category {
@@ -17,14 +18,25 @@ div.category {
     justify-content: center;
     align-items: center;
     padding: 5px;
-    transition: border-bottom calc( var(--transition-time) / 3) ease-out;
     border-bottom: 2px solid transparent;
+    transition: all var(--transition-time) ease;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 150px;
+    font-size: var(--font-size);
 }
 
 div.category-name {
     padding: 0px 10px;
+    white-space: nowrap;
 }
 
 div.category-active {
     border-bottom: 2px solid var(--theme-highlight);
+    top: 175px;
+    left: calc(50vw - (150px / 2 ));
+    position: absolute;
+    font-size: calc( var(--font-size) + 3px);
 }
+

@@ -48,7 +48,7 @@ div.content {
     padding: 0px;
     margin: 0px;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1100px;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -62,10 +62,16 @@ h1, h2, h3, h4 {
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: var(--theme-dark);
+}
+
 P {
     padding: calc(var(--content-padding) / 2) 0px var(--content-padding) 0px;
     line-height: 25px;
-    margin: 0;
+    margin: 0 auto;
+    max-width: 500px;
 }
 
 div.flex {
@@ -137,19 +143,36 @@ div.title {
 
 div.sub-title {
     color: rgba(0,0,0,0.95);
-    border-top: 1px solid rgba(0,0,0,0.7);
+    border-top: 1px solid var(--theme-highlight);
     padding-top: 5px;
     margin-top: 2px;
+    width: 100%;
+    text-align: center;
 }
 
 div.top {
     color: hsl(0,0,0);
     background-color: hsl(0,0,100%);
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: var(--content-padding);
+}
+
+div.name-title {
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: var(--content-padding);
+    flex-direction: column;
+}
+
+div.email-phone {
+    display: flex;
+    font-size: calc(var(--font-size) - 2px);
+}
+
+div.email {
+    padding-right: 10px;
 }
 
 div.middle {

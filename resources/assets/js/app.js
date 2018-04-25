@@ -18,6 +18,11 @@ Vue.component('timeline-date', require('./components/TimelineDate.vue'));
 const router = new VueRouter({
     routes: [
         {
+            path: 'home',
+            name: 'home',
+            component: require('./routes/Home.vue')
+        },
+        {
             path: 'web-development',
             name: 'web-development',
             component: require('./routes/WebDevelopment.vue')
@@ -55,40 +60,33 @@ const store = new Vuex.Store({
     },
 
     mutations: {
-        toggleCategory (state, index) {
-            state.categories[index].visible = !state.categories[index].visible;
-        },
-        setCategory (state, index) {
-            app.$lodash.forEach(state.categories, function(category) {
-                category.visible = false;
+        setCategory (state, category) {
+
+            lodash.forEach(state.categories, function(cat) {
+                cat.visible = false;
             });
-            state.categories[index].visible = true;
+
+            category.visible = true;
+
+            state.categories = lodash.sortBy(state.categories, function(cat) {
+                return cat == category ? 0 : cat.originalIndex;
+            });
+
         },
     },
 
     actions: {
-        toggleCategory ({ commit, state }, category) {
-            let index = app.$lodash.findIndex(state.categories, function(item) {
-                return category.name == item.name;
+        setCategory ({ commit, state }, category) {
+
+            category = lodash.find(state.categories, function(cat) {
+                return cat.route == category.route;
             });
 
-            let hue = 0;
-
-            if (!state.categories[index].visible) {
-               hue = category.hue;
-            }
-
-            if (index > -1) {
-                //commit('toggleCategory', index);
-                commit('setCategory', index);
-            }
-
-            //} else if (!app.$lodash.filter(state.categories, ['visible', true]).length) {
-                //hue = 0;
-            //}
+            commit('setCategory', category);
+            router.push({ name: category.route});
 
             setTimeout(function() {
-                app.setThemeColor(hue);
+                app.setThemeColor(category.hue);
             }, 250);
 
         },
@@ -100,6 +98,14 @@ const app = new Vue({
     el: '#app',
     store,
     router,
+
+    mounted() {
+        //router.push({ name: 'home' });
+        let category = this.$lodash.find(categories, function(category) {
+            return category.name == 'home';
+        });
+        this.$store.dispatch('setCategory', category);
+    },
 
     methods: {
     

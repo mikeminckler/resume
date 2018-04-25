@@ -2,7 +2,8 @@
 
     <div class="categories">
 
-        <div class="category-menu">
+        <transition-group name="categories" class="category-menu" tag="div">
+
             <div class="category clickable" 
                 v-for="(category, index) in $store.state.categories" 
                 :key="category.name"
@@ -11,13 +12,9 @@
             >
                 <div class="category-name">{{ category.label }}</div>
             </div>
-        </div>
 
-        <div class="header" v-if="activeCategory">
-            <transition name="fade" mode="out-in">
-                <div class="header-text" :key="activeCategory.name">{{ activeCategory.label }}</div>
-            </transition>
-        </div>
+        </transition-group>
+
     </div>
 
 
@@ -40,8 +37,7 @@
         methods: {
 
             updateCategories: function(category) {
-                this.$store.dispatch('toggleCategory', category);
-                this.$router.push({ name: category.route});
+                this.$store.dispatch('setCategory', category);
             },
         
         }

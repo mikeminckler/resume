@@ -56,7 +56,9 @@ import items from './state/items.js';
 const store = new Vuex.Store({
     state: {
         categories: categories,
-        items: items
+        items: items,
+        overlay: true,
+        showCategories: true,
     },
 
     mutations: {
@@ -68,11 +70,21 @@ const store = new Vuex.Store({
 
             category.visible = true;
 
+            /*
             state.categories = lodash.sortBy(state.categories, function(cat) {
                 return cat == category ? 0 : cat.originalIndex;
             });
+            */
 
         },
+
+        setOverlay (state, bool) {
+            state.overlay = bool;
+        },
+
+        setCategoriesMenu (state, bool) {
+            state.showCategories = bool;
+        }
     },
 
     actions: {
@@ -85,11 +97,31 @@ const store = new Vuex.Store({
             commit('setCategory', category);
             router.push({ name: category.route});
 
+            commit('setOverlay', true);
+
             setTimeout(function() {
-                app.setThemeColor(category.hue);
+                commit('setOverlay', false);
             }, 250);
 
+
+            setTimeout(function() {
+                app.setThemeColor(category.hue);
+                app.resize();
+            }, 100);
+
         },
+
+        showCategories({ commit, state }) {
+            commit('setCategoriesMenu', true);
+        },
+        
+        hideCategories({ commit, state }) {
+            commit('setCategoriesMenu', false);
+        },
+
+        toggleCategories({ commit, state }) {
+            commit('setCategoriesMenu', !state.showCategories);
+        }
     }
 
 });
@@ -105,6 +137,13 @@ const app = new Vue({
             return category.name == 'home';
         });
         this.$store.dispatch('setCategory', category);
+        this.$store.dispatch('showCategories');
+
+        window.addEventListener('resize', lodash.debounce(function() {
+            app.resize();
+        }, 100));
+
+        this.resize();
     },
 
     methods: {
@@ -114,6 +153,20 @@ const app = new Vue({
             document.documentElement.style.setProperty('--theme-dark', 'hsla(' + hue + ', 100%, 10%, 0.75)');
             document.documentElement.style.setProperty('--theme-highlight', 'hsla(' + hue + ', 40%, 50%, 0.75)');
             document.documentElement.style.setProperty('--theme-soft', 'hsla(' + hue + ', 40%, 50%, 0.1)');
+        },
+
+        toggleCategories: function(category) {
+            this.$store.dispatch('toggleCategories');
+        },
+
+        resize: function() {
+            if (window.innerWidth < 600) {
+                this.$store.dispatch('hideCategories');
+            } else {
+                this.$store.dispatch('showCategories');
+            }
         }
+        
     }
+
 });

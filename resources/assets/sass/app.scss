@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
 
 @import "categories";
 @import "timeline";
@@ -6,11 +6,19 @@
 
 :root {
 
-    --font: 'Cormorant', serif;
-    --font-size: 17px;
-    --font-weight: 400;
-    --font-color: rgba(0,0,0,1);
+    --bg-color: rgba(51,51,51,1);
+
+    --font: 'Source Sans Pro', serif;
+    --font-size: 16px;
+    --font-weight: 300;
+    --font-color: rgba(255,255,255,1);
     --transition-time: .5s;
+
+    --header-font-weight: 400;
+
+    --color1: hsla(205,100,50,1);
+    --color2: hsla(30,100,65,1);
+    --color3: hsla(55,75,65,1);
 
     --theme-light: hsla(0,0,100%,1);
     --theme-dark: hsla(0,0,0,1);
@@ -18,20 +26,22 @@
     --theme-soft: hsla(0,0,50%,1);
 
     --timeline-border-color: rgba(0,0,0,1);
-    --border-color: rgba(0,0,0,0.3);
+    --border-color: rgba(255,255,255,0.3);
 
     --content-padding: 25px;
+
+    --image-thumbnail-size: 150px;
 
 }
 
 body {
     padding: 0px;
     margin: 0px;
-    font-family: 'Ubuntu', sans-serif;
-    font-weight: var(--text-weight);
+    font-weight: var(--font-weight);
 	font-family: var(--font);
     font-size: var(--font-size);
-    background-color: rgba(255,255,255,1);
+    background-color: var(--bg-color);
+    color: var(--font-color);
 }
 
 div.app {
@@ -46,12 +56,13 @@ div.app {
 
 div.content {
     padding: 0px;
-    margin: 0px;
+    margin: 0 25px 0 0;
     width: 100%;
-    max-width: 1100px;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     flex: 1;
+    border-right: 1px solid var(--border-color);
 }
 
 h1, h2, h3, h4 {
@@ -64,14 +75,14 @@ h1, h2, h3, h4 {
 
 a {
     text-decoration: none;
-    color: var(--theme-dark);
+    color: hsla(205,100,90,1);
 }
 
 P {
     padding: calc(var(--content-padding) / 2) 0px var(--content-padding) 0px;
     line-height: 25px;
-    margin: 0 auto;
     max-width: 500px;
+    margin: 0;
 }
 
 div.flex {
@@ -87,17 +98,19 @@ div.route {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
 }
 
 div.content-item {
-    max-width: 500px;
-    width: 100%;
 }
 
-div.content-header {
-    background: linear-gradient(to right, var(--theme-light), rgba(0,0,0,0));
-    padding: 5px 10px;
+div.header {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: calc( var(--font-size) + 2px);
+    font-weight: var(--header-font-weight);
 }
 
 /*
@@ -137,22 +150,7 @@ div.grid-item svg {
     top: 2px;
 }
 
-div.title {
-    font-size: calc( var(--font-size) + 10px);
-}
-
-div.sub-title {
-    color: rgba(0,0,0,0.95);
-    border-top: 1px solid var(--theme-highlight);
-    padding-top: 5px;
-    margin-top: 2px;
-    width: 100%;
-    text-align: center;
-}
-
 div.top {
-    color: hsl(0,0,0);
-    background-color: hsl(0,0,100%);
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -162,13 +160,35 @@ div.top {
 div.name-title {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
+    width: 360px;
+}
+
+div.title {
+    font-size: calc( var(--font-size) + 10px);
+    border-bottom: 3px solid var(--color1);
+    white-space: nowrap;
+    width: 100%;
+    overflow: visible;
+}
+
+div.sub-title {
+    border-bottom: 3px solid var(--color2);
+    white-space: nowrap;
+    width: 90%;
+    overflow: visible;
 }
 
 div.email-phone {
     display: flex;
     font-size: calc(var(--font-size) - 2px);
+    border-bottom: 3px solid var(--color3);
+    width: 80%;
+    overflow: visible;
+}
+
+div.title, div.sub-title, div.email-phone {
+    padding: 5px;
 }
 
 div.email {
@@ -178,6 +198,29 @@ div.email {
 div.middle {
     color: var(--font-color);
     flex: 1;
+    display: flex;
+    margin-top: 25px;
+    position: relative;
+}
+
+div.content-area {
+    margin-left: 250px;
+    padding-right: 50px;
+    flex: 1;
+    transition: margin-left calc( var(--transition-time) / 2) ease;
+}
+
+
+@media (max-width: 600px) { 
+    div.content-area {
+        margin-left: 25px;
+        padding-right: 10px;
+    }
+
+    div.content {
+        border-right: 1px solid transparent;
+        margin: 0px;
+    }
 }
 
 @keyframes fade {
@@ -197,18 +240,22 @@ div.middle {
     animation: fade calc( var(--transition-time) / 2) reverse;
 }
 
-div.header {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+.overlay {
+    width: 0px;
+    transition: all calc( var(--transition-time) / 2) ease;
+    background-color: var(--bg-color);
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    z-index: 5;
+    border-left: 1px solid transparent;
 }
 
-div.header-text {
-    font-size: calc( var(--font-size) + 2px);
-    color: rgba(0,0,0,0.8);
-    border-bottom: 1px solid rgba(0,0,0,0.5);
-    margin: 15px;
-    padding: 10px 50px;
+.overlay-active {
+    border-left: 1px solid var(--border-color);
+    width: calc(100% - 25px);
 }
 
+.overlay-active.menu {
+    width: calc(100% - 200px);
+}

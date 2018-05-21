@@ -1,6 +1,6 @@
 <template>
 
-    <div class="categories">
+    <div class="categories" :class="$store.state.showCategories ? '' : 'hidden'">
 
         <transition-group name="categories" class="category-menu" tag="div">
 
@@ -39,7 +39,7 @@
             updateCategories: function(category) {
                 this.$store.dispatch('setCategory', category);
             },
-        
+
         }
 
     }

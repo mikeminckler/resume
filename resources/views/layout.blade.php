@@ -17,7 +17,34 @@
 
         <div class="app" id="app">
             <div class="content">
-                @yield ('content')
+
+                <div class="top" id="top">
+                    <div class="name-title">
+                        <div class="title">Mike Minckler</div>
+                        <div class="sub-title">Web Developer + Content Creator</div>
+                        <div class="email-phone">
+                            <div class="email"><a href="mailto:mikeminckler@gmail.com">mikeminckler@gmail.com</a></div>
+                            <div class="phone"><a href="tel:+12507017414">+12507017414</a></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="middle">
+
+                    <div class="category-toggle" @click="toggleCategories">
+                        <i class="fas fa-bars"></i>
+                    </div>
+
+                    <div class="overlay" :class="[$store.state.overlay ? 'overlay-active' : '', $store.state.showCategories ? 'menu' : '']"></div>
+
+                    <categories></categories>
+
+                    <transition name="fade" mode="out-in">
+                        <router-view class="content-area" :class="$store.state.showCategories ? 'menu' : ''"></router-view>
+                    </transition>
+
+                </div>
+
             </div>
         </div>
 

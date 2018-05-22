@@ -1,20 +1,24 @@
 div.categories {
-    margin-left: 25px;
     display: flex;
     flex-direction: column;
     width: 175px;
-    border-right: 2px solid var(--border-color);
-    padding-top: 35px;
+    min-height: calc(100vh - 285px);
+
     position: absolute;
+    z-index: 20;
     left: 0;
     transition: all calc( var(--transition-time) / 2) ease;
-    padding-bottom: 150px;
+
+    margin-left: 25px;
+    padding-top: 35px;
     background-color: var(--bg-color);
-    z-index: 20;
+
+    border-right: 2px solid var(--border-color);
+    box-shadow: 10px 0 0 var(--bg-color);
 }
 
 div.categories.hidden {
-    left: -175px;
+    left: -200px;
 }
 
 div.category-menu {
@@ -29,14 +33,25 @@ div.category-menu {
 div.category {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
-    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px 0;
+    margin: 0;
     transition: all var(--transition-time) ease;
     font-size: var(--font-size);
 
     border-top: 1px solid transparent;
-    border-left: 1px solid transparent;
     border-bottom: 3px solid transparent;
+    border-left: 2px solid var(--bg-color);
+    cursor: pointer;
+}
+
+div.category:hover {
+    border-left: 2px solid var(--border-color-dark);
+}
+
+div.category-active:hover {
+    border-left: 2px solid var(--bg-color);
 }
 
 div.category-name {
@@ -44,19 +59,38 @@ div.category-name {
     white-space: nowrap;
 }
 
+div.category-icon {
+    padding-right: 10px;
+    font-size: 14px;
+    opacity: 0.75;
+}
+
 div.category-active {
     position: relative;
-    width: calc(100% - 15px);
-    border-top: 1px solid var(--border-color);
-    border-left: 1px solid var(--border-color);
-    border-bottom: 3px solid var(--theme-highlight);
-    border-right: 2px solid var(--bg-color);
+    width: 100%;
+    border-top: 1px solid var(--border-color-light);
+    border-bottom: 3px solid var(--theme-color);
+    background-color: var(--bg-color);
+    padding-left: 10px;
 }
+
+/*
+div.category-active:after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0px;
+    height: 3px;
+    width: 100%;
+    transition: all var(--transition-time) ease;
+    background-image: linear-gradient(to right, var(--bg-color), var(--theme-color));
+}
+*/
 
 div.category-toggle {
     position: absolute;
     left: -100vw;
-    top: -40px;
+    top: -20px;
     cursor: pointer;
     transition: all var(--transition-time) ease;
     height: 0;
@@ -66,7 +100,7 @@ div.category-toggle {
 @media (max-width: 600px) { 
 
     div.category-toggle {
-        left: 35px;
+        left: 15px;
     }
 
     div.categories {

@@ -11,39 +11,41 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 Vue.component('categories', require('./components/Categories.vue'));
+Vue.component('category-title', require('./components/CategoryTitle.vue'));
 Vue.component('timeline', require('./components/Timeline.vue'));
 Vue.component('timeline-date', require('./components/TimelineDate.vue'));
 
 
 const router = new VueRouter({
+    mode: 'history',
     routes: [
         {
-            path: 'home',
+            path: '/',
             name: 'home',
             component: require('./routes/Home.vue')
         },
         {
-            path: 'web-development',
+            path: '/web-development',
             name: 'web-development',
             component: require('./routes/WebDevelopment.vue')
         },
         {
-            path: 'photography',
+            path: '/photography',
             name: 'photography',
             component: require('./routes/Photography.vue')
         },
         {
-            path: 'video',
+            path: '/video',
             name: 'video',
             component: require('./routes/video.vue')
         },
         {
-            path: 'design',
+            path: '/design',
             name: 'design',
             component: require('./routes/Design.vue')
         },
         {
-            path: 'animation',
+            path: '/animation',
             name: 'animation',
             component: require('./routes/Animation.vue')
         },
@@ -59,6 +61,7 @@ const store = new Vuex.Store({
         items: items,
         overlay: true,
         showCategories: true,
+        activeCategory: {},
     },
 
     mutations: {
@@ -69,6 +72,8 @@ const store = new Vuex.Store({
             });
 
             category.visible = true;
+
+            state.activeCategory = category;
 
             /*
             state.categories = lodash.sortBy(state.categories, function(cat) {
@@ -105,7 +110,7 @@ const store = new Vuex.Store({
 
 
             setTimeout(function() {
-                app.setThemeColor(category.hue);
+                app.setThemeColor(category.color);
                 app.resize();
             }, 100);
 
@@ -132,11 +137,8 @@ const app = new Vue({
     router,
 
     mounted() {
-        //router.push({ name: 'home' });
-        let category = this.$lodash.find(categories, function(category) {
-            return category.name == 'home';
-        });
-        this.$store.dispatch('setCategory', category);
+
+        this.setCategory();
         this.$store.dispatch('showCategories');
 
         window.addEventListener('resize', lodash.debounce(function() {
@@ -148,11 +150,8 @@ const app = new Vue({
 
     methods: {
     
-        setThemeColor: function(hue) {
-            document.documentElement.style.setProperty('--theme-light', 'hsla(' + hue + ', 100%, 95%, 0.75)');
-            document.documentElement.style.setProperty('--theme-dark', 'hsla(' + hue + ', 100%, 10%, 0.75)');
-            document.documentElement.style.setProperty('--theme-highlight', 'hsla(' + hue + ', 40%, 50%, 0.75)');
-            document.documentElement.style.setProperty('--theme-soft', 'hsla(' + hue + ', 40%, 50%, 0.1)');
+        setThemeColor: function(color) {
+            document.documentElement.style.setProperty('--theme-color', 'hsla(' + color + ')');
         },
 
         toggleCategories: function(category) {
@@ -165,8 +164,23 @@ const app = new Vue({
             } else {
                 this.$store.dispatch('showCategories');
             }
+        },
+
+        setCategory: function() {
+        
+            let category = this.$lodash.find(categories, function(category) {
+                return category.route == router.currentRoute.name;
+            });
+            
+            this.$store.dispatch('setCategory', category);
+
         }
         
     }
 
 });
+
+router.afterEach(function (transition) {
+    app.setCategory();
+});
+

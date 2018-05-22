@@ -2,9 +2,11 @@
 
     <div class="route">
 
+        <category-title></category-title>
+
         <div class="content-item">
 
-            <div class="content-header">Experience</div>
+            <div class="sub-header">Experience</div>
             <p>Since 2005 a professional web developer and content creator in the areas of  web design, video production, photography, graphic design, and 3D animation. An adaptive life-long learner always improving and staying current with the latest in progressive technology and digital media.</p>
 
             <div class="grid-list">
@@ -19,7 +21,6 @@
         <div class="content-item">
             <div class="content-header">Projects</div>
         </div>
-        <timeline></timeline>
 
     </div>
 

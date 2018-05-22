@@ -2,6 +2,12 @@
 
     <div class="route">
 
+        <category-title></category-title>
+
+        <p>
+            Canon SLR. Event Photography. Sports. Theatre. Dance. Portraits. Landscape. Travel.
+        </p>
+
         <div class="photos">
 
             <div class="photo" 

@@ -11,6 +11,9 @@
                 :class="category.visible ? 'category-active' : ''"
             >
                 <div class="category-name">{{ category.label }}</div>
+                <div class="category-icon">
+                    <i :class="category.icon"></i>
+                </div>
             </div>
 
         </transition-group>

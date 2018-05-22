@@ -11,4 +11,4 @@
 |
 */
 
-Route::get('/', 'PagesController@home')->name('home');
+Route::get('{catchall}', 'PagesController@home')->name('home')->where('catchall', '(.*)');

@@ -2,7 +2,8 @@ const categories = [
     {
         name: 'home',
         label: 'About Me',
-        hue: 205,
+        color: '205,100%,50%,1',
+        icon: 'fas fa-user',
         route: 'home',
         originalIndex: 0,
         visible: false
@@ -10,7 +11,8 @@ const categories = [
     {
         name: 'coding',
         label: 'Web Development',
-        hue: 205,
+        color: '30,100%,65%,1',
+        icon: 'far fa-keyboard',
         route: 'web-development',
         originalIndex: 1,
         visible: false
@@ -18,7 +20,8 @@ const categories = [
     {
         name: 'photography',
         label: 'Photography',
-        hue: 155,
+        color: '55,75%,65%,1',
+        icon: 'fas fa-camera-retro',
         route: 'photography',
         originalIndex: 2,
         visible: false
@@ -26,7 +29,8 @@ const categories = [
     {
         name: 'video',
         label: 'Video',
-        hue: 50,
+        color: '205,100%,50%,1',
+        icon: 'fas fa-video',
         route: 'video',
         originalIndex: 3,
         visible: false
@@ -34,7 +38,8 @@ const categories = [
     {
         name: 'design',
         label: 'Graphic Design',
-        hue: 25,
+        color: '30,100%,65%,1',
+        icon: 'far fa-image',
         route: 'design',
         originalIndex: 4,
         visible: false
@@ -42,7 +47,8 @@ const categories = [
     {
         name: '3d',
         label: '3D Animation',
-        hue: 295,
+        color: '55,75%,65%,1',
+        icon: 'fas fa-box',
         route: 'animation',
         originalIndex: 5,
         visible: false

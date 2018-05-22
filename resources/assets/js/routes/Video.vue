@@ -1,7 +1,9 @@
 <template>
 
-    <div class="">
-        <div class="header">Photography</div>
+    <div class="route">
+
+        <category-title></category-title>
+
     </div>
 
 </template>

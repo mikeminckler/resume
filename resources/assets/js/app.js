@@ -12,8 +12,9 @@ Vue.use(VueRouter);
 
 Vue.component('categories', require('./components/Categories.vue'));
 Vue.component('category-title', require('./components/CategoryTitle.vue'));
-Vue.component('timeline', require('./components/Timeline.vue'));
-Vue.component('timeline-date', require('./components/TimelineDate.vue'));
+Vue.component('google-timeline', require('./components/GoogleTimeline.vue'));
+//Vue.component('timeline', require('./components/Timeline.vue'));
+//Vue.component('timeline-date', require('./components/TimelineDate.vue'));
 
 
 const router = new VueRouter({

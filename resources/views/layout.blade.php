@@ -38,10 +38,28 @@
                     <div class="overlay" :class="[$store.state.overlay ? 'overlay-active' : '', $store.state.showCategories ? 'menu' : '']"></div>
 
                     <categories></categories>
+                    
+                    <div class="content-area" :class="[$store.state.showCategories ? 'menu' : '', 'color' + category.base]">
 
-                    <transition name="fade" mode="out-in">
-                        <router-view class="content-area" :class="$store.state.showCategories ? 'menu' : ''"></router-view>
-                    </transition>
+                        <div class="category-title">
+
+                            <transition name="category" mode="out-in" appear>
+                                <div class="header" :key="category.label">@{{ category.label }}</div>
+                            </transition>
+
+                            <transition name="category-icon" mode="out-in" appear>
+                                <div class="header-icon" :key="category.label">
+                                    <i :class="category.icon"></i>
+                                </div>
+                            </transition>
+
+                        </div>
+
+                        <transition name="fade" mode="out-in" appear>
+                            <router-view class="route-area"></router-view>
+                        </transition>
+
+                    </div>
 
                 </div>
 

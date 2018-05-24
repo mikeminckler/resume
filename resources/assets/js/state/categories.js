@@ -5,7 +5,7 @@ const categories = [
         color: '205,100%,50%,1',
         icon: 'fas fa-user',
         route: 'home',
-        originalIndex: 0,
+        base: 1,
         visible: false
     }, 
     {
@@ -14,7 +14,7 @@ const categories = [
         color: '30,100%,65%,1',
         icon: 'far fa-keyboard',
         route: 'web-development',
-        originalIndex: 1,
+        base: 2,
         visible: false
     }, 
     {
@@ -23,7 +23,7 @@ const categories = [
         color: '55,75%,65%,1',
         icon: 'fas fa-camera-retro',
         route: 'photography',
-        originalIndex: 2,
+        base: 3,
         visible: false
     }, 
     {
@@ -32,7 +32,7 @@ const categories = [
         color: '205,100%,50%,1',
         icon: 'fas fa-video',
         route: 'video',
-        originalIndex: 3,
+        base: 1,
         visible: false
     }, 
     {
@@ -41,7 +41,7 @@ const categories = [
         color: '30,100%,65%,1',
         icon: 'far fa-image',
         route: 'design',
-        originalIndex: 4,
+        base: 2,
         visible: false
     }, 
     {
@@ -50,7 +50,7 @@ const categories = [
         color: '55,75%,65%,1',
         icon: 'fas fa-box',
         route: 'animation',
-        originalIndex: 5,
+        base: 3,
         visible: false
     }, 
 ];

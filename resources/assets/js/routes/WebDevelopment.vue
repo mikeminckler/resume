@@ -2,11 +2,8 @@
 
     <div class="route">
 
-        <category-title></category-title>
-
+        <div class="header">Experience</div>
         <div class="content-item">
-
-            <div class="sub-header">Experience</div>
             <p>Since 2005 a professional web developer and content creator in the areas of  web design, video production, photography, graphic design, and 3D animation. An adaptive life-long learner always improving and staying current with the latest in progressive technology and digital media.</p>
 
             <div class="grid-list">
@@ -15,11 +12,16 @@
                     <div class="grid-item-text">{{ item }}</div>
                 </div>
             </div>
-
         </div>
 
+        <div class="header">Projects</div>
         <div class="content-item">
-            <div class="content-header">Projects</div>
+        
+        </div>
+
+        <div class="header">Side Projects</div>
+        <div class="content-item">
+        
         </div>
 
     </div>

@@ -11,8 +11,8 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 Vue.component('categories', require('./components/Categories.vue'));
-Vue.component('category-title', require('./components/CategoryTitle.vue'));
 Vue.component('google-timeline', require('./components/GoogleTimeline.vue'));
+Vue.component('youtube-video', require('./components/YoutubeVideo.vue'));
 //Vue.component('timeline', require('./components/Timeline.vue'));
 //Vue.component('timeline-date', require('./components/TimelineDate.vue'));
 
@@ -63,6 +63,12 @@ const store = new Vuex.Store({
         overlay: true,
         showCategories: true,
         activeCategory: {},
+        googleChartsLoaded: false,
+        youtubeReady: false,
+        screen: {
+            width: window.innerWidth,
+            height: window.innerHeight
+        },
     },
 
     mutations: {
@@ -90,7 +96,19 @@ const store = new Vuex.Store({
 
         setCategoriesMenu (state, bool) {
             state.showCategories = bool;
-        }
+        },
+
+        setGoogleChartsLoaded (state) {
+            state.googleChartsLoaded = true;
+        },
+
+        setYoutubeReady (state, ready) {
+            state.youtubeReady = ready;
+        },
+
+        setScreenSize (state, screen) {
+            state.screen = screen;
+        },
     },
 
     actions: {
@@ -127,7 +145,20 @@ const store = new Vuex.Store({
 
         toggleCategories({ commit, state }) {
             commit('setCategoriesMenu', !state.showCategories);
-        }
+        },
+
+        setGoogleChartsLoaded({ commit, state }) {
+            commit('setGoogleChartsLoaded');
+        },
+
+		setYoutubeReady({ commit, state }, ready) {
+            commit('setYoutubeReady', ready);
+        },
+
+        setScreenSize({ commit, state }, screen) {
+            commit('setScreenSize', screen);
+        },
+
     }
 
 });
@@ -142,11 +173,27 @@ const app = new Vue({
         this.setCategory();
         this.$store.dispatch('showCategories');
 
-        window.addEventListener('resize', lodash.debounce(function() {
-            app.resize();
-        }, 100));
-
+        window.addEventListener('resize', this.resize);
+            
         this.resize();
+
+		var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        window.onYouTubeIframeAPIReady = function() {
+            app.$store.dispatch('setYoutubeReady', true);
+        }
+
+    },
+
+    computed: {
+
+        category() {
+            return this.$store.state.activeCategory;
+        }
+
     },
 
     methods: {
@@ -159,13 +206,24 @@ const app = new Vue({
             this.$store.dispatch('toggleCategories');
         },
 
-        resize: function() {
-            if (window.innerWidth < 600) {
-                this.$store.dispatch('hideCategories');
-            } else {
-                this.$store.dispatch('showCategories');
-            }
-        },
+        resize: _.debounce(
+            () => {
+
+                let screen = {
+                    width: window.innerWidth,
+                    height: window.innerHeight,
+                }
+                app.$store.dispatch('setScreenSize', screen);
+
+                if (window.innerWidth < 600) {
+                    app.$store.dispatch('hideCategories');
+                } else {
+                    app.$store.dispatch('showCategories');
+                }
+
+            }, 100
+
+        ),
 
         setCategory: function() {
         

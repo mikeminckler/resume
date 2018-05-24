@@ -2,17 +2,16 @@
 
     <div class="route">
 
-        <category-title></category-title>
 
-        <div class="content-item">
+        <div class="header">Experience</div>
+        <div class="content-item"></div>
 
-            <div class="sub-header">Experience</div>
+        <div class="header">Projects</div>
+        <div class="content-item"> </div>
 
-            <p>
+        <div class="header">Side Projects</div>
+        <div class="content-item"></div>
 
-            </p>
-
-        </div>
         
     </div>
 

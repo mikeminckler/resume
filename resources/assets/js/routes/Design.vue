@@ -2,7 +2,14 @@
 
     <div class="route">
 
-        <category-title></category-title>
+        <div class="header">Experience</div>
+        <div class="content-item"></div>
+
+        <div class="header">Projects</div>
+        <div class="content-item"> </div>
+
+        <div class="header">Side Projects</div>
+        <div class="content-item"></div>
 
     </div>
 

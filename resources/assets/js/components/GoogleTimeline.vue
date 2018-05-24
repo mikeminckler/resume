@@ -25,10 +25,16 @@
         },
 
         mounted() {
-            this.createGoogleCharts()
-                .then( () => {
-                    this.initGoogleCharts();
-                });
+            
+            if (!this.$store.state.googleChartsLoaded) {
+                this.createGoogleCharts()
+                    .then( () => {
+                        this.initGoogleCharts();
+                    });
+            } else {
+                this.drawTimeline();
+            }
+
         },
 
         methods: {
@@ -49,6 +55,7 @@
 				google.charts.load('current', {'packages':['timeline']});
                 google.charts.setOnLoadCallback( () => {
 					this.drawTimeline();
+                    this.$store.dispatch('setGoogleChartsLoaded');
 				});
 			},
 			
@@ -58,15 +65,26 @@
                 var chart = new google.visualization.Timeline(container);
                 var dataTable = new google.visualization.DataTable();
 
-                dataTable.addColumn({ type: 'string', id: 'President' });
+                dataTable.addColumn({ type: 'string', id: 'Technology' });
+                dataTable.addColumn({ type: 'string', id: 'Name' });
                 dataTable.addColumn({ type: 'date', id: 'Start' });
                 dataTable.addColumn({ type: 'date', id: 'End' });
-                dataTable.addRows([
-                [ 'Washington', new Date(1789, 3, 30), new Date(1797, 2, 4) ],
-                [ 'Adams',      new Date(1797, 2, 4),  new Date(1801, 2, 4) ],
-                [ 'Jefferson',  new Date(1801, 2, 4),  new Date(1809, 2, 4) ]]);
 
-                chart.draw(dataTable);
+                dataTable.addRows([
+                    [ '1', 'HTML + CSS', new Date(2001, 5, 1), new Date()],
+                    [ '2', 'PHP', new Date(2005, 3, 1),  new Date() ],
+                    [ '3', 'Laravel', new Date(2014, 8, 1),  new Date() ],
+                ]);
+
+                var options = {
+                    colors: ['#0095ff', '#ffa64d', '#fff04d'],
+                    timeline: { 
+                        showRowLabels: false,
+                    },
+                    //backgroundColor: '#333333',
+                };
+
+                chart.draw(dataTable, options);
             
             }
 

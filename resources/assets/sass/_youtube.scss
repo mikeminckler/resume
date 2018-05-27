@@ -20,7 +20,24 @@ div.youtube-player {
 
 div.videos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-gap: 25px;
     padding: 5px;
+    cursor: pointer;
+}
+
+div.video {
+}
+
+div.video-title {
+    font-weight: var(--header-font-weight);
+    font-size: calc( var(--font-size) + 2px);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+}
+
+div.video-description {
+    font-size: calc( var(--font-size) - 1px); 
+    line-height: 25px;
 }

@@ -10,8 +10,12 @@ Vue.use(Vuex);
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
+const axios = require('axios');
+Vue.prototype.$http = axios;
+
 Vue.component('categories', require('./components/Categories.vue'));
-Vue.component('google-timeline', require('./components/GoogleTimeline.vue'));
+Vue.component('grid-list', require('./components/GridList.vue'));
+//Vue.component('google-timeline', require('./components/GoogleTimeline.vue'));
 Vue.component('youtube-video', require('./components/YoutubeVideo.vue'));
 //Vue.component('timeline', require('./components/Timeline.vue'));
 //Vue.component('timeline-date', require('./components/TimelineDate.vue'));

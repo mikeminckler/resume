@@ -43,7 +43,7 @@
 
                         <div class="category-title">
 
-                            <transition name="category" mode="out-in" appear>
+                            <transition name="fade" mode="out-in" appear>
                                 <div class="header" :key="category.label">@{{ category.label }}</div>
                             </transition>
 

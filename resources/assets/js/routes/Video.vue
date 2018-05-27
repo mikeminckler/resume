@@ -11,10 +11,11 @@
             <div class="videos">
                 <div class="video"
                     v-for="(video, index) in videos"    
-                    :key="video"
+                    :key="video.id"
                     @click="selectVideo(video)"
                 >
-                    {{ video }}
+                    <div class="video-title">{{ video.title }}</div>
+                    <div class="video-description">{{ video.description }}</div>
                 </div>
             </div>
         
@@ -31,7 +32,7 @@
                 <div class="image-viewer-background" @click="deselectVideo()"></div>
                 <div class="image-viewer-close" @click="deselectVideo()"><div class="fas fa-times-circle"></div></div>
                 <transition name="fade" mode="out-in">
-                    <youtube-video v-if="selectedVideo" :video-id="selectedVideo" :key="selectedVideo" @ended="deselectVideo"></youtube-video>
+                    <youtube-video v-if="selectedVideo" :video-id="selectedVideo.id" :key="selectedVideo.id" @ended="deselectVideo"></youtube-video>
                 </transition>
             </div>
         </transition>
@@ -48,8 +49,31 @@
             return {
                 selectedVideo: '',
                 videos: [
-                    'qyJWl59mo6g',
-                    'WVoBRBvgwzw',
+                    {
+                        'id': 'yVNo5LhSs-M',
+                        'title': '30 second Comercial',
+                        'description': 'Commercial short for Brentwood College School',
+                    },
+                    {
+                        'id': 'qyJWl59mo6g',
+                        'title': 'Weddings at Brentwood',
+                        'description': 'A promotional video to generate business for wedding rentals at Brentwood College School',
+                    },
+                    {
+                        'id': 'WVoBRBvgwzw',
+                        'title': 'Brentwood Logo',
+                        'description': 'Built in After Effects and used for all intro and outro branding of school videos',
+                    },
+                    {
+                        'id': 'Fzhf8HGoE4w',
+                        'title': 'Timelapse',
+                        'description': 'Created using a SLR intervalometer over the course of a week in the summer. Color correction in Camera Raw, assembled and stablized in After Effects.',
+                    },
+                    {
+                        'id': 'fEtDaY669Ns',
+                        'title': 'Rowing morning',
+                        'description': 'Montage of rowing in the morning at Brentwood College School.',
+                    },
                 ]
             }
         },

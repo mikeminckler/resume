@@ -81,7 +81,7 @@
                     timeline: { 
                         showRowLabels: false,
                     },
-                    //backgroundColor: '#333333',
+                    backgroundColor: '#333333',
                 };
 
                 chart.draw(dataTable, options);

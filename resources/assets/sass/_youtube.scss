@@ -4,10 +4,6 @@ iframe {
 
 div.youtube-player {
     overflow: hidden;
-    border-top: 1px solid var(--border-color-dark);
-    border-bottom: 1px solid var(--border-color-dark);
-    border-right: 1px solid var(--border-color-dark);
-    border-left: 1px solid var(--border-color-dark);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -16,7 +12,6 @@ div.youtube-player {
     position: relative;
     z-index: 30;
 }
-
 
 div.videos {
     display: grid;

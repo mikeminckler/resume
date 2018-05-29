@@ -22,7 +22,7 @@
                 :key="image"
                 @click="selectImage(image)"
              >
-                <img :src="'/images/' + image">
+                <img :src="'/images/photography/' + image">
             </div>
 
         </div>
@@ -37,7 +37,7 @@
                 <div class="image-advance-right" @click="nextImage()"><div class="fas fa-chevron-right"></div></div>
                 <div class="image-viewer-close" @click="deselectImage()"><div class="fas fa-times-circle"></div></div>
                 <transition name="fade" mode="out-in">
-                    <img v-if="selectedImage" :src="'/images/' + selectedImage" :key="selectedImage">
+                    <img v-if="selectedImage" :src="'/images/photography/' + selectedImage" :key="selectedImage">
                 </transition>
             </div>
         </transition>
@@ -56,6 +56,27 @@
                 images: [
                     'IMG_2516.jpg',
                     'IMG_0179.jpg',
+                    'IMG_8403.jpg',
+                    'IMG_3610.jpg',
+                    'IMG_2888.jpg',
+                    'IMG_3043.jpg',
+                    'IMG_2724.jpg',
+                    'IMG_2656.jpg',
+                    'P1020703.jpg',
+                    'P1020487.jpg',
+                    'P1010795.jpg',
+                    'P1010096.jpg',
+                    'P1000465.jpg',
+                    'IMG_1419.jpg',
+                    'IMG_9891.jpg',
+                    'IMG_1872.jpg',
+                    'IMG_4567.jpg',
+                    'IMG_3877.jpg',
+                    'IMG_4550.jpg',
+                    'IMG_1079.jpg',
+                    'IMG_6131.jpg',
+                    'IMG_5619.jpg',
+                    'IMG_4001.jpg',
                 ]
             }
         },
@@ -93,27 +114,31 @@
 
             nextImage: function() {
 
-                let index = this.$lodash.findIndex(this.images, image => {
-                    return image == this.selectedImage;
-                });
-                index ++;
-                if (index == this.images.length) {
-                    index = 0;
+                if (this.selectedImage) {
+                    let index = this.$lodash.findIndex(this.images, image => {
+                        return image == this.selectedImage;
+                    });
+                    index ++;
+                    if (index == this.images.length) {
+                        index = 0;
+                    }
+                    this.selectedImage = this.images[index]; 
                 }
-                this.selectedImage = this.images[index]; 
 
             },
 
             prevImage: function() {
 
-                let index = this.$lodash.findIndex(this.images, image => {
-                    return image == this.selectedImage;
-                });
-                index --;
-                if (index < 0) {
-                    index = this.images.length - 1;
+                if (this.selectedImage) {
+                    let index = this.$lodash.findIndex(this.images, image => {
+                        return image == this.selectedImage;
+                    });
+                    index --;
+                    if (index < 0) {
+                        index = this.images.length - 1;
+                    }
+                    this.selectedImage = this.images[index]; 
                 }
-                this.selectedImage = this.images[index]; 
 
             }
 

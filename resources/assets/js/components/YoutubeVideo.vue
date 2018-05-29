@@ -74,12 +74,19 @@
                 if (key.keyCode == 27) {
                     this.$emit('ended');
                 }
+                if (key.keyCode == 32) {
+                    this.player.playVideo();
+                }
             });
 
             if (this.ready) {
                 this.loadVideo();
             }
 
+        },
+
+        beforeDestroy() {
+            this.player.destroy();
         },
 
         methods: {
@@ -89,7 +96,7 @@
                 if (this.id) {
                     this.player = new YT.Player('player_' + this.divId, {
                         videoId: this.id,
-                        host: 'https://www.youtube.com',
+                        //host: 'https://www.youtube.com',
                         events: {
                             'onReady': vue.onPlayerReady,
                             'onStateChange': vue.onPlayerStateChange
@@ -100,7 +107,7 @@
                             rel: 0,
                             modestbranding: 1,
                             iv_load_policy: 3,
-                            fs: 0,
+                            fs: 1,
                             enablejsapi: 1,
                             disablekb: 1
                         }
@@ -131,16 +138,21 @@
             },
 
             resize: function() {
-                this.setParentWidth();
+
+                let width = this.player.getIframe().parentElement.parentElement.clientWidth - (this.padding * 2);
+                let height = (width * 9 ) / 16;
+
+                if (height > window.innerHeight) {
+                    this.parentWidth = ((window.innerHeight - (this.padding * 2)) * 16) / 9;
+                } else {
+                    this.parentWidth = width;
+                }
+
                 this.player.getIframe().style.width = this.playerWidth + 'px';
                 this.player.getIframe().style.height = 'calc((' + this.playerWidth + 'px * 9) / 16)';
             
                 this.player.getIframe().parentElement.style.width = this.playerWidth + 'px';
                 this.player.getIframe().parentElement.style.height = 'calc((' + this.playerWidth + 'px * 9) / 16)';
-            },
-
-            setParentWidth: function() {
-                this.parentWidth = this.player.getIframe().parentElement.parentElement.clientWidth - (this.padding * 2);
             },
 
             onPlayerStateChange: function(event) {

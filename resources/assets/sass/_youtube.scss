@@ -15,13 +15,14 @@ div.youtube-player {
 
 div.videos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     grid-gap: 25px;
-    padding: 5px;
+    padding: 5px 0;
     cursor: pointer;
 }
 
 div.video {
+    position: relative;
 }
 
 div.video-title {
@@ -35,4 +36,18 @@ div.video-title {
 div.video-description {
     font-size: calc( var(--font-size) - 1px); 
     line-height: 25px;
+}
+
+div.play-icon {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    opacity: 0.8;
 }

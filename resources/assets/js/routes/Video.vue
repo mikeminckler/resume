@@ -19,12 +19,10 @@
                 Final Cut Pro X
 
                 After Effects
-
-
-
-
-
             </p>
+
+            <grid-list :items="['Promotional', 'Live Streaming', 'Sports', 'Theatre', 'Visual Effects', 'Timelapse', 'Music Videos', 'After Effects', 'Titling', 'Interviews']"></grid-list>
+
         </div>
 
         <div class="header">Projects</div>

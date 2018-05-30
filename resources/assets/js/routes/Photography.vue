@@ -3,18 +3,16 @@
     <div class="route">
 
         <div class="header">Experience</div>
-        <div class="content-item"></div>
+        <div class="content-item">
+            <p>
+                Began with travel photography in 2004 and have persued the skill ever since. 
+                Whenever possible I will take my photos for website and design work.
+            </p>
+
+            <grid-list :items="['Canon SLR', 'Camera Raw', 'Events', 'Sports', 'Theatre', 'Dance', 'Portraits', 'Travel']"></grid-list>
+        </div>
 
         <div class="header">Projects</div>
-        <div class="content-item"> </div>
-
-        <div class="header">Side Projects</div>
-        <div class="content-item"></div>
-
-        <p>
-            Canon SLR. Event Photography. Sports. Theatre. Dance. Portraits. Landscape. Travel.
-        </p>
-
         <div class="photos">
 
             <div class="photo" 
@@ -77,6 +75,15 @@
                     'IMG_6131.jpg',
                     'IMG_5619.jpg',
                     'IMG_4001.jpg',
+                    'IMG_2147.jpg',
+                    'IMG_4256.jpg',
+                    'IMG_4082.jpg',
+                    'IMG_4000.jpg',
+                    'IMG_4820.jpg',
+                    'IMG_4655.jpg',
+                    'IMG_4444.jpg',
+                    'IMG_9332.jpg',
+                    'IMG_1827.jpg',
                 ]
             }
         },

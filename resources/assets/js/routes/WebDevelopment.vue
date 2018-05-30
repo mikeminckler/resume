@@ -83,7 +83,17 @@
                 <transition name="fade" mode="out-in">
                     <div v-if="selectedSite" class="site-viewer">
 
-                        <div class="header">{{ selectedSite.name }}</div>
+                        <div class="website-info">
+
+                            <div class="header">{{ selectedSite.name }}</div>
+                            <p>{{ selectedSite.info }}</p>
+
+                            <div class="dates">{{ selectedSite.dates }}</div>
+                            <div class="url"><a :href="'https://' + selectedSite.url" target="_blank">{{ selectedSite.url }}</a></div>
+                            <div class="role">{{ selectedSite.role }}</div>
+                            <grid-list width="150px" :items="selectedSite.gridList"></grid-list>
+
+                        </div>
 
                         <div class="website-image">
                             <img :src="'/images/web/' + selectedSite.thumbnail" class="website-image" />
@@ -146,7 +156,7 @@
                         name: 'Brentwood Information Event Registration',
                         thumbnail: 'rsvp.jpg',
                         dates: 'October 2017 - March 2018',
-                        url: 'rsvp.brentwood.bc.ca',
+                        url: 'rsvp.brentwood.ca',
                         role: 'Registration system for admission info sessions',
                         gridList: [
                             'Laravel + VueJS', 

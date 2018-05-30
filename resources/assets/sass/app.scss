@@ -505,4 +505,18 @@ div.timeline {
 div.site-viewer {
     position: relative;
     z-index: 5;
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+
+    & .website-image {
+        max-width: 600px;
+        flex: 1;
+        transform: perspective( 100vw ) rotateY(-20deg);
+    }
+
+    & .website-info {
+        max-width: 600px;
+        flex: 1;
+    }
 }

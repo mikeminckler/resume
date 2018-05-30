@@ -10,6 +10,8 @@
 
         <p>Soccer volleyball coach. Music. Travel</p>
 
+        <p>Everything on this resume, unless otherwise stated, is my creation. I'm am capable of starting at design and moving right through to launch. Design, Web, Video, Photo.</p>
+
     </div>
 
 </template>

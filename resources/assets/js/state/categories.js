@@ -44,15 +44,6 @@ const categories = [
         base: 2,
         visible: false
     }, 
-    {
-        name: '3d',
-        label: '3D Animation',
-        color: '55,75%,65%,1',
-        icon: 'fas fa-box',
-        route: 'animation',
-        base: 3,
-        visible: false
-    }, 
 ];
 
 export default categories;

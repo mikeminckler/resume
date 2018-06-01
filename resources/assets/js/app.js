@@ -15,11 +15,7 @@ Vue.prototype.$http = axios;
 
 Vue.component('categories', require('./components/Categories.vue'));
 Vue.component('grid-list', require('./components/GridList.vue'));
-//Vue.component('google-timeline', require('./components/GoogleTimeline.vue'));
 Vue.component('youtube-video', require('./components/YoutubeVideo.vue'));
-//Vue.component('timeline', require('./components/Timeline.vue'));
-//Vue.component('timeline-date', require('./components/TimelineDate.vue'));
-
 
 const router = new VueRouter({
     mode: 'history',
@@ -48,11 +44,6 @@ const router = new VueRouter({
             path: '/design',
             name: 'design',
             component: require('./routes/Design.vue')
-        },
-        {
-            path: '/animation',
-            name: 'animation',
-            component: require('./routes/Animation.vue')
         },
     ]
 })

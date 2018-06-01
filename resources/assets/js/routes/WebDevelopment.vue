@@ -81,7 +81,7 @@
                 <div class="image-advance-right" @click="nextSite()"><div class="fas fa-chevron-right"></div></div>
                 <div class="image-viewer-close" @click="deselectSite()"><div class="fas fa-times-circle"></div></div>
                 <transition name="fade" mode="out-in">
-                    <div v-if="selectedSite" class="site-viewer">
+                    <div v-if="selectedSite" class="site-viewer" :key="selectedSite.id">
 
                         <div class="website-info">
 

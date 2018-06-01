@@ -512,7 +512,7 @@ div.site-viewer {
     & .website-image {
         max-width: 600px;
         flex: 1;
-        transform: perspective( 100vw ) rotateY(-20deg);
+        transform: perspective( 150vw ) rotateY(-15deg);
     }
 
     & .website-info {

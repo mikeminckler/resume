@@ -78,19 +78,19 @@
                         'id': 'yVNo5LhSs-M',
                         'title': '30 second Comercial',
                         'thumbnail': '30sec.jpg',
-                        'description': 'Commercial short for Brentwood College School',
+                        'description': 'Commercial short for Brentwood College School.',
                     },
                     {
                         'id': 'qyJWl59mo6g',
                         'title': 'Weddings at Brentwood',
                         'thumbnail': 'weddings.jpg',
-                        'description': 'A promotional video to generate business for wedding rentals at Brentwood College School',
+                        'description': 'A promotional video to generate business for wedding rentals at Brentwood College School.',
                     },
                     {
                         'id': 'WVoBRBvgwzw',
                         'title': 'Brentwood Logo',
                         'thumbnail': 'bcs_logo.jpg',
-                        'description': 'Built in After Effects and used for all intro and outro branding of school videos',
+                        'description': 'Built in After Effects and used for all intro and outro branding of school videos.',
                     },
                     {
                         'id': 'Fzhf8HGoE4w',
@@ -133,6 +133,30 @@
                         'title': 'Regatta 40th Anniversary',
                         'thumbnail': 'regatta.jpg',
                         'description': 'Chronicalling the history of the Brentwood Regatta after 40 years.',
+                    },
+                    {
+                        'id': 'L365mRNWR1c',
+                        'title': 'TedX Brentwood Logo',
+                        'thumbnail': 'tedxlogo.jpg',
+                        'description': 'Leader video for the annual TedX Brentwood event.',
+                    },
+                    {
+                        'id': 'RAxe4c3s3A0',
+                        'title': '2013 Brentwood College School Intro',
+                        'thumbnail': 'bcs_logo_2013.jpg',
+                        'description': 'Brentwood College School 2013 leader for official videos.',
+                    },
+                    {
+                        'id': 'GEJi1PMSx5E',
+                        'title': 'TedX Brentwood 2015 Logo',
+                        'thumbnail': 'fusion.jpg',
+                        'description': 'Intro Logo for TedX Brentwood 2015 creating in Adobe After Effects.',
+                    },
+                    {
+                        'id': 'h94Z-C-WoI4',
+                        'title': 'The Brentwood Musical Program',
+                        'thumbnail': 'musical.jpg',
+                        'description': 'A feature look at the Brentwood College School musical program.',
                     },
                 ]
             }

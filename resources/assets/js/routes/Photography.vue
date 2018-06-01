@@ -84,6 +84,11 @@
                     'IMG_4444.jpg',
                     'IMG_9332.jpg',
                     'IMG_1827.jpg',
+                    'IMG_3627.jpg',
+                    'west_coast01cc.jpg',
+                    'IMG_9416.jpg',
+                    'IMG_8193.jpg',
+                    'IMG_1274_1.jpg',
                 ]
             }
         },

@@ -5,8 +5,6 @@
         <div class="header">Experience</div>
         <div class="content-item">
             <p>
-                Began with travel photography in 2004 and have persued the skill ever since. 
-                Whenever possible I will take my photos for website and design work.
             </p>
 
             <grid-list :items="['Canon SLR', 'Camera Raw', 'Events', 'Sports', 'Theatre', 'Dance', 'Portraits', 'Travel']"></grid-list>

@@ -5,40 +5,21 @@
         <div class="header">Experience</div>
         <div class="content-item">
 
-            <p>
-                In the departments of Information Technology, and subsuquently Marketing, I was responsible 
+            <div class="expander" :class="expanded ? 'expanded' : ''">
 
-                Brentwood, IT then marketing. Worked on various in house projects. SIS, main website for new families. 
-                began with PHP. CMS. 
+                <p>I began my web development career in 2005 when I was hired at Brentwood College School in the IT department. As lead web developer I was in responsible for the design and maintenance of the main <span class="route-link" @click="selectSiteById(1)">Brentwood website</span> where I implemented an 18 month refresh cycle that produced five unique versions. Each revision kept the site up to date with the latest frontend design trends and technology. The site was built on the Typo3 content management system making it easy for editors to update content and allowing me to implement a custom frontend design. The 2014 refresh of the main website marked the last version I developed as the marketing department began to focus on other mediums for promotion. </p>
 
-                Always been drawn to frontend design and UI. Mix and design and functionality.
+                <p>As well during my time in the IT department at Brentwood I was involved in the programming of the schools student information system responsible for the record keeping and day to day operations. Working on this project from 2006 to 2010, I developed my skills in PHP and object oriented programming while developing features for this custom framework. As well I was able to learn Ubuntu server management including Apache, Nginx, DNS configurations. </p>
 
-                Procedural <i class="fas fa-arrow-right"></i> OOP, MVC. 
+                <p>With the shift in focus of the Brentwood marketing department in 2014 I was looking to pursue a new project and advance my programming skills. In September 2014 an opportunity arose where I was offered a contract to create a electronic medical record keeping system for Brentwood. Development soon began and <span class="route-link" @click="selectSiteById(0)">BlueHealth</span> was launched the following spring. This Laravel and VueJS based software has successfully met the needs of seven medical professionals in an office that has an annual patient base in excess of 550 patients. </p>
 
-                5 website revisions on a 18 month schedule. 
+                <p>Throughout my web development career I have also created several smaller side projects which have been vital to understanding new technologies such as single page applications, css grid and real time updates via websockets.</p>
 
-                With the offer to write a new medical charting management app I researched hpp frameworks and settled on Laravel.
+            </div>
+            <div class="expander-toggle" @click="expanded = !expanded">{{ expanded ? 'Hide' : 'Read More...' }}</div>
 
-                Lead to using VueJS. 
+            <grid-list :items="['Laravel', 'VueJS', 'PHP', 'JS', 'MVC', 'OOP', 'CSS GRID + FLEXBOX' ]"></grid-list>
 
-                Some side projects., Yeshi, COVL, 
-
-                IT baground added the server management skills. 
-
-                Using Ubuntu. 
-
-                Apache Nginx
-
-                Redis
-
-                Node
-
-                MySQL
-
-
-            </p>
-
-            <grid-list :items="['Laravel', 'VueJS', 'PHP', 'HTML', 'CSS' ]"></grid-list>
 
         </div>
 
@@ -86,11 +67,13 @@
                         <div class="website-info">
 
                             <div class="header">{{ selectedSite.name }}</div>
-                            <p>{{ selectedSite.info }}</p>
 
                             <div class="dates">{{ selectedSite.dates }}</div>
                             <div class="url"><a :href="'https://' + selectedSite.url" target="_blank">{{ selectedSite.url }}</a></div>
                             <div class="role">{{ selectedSite.role }}</div>
+
+                            <p>{{ selectedSite.description }}</p>
+
                             <grid-list width="150px" :items="selectedSite.gridList"></grid-list>
 
                         </div>
@@ -116,6 +99,7 @@
         data: function() {
             return {
                 selectedSite: '',
+                expanded: false,
                 sites: [
                     {
                         id: 0,
@@ -135,6 +119,7 @@
                             'Inventory', 
                             'Medication Dispensing'
                         ],
+                        description: 'The co-founder and lead programmer of a web-based online medical charting and management application. Built on the Laravel PHP framework, BlueHealth features a clean and responsive user interface focused on providing quick and easy data entry, searching, and reporting. BlueHealth has facilitated the creation of over 25,000 medical records annually.',
                     },
                     {
                         id: 1,
@@ -150,6 +135,7 @@
                             'Responsive Design', 
                             'YouTube Integration'
                         ],
+                        description: 'A key member of the marketing and IT departments at Brentwood for over a decade. A leader in promoting Brentwood as a world renowned boarding school by developing and maintaining the school’s website, YouTube channel, and live stream productions. Produced video content and photography for online and promotional materials. Taught students in grades 9 through 12 the subjects of video production and 3D animation as well as coaching the girls’ volleyball team.',
                     },
                     {
                         id: 2,
@@ -161,6 +147,7 @@
                         gridList: [
                             'Laravel + VueJS', 
                         ],
+                        description: 'Used as a landing page for online advertising. Targeted at prospective students and parents, this site provided an registration component for new families to sign up for information sessions throughout the country. An interactive and easy to use registration form were design specifics.',
                     },
                     {
                         id: 3,
@@ -176,6 +163,7 @@
                             'Websockets', 
                             'Google Charts',
                         ],
+                        description: 'This statistics tracking tool was used for the volleyball program at Brentwood. Using web sockets to provide realtime feedback without the need for page refreshes was a key design feature. This was accomplished using Laravel\'s broadcasting queue through NodeJS to provide update events in the browser.',
                     },
                 ]
             }
@@ -193,6 +181,13 @@
         
             selectSite: function(site) {
                 this.selectedSite = site;  
+            },
+
+            selectSiteById: function(id) {
+                let site = this.$lodash.find(this.sites, site => {
+                    return site.id == id;
+                });
+                this.selectSite(site);
             },
 
             deselectSite: function() {

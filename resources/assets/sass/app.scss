@@ -16,6 +16,7 @@
     --font: 'Source Sans Pro', serif;
     --font-size: 15px;
     --font-weight: 300;
+    --font-weight-bold: 700;
     --font-color: rgba(255,255,255,1);
     --transition-time: .5s;
 
@@ -92,6 +93,10 @@ a {
     color: var(--route-link-color);
 }
 
+.bold {
+    font-weight: var(--font-weight-bold);
+}
+
 p {
     padding: 0px 0px 15px 0px;
     line-height: 25px;
@@ -105,6 +110,23 @@ div.flex {
 }
 
 .clickable {
+    cursor: pointer;
+}
+
+div.expander {
+    max-height: 100px;
+    transition: max-height var(--transition-time) ease;
+    overflow: hidden;
+}
+
+div.expander.expanded {
+    max-height: 100vh;
+}
+
+div.expander-toggle {
+    padding: 5px 0;
+    color: var(--link-color);
+    margin-bottom: var(--content-padding);
     cursor: pointer;
 }
 
@@ -508,6 +530,7 @@ div.site-viewer {
     display: flex;
     width: 100%;
     max-width: 1200px;
+    padding: 15px 35px;
 
     & .website-image {
         max-width: 600px;

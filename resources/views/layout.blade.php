@@ -33,6 +33,7 @@
 
                     <div class="category-toggle" @click="toggleCategories">
                         <i class="fas fa-bars"></i>
+                        <div>Menu</div>
                     </div>
 
                     <div class="overlay" :class="[$store.state.overlay ? 'overlay-active' : '', $store.state.showCategories ? 'menu' : '']"></div>
@@ -62,6 +63,8 @@
                     </div>
 
                 </div>
+
+                <div class="footer">Built from scratch using only Laravel + VueJS + Lodash</div>
 
             </div>
         </div>

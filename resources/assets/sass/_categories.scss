@@ -107,11 +107,19 @@ div.category-active:after {
 div.category-toggle {
     position: absolute;
     left: -100vw;
-    top: -20px;
+    top: -10px;
     cursor: pointer;
     transition: all var(--transition-time) ease;
     height: 0;
-    z-index: 15;
+    z-index: 25;
+    display: flex;
+    align-items: flex-start;
+
+    & div {
+        position: relative;
+        left: 3px;
+        top: -2px;
+    }
 }
 
 @media (max-width: 600px) { 

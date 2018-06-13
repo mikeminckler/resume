@@ -121,10 +121,10 @@
                 //this.player.setVolume(20);
                 this.resize();
 
-                if (this.autoplay) {
+                if (!this.autoplay) {
                     setTimeout( () => {
                         this.player.playVideo();
-                    }, 2000);
+                    }, 500);
                 }
             },
 

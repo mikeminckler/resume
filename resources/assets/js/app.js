@@ -50,6 +50,8 @@ const router = new VueRouter({
 
 import categories from './state/categories.js';
 import items from './state/items.js';
+import photography from './state/photography.js';
+import videos from './state/videos.js';
 
 const store = new Vuex.Store({
     state: {
@@ -64,6 +66,8 @@ const store = new Vuex.Store({
             width: window.innerWidth,
             height: window.innerHeight
         },
+        videos: videos,
+        photographyImages: photography,
     },
 
     mutations: {
@@ -76,6 +80,14 @@ const store = new Vuex.Store({
             category.visible = true;
 
             state.activeCategory = category;
+
+            (function smoothscroll(){
+                var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                if (currentScroll > 125) {
+                    window.requestAnimationFrame(smoothscroll);
+                    window.scrollTo (125,currentScroll - (currentScroll/5));
+                }
+            })();
 
             /*
             state.categories = lodash.sortBy(state.categories, function(cat) {
@@ -181,6 +193,8 @@ const app = new Vue({
             app.$store.dispatch('setYoutubeReady', true);
         }
 
+        this.loadImages();
+
     },
 
     computed: {
@@ -228,6 +242,15 @@ const app = new Vue({
             
             this.$store.dispatch('setCategory', category);
 
+        },
+
+        loadImages: function() {
+
+            this.$lodash.forEach(this.$store.state.photographyImages, function(src) {
+                var image = new Image();
+                image.src = '/images/photography/' + src;
+            });
+        
         }
         
     }
@@ -235,6 +258,6 @@ const app = new Vue({
 });
 
 router.afterEach(function (transition) {
-    app.setCategory();
+    //app.setCategory();
 });
 

@@ -4,7 +4,12 @@
 
         <div class="header">Experience</div>
         <div class="content-item">
-            <p>Photoshop. Illustrator. SVG. Print. Posters.</p>
+
+            <p>Working in the marketing department for the past five years has allowed me to tackle several graphic design projects.</p>
+            <p>Using a tablet in conjuction with Photoshop and Illustrator is my prefered workflow.</p>
+            <p>During web design I do the majority of my layouts in Photoshop and then translate them online.</p>
+
+            <grid-list :items="['Photoshop', 'Illustrator', 'SVG', 'Print', 'Posters']"></grid-list>
         </div>
 
         <div class="header">Projects</div>

@@ -97,11 +97,15 @@ a {
     font-weight: var(--font-weight-bold);
 }
 
-p {
+p, ul {
     padding: 0px 0px 15px 0px;
     line-height: 25px;
     max-width: 600px;
     margin: 0;
+}
+
+ul {
+    margin-left: 30px;
 }
 
 div.flex {
@@ -338,6 +342,7 @@ div.content-item {
 div.grid-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    margin-top: 10px;
     margin-bottom: var(--content-padding);
     align-items: center;
     grid-gap: 5px;
@@ -409,9 +414,19 @@ div.middle {
     position: relative;
 }
 
+div.footer {
+    font-size: calc(var(--font-size) - 1px);
+    color: #aaa;
+    margin-top: var(--content-padding);
+    padding: 10px 50px 10px 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
 div.content-area {
     margin-left: 250px;
     padding-right: 50px;
+    padding-top: 15px;
     flex: 1;
     transition: margin-left calc( var(--transition-time) / 2) ease;
 }

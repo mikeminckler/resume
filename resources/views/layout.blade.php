@@ -19,12 +19,12 @@
             <div class="content">
 
                 <div class="top" id="top">
-                    <div class="name-title">
+                    <div class="name-title" @click="setCategory('home')">
                         <div class="title">Mike Minckler</div>
                         <div class="sub-title">Web Developer + Content Creator</div>
                         <div class="email-phone">
-                            <div class="email"><a href="mailto:mikeminckler@gmail.com">mikeminckler@gmail.com</a></div>
-                            <div class="phone"><a href="tel:+12507017414">+12507017414</a></div>
+                            <div class="email"><a @click.stop="" href="mailto:mikeminckler@gmail.com">mikeminckler@gmail.com</a></div>
+                            <div class="phone"><a @click.stop="" href="tel:+12507017414">+12507017414</a></div>
                         </div>
                     </div>
                 </div>

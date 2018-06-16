@@ -52,11 +52,13 @@ import categories from './state/categories.js';
 import items from './state/items.js';
 import photography from './state/photography.js';
 import videos from './state/videos.js';
+import websites from './state/websites.js';
 
 const store = new Vuex.Store({
     state: {
         categories: categories,
         items: items,
+        websites: websites,
         overlay: true,
         showCategories: true,
         activeCategory: {},
@@ -80,14 +82,6 @@ const store = new Vuex.Store({
             category.visible = true;
 
             state.activeCategory = category;
-
-            (function smoothscroll(){
-                var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
-                if (currentScroll > 125) {
-                    window.requestAnimationFrame(smoothscroll);
-                    window.scrollTo (125,currentScroll - (currentScroll/5));
-                }
-            })();
 
             /*
             state.categories = lodash.sortBy(state.categories, function(cat) {
@@ -129,6 +123,20 @@ const store = new Vuex.Store({
             router.push({ name: category.route});
 
             commit('setOverlay', true);
+
+            let index = lodash.findIndex(state.categories, function(cat) {
+                return cat.route == category.route;
+            });
+
+            //document.getElementsByClassName("circle")[0].style.transform = 'rotate(-' + (72 * index) + 'deg)';
+
+            (function smoothscroll(){
+                var currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+                if (currentScroll > 125) {
+                    window.requestAnimationFrame(smoothscroll);
+                    window.scrollTo (125,currentScroll - (currentScroll/5));
+                }
+            })();
 
             setTimeout(function() {
                 commit('setOverlay', false);

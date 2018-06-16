@@ -5,11 +5,12 @@
         <div class="header">Experience</div>
         <div class="content-item">
 
-            <p>Working in the marketing department for the past five years has allowed me to tackle several graphic design projects.</p>
-            <p>Using a tablet in conjuction with Photoshop and Illustrator is my prefered workflow.</p>
-            <p>During web design I do the majority of my layouts in Photoshop and then translate them online.</p>
+            <p>In 2013, my position at Brentwood was tranfered into the marketing departent to allow me to focus on content creation of promotional materials for the school.</p>
+            <p>Along side my web design, video and photography work, I was also involved in several graphic design projects. These included creating posters, print materials and online advertisments.</p>
+            <p> My prefered workflow includes using Photoshop and Illustror along side a drawing tablet.</p>
+            <p>Most recently I have been the <strong>lead designer</strong> for the interior design of the new 40 million dollar Athletics Centre. This process included using 3D animation software to fully visualize the branding and artistic designs of the building.</p>
 
-            <grid-list :items="['Photoshop', 'Illustrator', 'SVG', 'Print', 'Posters']"></grid-list>
+            <grid-list :items="['Photoshop', 'Illustrator', 'SVG', 'Print', 'Posters', '3D modeeling']"></grid-list>
         </div>
 
         <div class="header">Projects</div>

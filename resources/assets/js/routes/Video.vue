@@ -4,22 +4,10 @@
 
         <div class="header">Experience</div>
         <div class="content-item">
-            <p>
-
-                Since high school. 25 years.
-
-                Promotional. Live Streaming. Sports. Theatre. Visual Effects. Timelapse. Music Videos. After Effects. Titling. Interviews. 
-
-                With advent of Live Streaming on YouTube, began working multi camera live evnets. 
-
-                Outdoor sports. Regatta Stats. Theatre performances. TedX.
-
-                Feature shorts for the school., intergrated into the website.
-
-                Final Cut Pro X
-
-                After Effects
-            </p>
+            <p>Video production is a medium in which I have over 20 years of experience. My post secondary education was focused on visual effects for video production.</p>
+            <p>I have extensive experience producing live streaming events online utilizing  multiple cameras, raphical overlays and sound mixing. Some of the larger events I have worked on include the four Brentwood TedX conferences and the annual Brentwood regatta which attracts over two thousand viewers of the course of three days.</p>
+            <p>I am proficent using Final Cut ProX, Adobe Premier Pro, and Adbobe After Effects.</p>
+            <p>My latest work at Brentwood includes a 30 second comercial, a feature on boarding life, a promotional video for wedding rentals and a profile of a famous alumni.</p>
 
             <grid-list :items="['Promotional', 'Live Streaming', 'Sports', 'Theatre', 'Visual Effects', 'Timelapse', 'Music Videos', 'After Effects', 'Titling', 'Interviews']"></grid-list>
 

@@ -4,10 +4,12 @@
 
         <div class="header">Experience</div>
         <div class="content-item">
-            <p>Since 2004, digital photography has been a creative passion of mine. Beginning with trips to overseas followed by sports, theatre and dance events at Brentwood College School I have honed my skills throughout taking thousands upon thousands of photos.</p>
-            <p>For website designs I prefer to take my own photos as I can get the variety and types of shots I require while saving signifigant costs.</p>
+            <p>Since 2004, digital photography has been a creative passion of mine. I am proficient in full frame profession Canon DSLR cameras and L series lenses which I use in combination with capturing photos in camera raw to bring out the best in every picture.</p>
+            <p>In 2010 I was promoted to <strong> lead event photographer</strong> at Brentwood where I photographed many challenging events such as sports, theatre and dance.</p>
+            <p>As well I was also responsible for providing photos for promotional materials such as the website, admissions brochures and print advertsing.</p>
+            <p>I throughly enjoy taking photos while travelling on holiday. I consider my landspace and architectural photogrphy to be some of my highest quality work.</p>
 
-            <grid-list :items="['Canon SLR', 'Camera Raw', 'Events', 'Sports', 'Theatre', 'Dance', 'Portraits', 'Travel']"></grid-list>
+            <grid-list :items="['Canon DSLR', 'Camera Raw', 'Events', 'Sports', 'Theatre', 'Dance', 'Portraits', 'Travel', 'Architectural']"></grid-list>
         </div>
 
         <div class="header">Portfolio</div>
@@ -18,7 +20,7 @@
                 :key="image"
                 @click="selectImage(image)"
              >
-                <img :src="'/images/photography/' + image">
+                <img :src="'/images/photography/thumbs/' + image">
             </div>
 
         </div>

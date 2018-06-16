@@ -5,11 +5,11 @@
         <div class="header">Background</div>
         <div class="content-item">
 
-            <p>For the past 13 years, I have been working as a web developer and content creator.</p>
-            <p>In 2005 I joined the Information Technology team at Brentwood College School, one of the world's top boarding schools, and was placed in charge of web development for the marketing and student information systems of the school.</p>
-            <p>Throughout my time at Brentwood I have had a wide variety of roles and responsibilities that have allowed me to develop a dynamic, well rounded, creative and technical skill set that continues to evolve.</p>
-            <p>In 2014 I founded my own web development company and created BlueHealth, an electronic medical charting and health management website that is actively managing over 1200 patients and their 68,000 records.</p>
-            <p>I thrive when working on challenging projects that focus on creative and elegant solutions, something that has been repeated throughout my career. </p>
+            <p>For the past 13 years, I have worked as a web developer and content creator.</p>
+            <p>In 2005 I joined the Information Technology department at Brentwood College School, one of the world's top boarding schools, and was placed in charge of <strong>web development</strong> for the marketing and student information systems of the school.</p>
+            <p>While at Brentwood I was fortunate to work on a wide variety of projects that allowed me to develop a well rounded, creative and technical skill set.</p>
+            <p>In 2014 I co-founded a web development company and launched <strong>BlueHealth</strong>, an electronic medical charting and health management website that is actively managing over 1200 patients and their 68,000 records.</p>
+            <p>I thrive when working on challenging projects that focus on creative and elegant solutions, something that has been repeated throughout my career.</p>
 
         </div>
 
@@ -25,7 +25,7 @@
 
         </div>
 
-        <div class="header">Other Experince</div>
+        <div class="header">Other Experience</div>
         <div class="content-item">
 
             <ul>

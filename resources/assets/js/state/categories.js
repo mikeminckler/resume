@@ -6,7 +6,8 @@ const categories = [
         icon: 'fas fa-user',
         route: 'home',
         base: 1,
-        visible: false
+        visible: false,
+        path: '/',
     }, 
     {
         name: 'coding',
@@ -15,7 +16,8 @@ const categories = [
         icon: 'far fa-keyboard',
         route: 'web-development',
         base: 2,
-        visible: false
+        visible: false,
+        path: '/web-development',
     }, 
     {
         name: 'photography',
@@ -24,7 +26,8 @@ const categories = [
         icon: 'fas fa-camera-retro',
         route: 'photography',
         base: 3,
-        visible: false
+        visible: false,
+        path: '/photography',
     }, 
     {
         name: 'video',
@@ -33,7 +36,8 @@ const categories = [
         icon: 'fas fa-video',
         route: 'video',
         base: 1,
-        visible: false
+        visible: false,
+        path: '/video',
     }, 
     {
         name: 'design',
@@ -42,7 +46,8 @@ const categories = [
         icon: 'far fa-image',
         route: 'design',
         base: 2,
-        visible: false
+        visible: false,
+        path: '/design',
     }, 
 ];
 

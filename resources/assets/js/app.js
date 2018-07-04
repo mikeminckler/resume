@@ -120,7 +120,10 @@ const store = new Vuex.Store({
             });
 
             commit('setCategory', category);
-            router.push({ name: category.route});
+
+            if (router.currentRoute.name != category.route) {
+                router.push({ name: category.route});
+            }
 
             commit('setOverlay', true);
 
@@ -273,6 +276,6 @@ const app = new Vue({
 });
 
 router.afterEach(function (transition) {
-    //app.setCategory();
+    app.setCategory();
 });
 

@@ -5,13 +5,17 @@
         <div class="header">Experience</div>
         <div class="content-item">
 
-            <p>When I joined the IT department at Brentwood in 2005 I was trained to be a full stack developer for the schools website and internal student information systems.</p>
-            <p>As lead developer for the schools promotional website, I implemented a content management system to provide a custom frontend design while allowing content creatores access to an easy to use backend.</p>
-            <p>During my time overseeing the website I implemented an 18 month refresh cycle that produced five unique versions.</p>
-            <p>The student information system that managed day to day operations of over one hundred staff and five hundred students utilized an object oriented cutsom PHP framework. I created several new features for this system including an eventing and calendaring module, travel management system and responsive design upgrade.</p>
+            <p>When I joined the IT department at Brentwood in 2005 I was trained to be a <strong>full stack developer</strong> for the school's website and internal student information systems.</p>
+            <p>As lead developer for the school's promotional website, I implemented a content management system to provide a custom frontend design while allowing content creators access to an easy to use backend.</p>
+            <p>During my time overseeing the website I implemented an 18 month release cycle that produced five unique frontend designs and three content refreshes.</p>
+            <p>I also worked on the student information system that managed day to day operations of over one hundred staff and five hundred students. This software was run on an object oriented custom PHP framework. I created several new features for this system including an eventing and calendaring module, a travel management system and a responsive design upgrade.</p>
+            <p>In have also created several other side projects that have allowed me to learn and practice new design patterns. These projects can be found on my <a href="https://github.com/mikeminckler" target="_blank">GitHub page</a>.</p>
 
-            <grid-list :items="['Laravel', 'VueJS', 'PHP', 'JS', 'MVC', 'OOP', 'CSS GRID + FLEXBOX', 'Websockets']"></grid-list>
+        </div>
 
+        <div class="header">Skills</div>
+        <div class="content-item">
+            <grid-list :items="['Laravel', 'VueJS', 'PHP', 'JS', 'MVC', 'CSS GRID + FLEXBOX', 'Websockets']"></grid-list>
         </div>
 
         <div class="header">Projects</div>
@@ -32,7 +36,7 @@
                     <div class="dates">{{ site.dates }}</div>
                     <div class="url"><a :href="'https://' + site.url" target="_blank">{{ site.url }}</a></div>
                     <div class="role">{{ site.role }}</div>
-                    <grid-list width="150px" :items="site.gridList"></grid-list>
+                    <grid-list width="150px" :items="$lodash.take(site.gridList, 5)"></grid-list>
                     <div class="more-info"> 
                         <div class="more-info-link">More info</div>
                         <i class="fas fa-arrow-alt-circle-right"></i>
@@ -55,13 +59,18 @@
                 <transition name="fade" mode="out-in">
                     <div v-if="selectedSite" class="site-viewer" :key="selectedSite.id">
 
+                        <div class="website-image">
+                            <img :src="'/images/web/' + selectedSite.thumbnail" class="website-image" />
+                        </div>
+
                         <div class="website-info">
 
-                            <div class="header">{{ selectedSite.name }}</div>
+                            <div class="website-name header">{{ selectedSite.name }}</div>
 
-                            <div class="dates">{{ selectedSite.dates }}</div>
-                            <div class="url"><a :href="'https://' + selectedSite.url" target="_blank">{{ selectedSite.url }}</a></div>
-                            <div class="role">{{ selectedSite.role }}</div>
+                            <div class="website-subinfo">
+                                <div class="dates">{{ selectedSite.dates }}</div>
+                                <div class="url"><a :href="'https://' + selectedSite.url" target="_blank">{{ selectedSite.url }}</a></div>
+                            </div>
 
                             <p>{{ selectedSite.description }}</p>
 
@@ -69,9 +78,6 @@
 
                         </div>
 
-                        <div class="website-image">
-                            <img :src="'/images/web/' + selectedSite.thumbnail" class="website-image" />
-                        </div>
 
 
 

@@ -7,7 +7,6 @@
 :root {
 
     --link-color: hsla(205,100%,75%,1);
-    --route-link-color: hsla(205,100%,90%,1);
     --highlight: rgba(205,100%,90%,0.1);
 
     --bg-color: rgba(51,51,51,1);
@@ -40,6 +39,8 @@
     --margin-bottom: 15px;
 
     --image-thumbnail-size: 200px;
+
+    --border-radius: 5px;
 
 }
 
@@ -88,9 +89,8 @@ a {
 }
 
 .route-link {
-    font-weight: 700;
     cursor: pointer;
-    color: var(--route-link-color);
+    color: var(--link-color);
 }
 
 .bold {
@@ -174,7 +174,7 @@ div.header-icon {
 div.header {
     white-space: nowrap;
     padding: 3px;
-    margin-bottom: calc( var(--margin-bottom) / 2);
+    margin-bottom: calc( var(--margin-bottom) );
     font-weight: var(--header-font-weight);
     font-size: calc( var(--font-size) + 3px);
 }
@@ -186,19 +186,28 @@ div.sub-header {
     font-size: calc( var(--font-size) + 1px);
 }
 
+div.website-subinfo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: var(--content-padding);
+
+    & div {
+        white-space: nowrap;
+        padding-right: 15px;
+    }
+}
+
 div.dates {
-    font-size: calc( var(--font-size) - 2px);
-    font-color: var(--dates-color);
+    color: var(--dates-color);
 }
 
 div.description {
     flex: 1;
     padding: 5px;
-    font-size: calc( var(--font-size) - 2px);
 }
 
 div.url {
-    font-size: calc( var(--font-size) - 2px);
 }
 
 div.role {
@@ -247,6 +256,8 @@ div.thumbnail {
     height: var(--image-thumbnail-size);
     overflow: hidden;
     position: relative;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--border-color);
 
     & img {
         width: 100%;
@@ -260,15 +271,15 @@ div.thumbnail {
 
 div.route {
 
-    & div.header:nth-child(6n + 1) {
-        padding-right: 20%;
+    & div.header:nth-child(6n + 1),  div.header:nth-child(6n + 2){
+        padding-right: 25%;
     }
 
-    & div.header:nth-child(6n + 3) {
-        padding-right: 20%;
+    & div.header:nth-child(6n + 3), div.header:nth-child(6n + 4) {
+        padding-right: 17%;
     }
 
-    & div.header:nth-child(6n + 5) {
+    & div.header:nth-child(6n + 5), div.header:nth-child(6n + 6) {
         padding-right: 10%;
     }
 
@@ -278,15 +289,15 @@ div.color1 {
     
     & div.route {
     
-        & div.header:nth-child(6n + 1) {
+        & div.header:nth-child(6n + 1), div.header:nth-child(6n + 2) {
             border-bottom: 1px solid var(--orange);
         }
 
-        & div.header:nth-child(6n + 3) {
+        & div.header:nth-child(6n + 3), div.header:nth-child(6n + 4) {
             border-bottom: 1px solid var(--yellow);
         }
 
-        & div.header:nth-child(6n + 5) {
+        & div.header:nth-child(6n + 5), div.header:nth-child(6n + 6) {
             border-bottom: 1px solid var(--blue);
         }
 
@@ -339,9 +350,31 @@ div.content-item {
     width: 100%;
 }
 
+div.core-skills, div.other-skills {
+    display: grid;
+    grid-template-columns: 25px 150px 1fr;
+    margin-bottom: var(--content-padding);
+
+    & div {
+        padding: 5px;
+    }
+
+    & div.skill-icon svg {
+        opacity: 0.8;
+    }
+
+    & div.bg-row {
+        background-color: rgba(255,255,255,0.1);
+    }
+}
+
+div.other-skills {
+    grid-template-columns: 25px 200px 1fr;
+}
+
 div.grid-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     margin-top: 10px;
     margin-bottom: var(--content-padding);
     align-items: center;
@@ -423,6 +456,11 @@ div.footer {
     padding: 10px 50px 10px 0;
     display: flex;
     justify-content: flex-end;
+
+    & a {
+        color: #ddd;
+        padding: 0px 5px;
+    }
 }
 
 div.content-area {
@@ -542,22 +580,35 @@ div.timeline {
 }
 
 div.site-viewer {
-    position: relative;
+    position: fixed;
+    max-height: 100vh;
+    overflow: scroll;
     z-index: 5;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    max-width: 1200px;
-    padding: 15px 35px;
+    max-width: 630px;
+    padding: 35px;
+    background-color: var(--bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
 
     & .website-image {
         max-width: 600px;
-        flex: 1;
-        transform: perspective( 150vw ) rotateY(-15deg);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        min-height: 200px;
     }
 
     & .website-info {
+        margin-top: var(--content-padding);
         max-width: 600px;
-        flex: 1;
+    }
+
+    div.website-name.header {
+        padding-right: 10px;
+        white-space: initial;
     }
 }
 
@@ -584,7 +635,7 @@ div.circle-icon {
     height: 30px;
     transition: all var(--transition-time) ease;
     padding-left: 10px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
     cursor: pointer;

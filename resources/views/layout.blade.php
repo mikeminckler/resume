@@ -19,7 +19,7 @@
             <div class="content">
 
                 <div class="top" id="top">
-                    <div class="name-title" @click="setCategory('home')">
+                    <div class="name-title" @click="goHome()">
                         <div class="title">Mike Minckler</div>
                         <div class="sub-title">Web Developer + Content Creator</div>
                         <div class="email-phone">
@@ -64,7 +64,7 @@
 
                 </div>
 
-                <div class="footer">Built from scratch using only Laravel + VueJS + Lodash</div>
+                <div class="footer">Built from scratch using <a href="https://laravel.com/" target="_blank">Laravel</a> + <a href="https://vuejs.org/" target="_blank">VueJS</a></div>
 
             </div>
         </div>

@@ -9,6 +9,7 @@ div.photo {
     height: var(--image-thumbnail-size);
     overflow: hidden;
     border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
 
     & img {
         width: 100%;
@@ -33,6 +34,7 @@ div.image-viewer {
     padding: 15px;
     width: 100vw;
     height: 100vh;
+    overflow: scroll;
     color: #fff;
     z-index: 25;
     justify-content: center;

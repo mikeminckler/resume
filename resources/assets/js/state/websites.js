@@ -17,7 +17,7 @@ const sites = [
             'Inventory', 
             'Medication Dispensing'
         ],
-        description: 'The co-founder and lead programmer of a web-based online medical charting and management application. Built on the Laravel PHP framework, BlueHealth features a clean and responsive user interface focused on providing quick and easy data entry, searching, and reporting. BlueHealth has facilitated the creation of over 25,000 medical records annually.',
+        description: 'Built on the Laravel PHP framework, BlueHealth features a clean and responsive user interface focused on providing quick and easy data entry, searching, and reporting. Security is provieded with an encrypted database, two factor authentication, group page and object permissions. VueJS is used extensively throughout the application for an interactive user experience. Websockets provide realtime feedback and event broadcasting.'
     },
     {
         id: 1,
@@ -33,7 +33,7 @@ const sites = [
             'Responsive Design', 
             'YouTube Integration'
         ],
-        description: 'A key member of the marketing and IT departments at Brentwood for over a decade. A leader in promoting Brentwood as a world renowned boarding school by developing and maintaining the school’s website, YouTube channel, and live stream productions. Produced video content and photography for online and promotional materials. Taught students in grades 9 through 12 the subjects of video production and 3D animation as well as coaching the girls’ volleyball team.',
+        description: 'The main promotional Brentwood website to generate interest from new families and provide current families with a place to stay in touch with the school from afar. Using the Typo3 framework I produced a custom frontend design that was kept up to date with the latest technologies such as responsive design. The site was updated on an 18 month release cycle that produced five unique frontend designs and three content refreshes.',
     },
     {
         id: 2,
@@ -44,8 +44,12 @@ const sites = [
         role: 'Registration system for admission info sessions',
         gridList: [
             'Laravel + VueJS', 
+            'Realtime Form Validation',
+            'CSS Grid + Flexbox',
+            'Email Confirmation',
+            'Advertising Analytics',
         ],
-        description: 'Used as a landing page for online advertising. Targeted at prospective students and parents, this site provided an registration component for new families to sign up for information sessions throughout the country. An interactive and easy to use registration form were design specifics.',
+        description: 'Used as a landing page for online advertising, this site was targeted at prospective students and parents providing a registration component for new families to sign up for information sessions throughout the country. An interactive and easy to use registration form were design requirements that were accomplished using VueJS to give the user step by step feedback.',
     },
     {
         id: 3,
@@ -61,7 +65,7 @@ const sites = [
             'Websockets', 
             'Google Charts',
         ],
-        description: 'This statistics tracking tool was used for the volleyball program at Brentwood. Using web sockets to provide realtime feedback without the need for page refreshes was a key design feature. This was accomplished using Laravel\'s broadcasting queue through NodeJS to provide update events in the browser.',
+        description: 'This statistics tracking tool was used for the volleyball program at Brentwood. Using web sockets to provide realtime feedback without the need for page refreshes was a key design feature. This was accomplished using Laravel\'s broadcasting queue through NodeJS to trigger update events in the browser.',
     },
 ];
 

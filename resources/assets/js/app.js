@@ -242,6 +242,13 @@ const app = new Vue({
 
         ),
 
+        goHome: function() {
+            let category = this.$lodash.find(categories, function(category) {
+                return category.route == 'home';
+            });
+            this.$store.dispatch('setCategory', category);
+        },
+
         setCategory: function() {
         
             let category = this.$lodash.find(categories, function(category) {

@@ -7,8 +7,10 @@
             <p>Since 2004, digital photography has been a creative passion of mine. I am proficient in full frame profession Canon DSLR cameras and L series lenses which I use in combination with capturing photos in camera raw to bring out the best in every picture.</p>
             <p>In 2010 I was promoted to <strong> lead event photographer</strong> at Brentwood where I photographed many challenging events such as sports, theatre and dance.</p>
             <p>As well I was also responsible for providing photos for promotional materials such as the website, admissions brochures and print advertsing.</p>
-            <p>I throughly enjoy taking photos while travelling on holiday. I consider my landspace and architectural photogrphy to be some of my highest quality work.</p>
+        </div>
 
+        <div class="header">Skills</div>
+        <div class="content-item">
             <grid-list :items="['Canon DSLR', 'Camera Raw', 'Events', 'Sports', 'Theatre', 'Dance', 'Portraits', 'Travel', 'Architectural']"></grid-list>
         </div>
 

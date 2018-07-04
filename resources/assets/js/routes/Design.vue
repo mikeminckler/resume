@@ -5,15 +5,18 @@
         <div class="header">Experience</div>
         <div class="content-item">
 
-            <p>In 2013, my position at Brentwood was tranfered into the marketing departent to allow me to focus on content creation of promotional materials for the school.</p>
-            <p>Along side my web design, video and photography work, I was also involved in several graphic design projects. These included creating posters, print materials and online advertisments.</p>
-            <p> My prefered workflow includes using Photoshop and Illustror along side a drawing tablet.</p>
-            <p>Most recently I have been the <strong>lead designer</strong> for the interior design of the new 40 million dollar Athletics Centre. This process included using 3D animation software to fully visualize the branding and artistic designs of the building.</p>
+            <p>In 2013, I was transfered into the marketing departent at Brentwood where I was assigned content creation of promotional materials for the school.</p>
+            <p>Along side web design, video and photography work, I was also involved in several graphic design projects. These included creating posters, print materials and online advertising.</p>
+            <p>My prefered workflow includes using Photoshop and Illustror in conjuction with a drawing tablet.</p>
+            <p>Most recently I have been the <strong>lead designer</strong> for the interior design of the new 40 million dollar Athletics Centre. This process included creating hand draw wall wraps in Photoshop and using 3D animation software to fully visualize the branding and artistic designs of the building.</p>
+        </div>
 
+        <div class="header">Skills</div>
+        <div class="content-item">
             <grid-list :items="['Photoshop', 'Illustrator', 'SVG', 'Print', 'Posters', '3D modeeling']"></grid-list>
         </div>
 
-        <div class="header">Projects</div>
+        <div class="header">Portfolio</div>
         <div class="photos">
 
             <div class="photo" 

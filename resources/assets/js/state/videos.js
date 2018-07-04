@@ -75,7 +75,7 @@ const videos = [
         'id': 'GEJi1PMSx5E',
         'title': 'TedX Brentwood 2015 Logo',
         'thumbnail': 'fusion.jpg',
-        'description': 'Intro Logo for TedX Brentwood 2015 creating in Adobe After Effects.',
+        'description': 'Intro Logo for TedX Brentwood 2015 created in Adobe After Effects.',
     },
     {
         'id': 'h94Z-C-WoI4',

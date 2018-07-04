@@ -15,7 +15,7 @@
         <div class="content-item">
 
             <div class="core-skills">
-                <div class="skill-icon bg-row"><div class="far fa-check-circle"></div></div>
+                <div class="skill-icon bg-row"><div class="fas fa-check-circle"></div></div>
                 <div class="bg-row"><span @click="setCategory('web-development')" class="route-link">Web Development</span></div>
                 <div class="skills bg-row">
                     Laravel,
@@ -26,7 +26,7 @@
                     CSS Flex + Grid + Transitions
                 </div>
 
-                <div class="skill-icon"><div class="far fa-check-circle"></div></div>
+                <div class="skill-icon"><div class="fas fa-check-circle"></div></div>
                 <div><span @click="setCategory('photography')" class="route-link">Photography</span></div>
                 <div class="skills">
                     Canon SLR,
@@ -38,7 +38,7 @@
                     Portraits
                 </div>
 
-                <div class="skill-icon bg-row"><div class="far fa-check-circle"></div></div>
+                <div class="skill-icon bg-row"><div class="fas fa-check-circle"></div></div>
                 <div class="bg-row"><span @click="setCategory('video')" class="route-link">Video</span></div>
                 <div class="skills bg-row">
                     Promotional,
@@ -49,7 +49,7 @@
                     Timelapse
                 </div>
 
-                <div class="skill-icon"><div class="far fa-check-circle"></div></div>
+                <div class="skill-icon"><div class="fas fa-check-circle"></div></div>
                 <div><span @click="setCategory('design')" class="route-link">Graphic Design</span></div>
                 <div class="skills">
                     Photoshop,
@@ -67,15 +67,15 @@
 
             <div class="other-skills">
 
-                <div class="skill-icon bg-row"><div class="far fa-check-circle"></div></div>
+                <div class="skill-icon bg-row"><div class="fas fa-check-circle"></div></div>
                 <div class="bg-row">Ubuntu Server Administration</div>
                 <div class="skills bg-row">Digital Ocean, AWS, Apache, Nginx, MySQL, Node, Redis</div>
 
-                <div class="skill-icon"><div class="far fa-check-circle"></div></div>
+                <div class="skill-icon"><div class="fas fa-check-circle"></div></div>
                 <div>Information Technology</div>
                 <div>Hardware maintenance, Networking, Active Directory + Domain Administration, Software distribution, Virtual Machines</div>
                 
-                <div class="skill-icon bg-row"><div class="far fa-check-circle"></div></div>
+                <div class="skill-icon bg-row"><div class="fas fa-check-circle"></div></div>
                 <div class="bg-row">Coaching</div>
                 <div class="bg-row skills">Volleyball, Football</div>
 

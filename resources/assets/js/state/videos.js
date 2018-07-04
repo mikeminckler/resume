@@ -1,7 +1,7 @@
 const videos = [
     {
         'id': 'yVNo5LhSs-M',
-        'title': '30 second Comercial',
+        'title': '30 second Commercial',
         'thumbnail': '30sec.jpg',
         'description': 'Commercial short for Brentwood College School.',
     },
@@ -21,7 +21,7 @@ const videos = [
         'id': 'Fzhf8HGoE4w',
         'title': 'Timelapse',
         'thumbnail': 'timelapse.jpg',
-        'description': 'Created using a SLR intervalometer over the course of a week in the summer. Color correction in Camera Raw, assembled and stablized in After Effects.',
+        'description': 'Created using a SLR intervalometer over the course of a week in the summer. Color correction in Camera Raw, assembled and stabilized in After Effects.',
     },
     {
         'id': 'fEtDaY669Ns',
@@ -43,21 +43,21 @@ const videos = [
     },
     {
         'id': 'GLV6HI2h1oQ',
-        'title': 'Cliffton Muuray Alumni',
+        'title': 'Clifton Murray Alumni',
         'thumbnail': 'cliffton.jpg',
-        'description': 'A profile of Brentwood alumni Cliffon Murray',
+        'description': 'A profile of Brentwood alumni Clifton Murray.',
     },
     {
         'id': '6iQ789xmKGI',
         'title': 'Forest Creatures',
         'thumbnail': 'c100.jpg',
-        'description': 'An afternoon of clips from out in the back yard.',
+        'description': 'An afternoon of clips from out in the backyard.',
     },
     {
         'id': 'bJjMVIhnqLY',
         'title': 'Regatta 40th Anniversary',
         'thumbnail': 'regatta.jpg',
-        'description': 'Chronicalling the history of the Brentwood Regatta after 40 years.',
+        'description': 'Chronicling the history of the Brentwood Regatta after 40 years.',
     },
     {
         'id': 'L365mRNWR1c',

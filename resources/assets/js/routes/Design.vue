@@ -5,15 +5,15 @@
         <div class="header">Experience</div>
         <div class="content-item">
 
-            <p>In 2013, I was transfered into the marketing departent at Brentwood where I was assigned content creation of promotional materials for the school.</p>
-            <p>Along side web design, video and photography work, I was also involved in several graphic design projects. These included creating posters, print materials and online advertising.</p>
-            <p>My prefered workflow includes using Photoshop and Illustror in conjuction with a drawing tablet.</p>
+            <p>In 2013, I was transferred into the marketing department at Brentwood where I was assigned content creation of promotional materials for the school.</p>
+            <p>Alongside web design, video and photography work, I was also involved in several graphic design projects. These included creating posters, print materials and online advertising.</p>
+            <p>My prefered workflow includes using Photoshop and Illustrator in conjunction with a drawing tablet.</p>
             <p>Most recently I have been the <strong>lead designer</strong> for the interior design of the new 40 million dollar Athletics Centre. This process included creating hand draw wall wraps in Photoshop and using 3D animation software to fully visualize the branding and artistic designs of the building.</p>
         </div>
 
         <div class="header">Skills</div>
         <div class="content-item">
-            <grid-list :items="['Photoshop', 'Illustrator', 'SVG', 'Print', 'Posters', '3D modeeling']"></grid-list>
+            <grid-list :items="['Photoshop', 'Illustrator', 'SVG', 'Print', 'Posters', '3D modeling']"></grid-list>
         </div>
 
         <div class="header">Portfolio</div>

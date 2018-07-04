@@ -17,7 +17,7 @@ const sites = [
             'Inventory', 
             'Medication Dispensing'
         ],
-        description: 'Built on the Laravel PHP framework, BlueHealth features a clean and responsive user interface focused on providing quick and easy data entry, searching, and reporting. Security is provieded with an encrypted database, two factor authentication, group page and object permissions. VueJS is used extensively throughout the application for an interactive user experience. Websockets provide realtime feedback and event broadcasting.'
+        description: 'Built on the Laravel PHP framework, BlueHealth features a clean and responsive user interface focused on providing quick and easy data entry, searching, and reporting. Security is provided with an encrypted database, two factor authentication, group page and object permissions. VueJS is used extensively throughout the application for an interactive user experience. Websockets provide real time feedback and event broadcasting.'
     },
     {
         id: 1,
@@ -65,7 +65,7 @@ const sites = [
             'Websockets', 
             'Google Charts',
         ],
-        description: 'This statistics tracking tool was used for the volleyball program at Brentwood. Using web sockets to provide realtime feedback without the need for page refreshes was a key design feature. This was accomplished using Laravel\'s broadcasting queue through NodeJS to trigger update events in the browser.',
+        description: 'This statistics tracking tool was used for the volleyball program at Brentwood. Using websockets to provide real time feedback without the need for page refreshes was a key design feature. This was accomplished using Laravel\'s broadcasting queue through NodeJS to trigger update events in the browser.',
     },
 ];
 

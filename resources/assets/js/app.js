@@ -204,7 +204,9 @@ const app = new Vue({
             app.$store.dispatch('setYoutubeReady', true);
         }
 
-        this.loadImages();
+            setTimeout(() => {
+                //this.loadImages();
+            }, 2000);
 
     },
 
@@ -267,6 +269,9 @@ const app = new Vue({
             this.$lodash.forEach(this.$store.state.photographyImages, function(src) {
                 var image = new Image();
                 image.src = '/images/photography/' + src;
+
+                var image = new Image();
+                image.src = '/images/photography/thumbs/' + src;
             });
         
         }

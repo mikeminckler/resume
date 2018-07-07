@@ -53,6 +53,7 @@ import items from './state/items.js';
 import photography from './state/photography.js';
 import videos from './state/videos.js';
 import websites from './state/websites.js';
+import designs from './state/designs.js';
 
 const store = new Vuex.Store({
     state: {
@@ -70,6 +71,7 @@ const store = new Vuex.Store({
         },
         videos: videos,
         photographyImages: photography,
+        designImages: designs,
     },
 
     mutations: {
@@ -205,7 +207,7 @@ const app = new Vue({
         }
 
             setTimeout(() => {
-                //this.loadImages();
+                this.loadImages();
             }, 2000);
 
     },
@@ -272,6 +274,14 @@ const app = new Vue({
 
                 var image = new Image();
                 image.src = '/images/photography/thumbs/' + src;
+            });
+
+            this.$lodash.forEach(this.$store.state.designImages, function(src) {
+                var image = new Image();
+                image.src = '/images/design/' + src;
+
+                var image = new Image();
+                image.src = '/images/design/thumbs/' + src;
             });
         
         }

@@ -360,7 +360,7 @@ div.content-item {
 
 div.core-skills, div.other-skills {
     display: grid;
-    grid-template-columns: 25px 150px 1fr;
+    grid-template-columns: 25px minmax(75px, 150px) minmax(75px, 1fr);
     margin-bottom: var(--content-padding);
 
     & div {
@@ -377,7 +377,6 @@ div.core-skills, div.other-skills {
 }
 
 div.other-skills {
-    grid-template-columns: 25px 200px 1fr;
 }
 
 div.grid-list {

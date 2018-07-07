@@ -24,7 +24,7 @@
                 :key="image"
                 @click="selectImage(image)"
              >
-                <img :src="'/images/design/' + image">
+                <img :src="'/images/design/thumbs/' + image">
             </div>
 
         </div>
@@ -55,22 +55,6 @@
         data: function() {
             return {
                 selectedImage: '',
-                images: [
-                    'rowing_boys.jpg',
-                    'rowing_girls.jpg',
-                    'rugby_girls.jpg',
-                    'soccer.jpg',
-                    'campus_map.jpg',
-                    'eod13.jpg',
-                    'phantom.jpg',
-                    'les_miz.jpg',
-                    'plaza.jpg',
-                    'cfawe13.jpg',
-                    'admissions_pop_up.jpg',
-                    'bcs_dance.jpg',
-                    'cfawe12.jpg',
-                    'home_banner.jpg',
-                ]
             }
         },
 
@@ -80,6 +64,14 @@
 
         destroyed() {
             window.removeEventListener('keyup', this.imageViewerKeys);
+        },
+
+        computed: {
+
+            images() {
+                return this.$store.state.designImages;
+            }
+        
         },
 
         methods: {

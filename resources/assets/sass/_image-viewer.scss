@@ -3,6 +3,7 @@ div.photos {
     grid-template-columns: repeat(auto-fit, minmax(var(--image-thumbnail-size), 1fr));
     grid-gap: 15px;
     padding: 5px 0;
+    width: 100%;
 }
 
 div.photo {

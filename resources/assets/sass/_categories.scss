@@ -6,7 +6,7 @@ div.categories {
 
     position: absolute;
     z-index: 20;
-    left: 0;
+    left: 0px;
     transition: all calc( var(--transition-time) / 2) ease;
 
     margin-left: 25px;
@@ -17,8 +17,8 @@ div.categories {
     box-shadow: 10px 0 0 var(--bg-color);
 }
 
-div.categories.hidden {
-    left: -200px;
+div.categories.visible {
+    left: 0px;
 }
 
 div.category-menu {
@@ -131,6 +131,7 @@ div.category-toggle {
     div.categories {
         margin-left: 10px;
         padding-right: 10px;
+        left: -200px;
     }
 
 }

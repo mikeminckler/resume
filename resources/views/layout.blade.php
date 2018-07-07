@@ -36,20 +36,18 @@
                         <div>Menu</div>
                     </div>
 
-                    <div class="overlay" :class="[$store.state.overlay ? 'overlay-active' : '', $store.state.showCategories ? 'menu' : '']"></div>
-
                     <categories></categories>
                     
                     <div class="content-area" :class="[$store.state.showCategories ? 'menu' : '', 'color' + category.base]">
 
                         <div class="category-title">
 
-                            <transition name="fade" mode="out-in" appear>
-                                <div class="header" :class="category ? 'show' : ''" :key="category.label">@{{ category.label }}</div>
+                            <transition name="fade" mode="out-in">
+                                <div class="header" v-if="category.label" :class="category.label ? 'show' : ''" :key="category.label">@{{ category.label }}</div>
                             </transition>
 
-                            <transition name="category-icon" mode="out-in" appear>
-                                <div class="header-icon" :key="category.label">
+                            <transition name="category-icon" mode="out-in">
+                                <div class="header-icon" v-if="category.label" :key="category.label">
                                     <i :class="category.icon"></i>
                                 </div>
                             </transition>

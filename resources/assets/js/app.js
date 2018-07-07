@@ -61,7 +61,7 @@ const store = new Vuex.Store({
         items: items,
         websites: websites,
         overlay: true,
-        showCategories: true,
+        showCategories: false,
         activeCategory: {},
         googleChartsLoaded: false,
         youtubeReady: false,
@@ -191,7 +191,7 @@ const app = new Vue({
     mounted() {
 
         this.setCategory();
-        this.$store.dispatch('showCategories');
+        //this.$store.dispatch('showCategories');
 
         window.addEventListener('resize', this.resize);
             

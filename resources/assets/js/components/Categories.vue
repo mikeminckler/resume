@@ -1,6 +1,6 @@
 <template>
 
-    <div class="categories" :class="$store.state.showCategories ? '' : 'hidden'">
+    <div class="categories" :class="$store.state.showCategories ? 'visible' : ''">
 
         <transition-group name="categories" class="category-menu" tag="div">
 

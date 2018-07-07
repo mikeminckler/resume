@@ -268,21 +268,33 @@ const app = new Vue({
 
         loadImages: function() {
 
-            this.$lodash.forEach(this.$store.state.photographyImages, function(src) {
-                var image = new Image();
-                image.src = '/images/photography/' + src;
+            if (router.currentRoute.name != 'photography') {
 
-                var image = new Image();
-                image.src = '/images/photography/thumbs/' + src;
-            });
+                this.$lodash.forEach(this.$store.state.photographyImages, function(src) {
+                    var image = new Image();
+                    image.src = '/images/photography/thumbs/' + src;
+                });
 
-            this.$lodash.forEach(this.$store.state.designImages, function(src) {
-                var image = new Image();
-                image.src = '/images/design/' + src;
+                this.$lodash.forEach(this.$store.state.photographyImages, function(src) {
+                    var image = new Image();
+                    image.src = '/images/photography/' + src;
+                });
 
-                var image = new Image();
-                image.src = '/images/design/thumbs/' + src;
-            });
+            }
+
+            if (router.currentRoute.name != 'design') {
+
+                this.$lodash.forEach(this.$store.state.designImages, function(src) {
+                    var image = new Image();
+                    image.src = '/images/design/thumbs/' + src;
+                });
+
+                this.$lodash.forEach(this.$store.state.designImages, function(src) {
+                    var image = new Image();
+                    image.src = '/images/design/' + src;
+                });
+
+            }
         
         }
         

@@ -61,6 +61,8 @@ div.image-viewer {
         position: relative;
         z-index: 30;
         pointer-events: none;
+        max-width: 900px;
+        max-height: 900px;
     }
 
     div.image-advance-left, div.image-advance-right, div.image-viewer-close {

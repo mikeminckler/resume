@@ -38,7 +38,7 @@ const router = new VueRouter({
         {
             path: '/video',
             name: 'video',
-            component: require('./routes/video.vue')
+            component: require('./routes/Video.vue')
         },
         {
             path: '/design',

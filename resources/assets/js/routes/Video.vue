@@ -4,10 +4,10 @@
 
         <div class="header">Experience</div>
         <div class="content-item">
-            <p>Video production is a medium in which I have over 20 years of experience. My post secondary education was focused on visual effects for video production.</p>
-            <p>I have extensive experience producing live streaming events online utilizing  multiple cameras, graphical overlays and sound mixing. Some of the larger events I have worked on include four Brentwood TedX conferences and the annual Brentwood regatta which attracts over two thousand viewers over the course of the three day event.</p>
-            <p>I am proficient using Final Cut ProX, Adobe Premiere Pro, and Adobe After Effects.</p>
-            <p>My latest work at Brentwood includes a 30 second commercial, a feature on boarding life, a promotional video for wedding rentals and a profile of a famous alumni.</p>
+            <p>I have over 20 years' experince in video production. My post-secondary education was focused on visual effects for video production.</p>
+            <p>I have extensive experience producing live streaming events online using multiple cameras, graphical overlays, and sound mixing. Some of the larger events I have worked on include four Brentwood TedX conferences and the annual Brentwood regatta which attracts more than 2,000 viewers over three days.</p>
+            <p>I am proficient in Final Cut ProX, Adobe Premiere Pro, and Adobe After Effects.</p>
+            <p>My latest work at Brentwood includes an online commercial, a feature on boarding life, a promotional video for wedding rentals, and a profile of one of our famous alumni.</p>
         </div>
 
         <div class="header">Skills</div>

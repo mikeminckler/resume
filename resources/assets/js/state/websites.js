@@ -33,7 +33,7 @@ const sites = [
             'Responsive Design', 
             'YouTube Integration'
         ],
-        description: 'The main promotional Brentwood website to generate interest from new families and provide current families with a place to stay in touch with the school from afar. Using the Typo3 framework I produced a custom frontend design that was kept up to date with the latest technologies such as responsive design. The site was updated on an 18 month release cycle that produced five unique frontend designs and three content refreshes.',
+        description: 'This is Brentwood\'s main promotional website focused on generating interest from new families and keeping current families in touch with the school. Using the Typo3 framework I produced a custom frontend design that was kept up to date with the latest technologies such as responsive design and deferred image loading. The site was updated on an 18 month release cycle that produced five unique frontend designs and three content refreshes.',
     },
     {
         id: 2,
@@ -49,7 +49,7 @@ const sites = [
             'Email Confirmation',
             'Advertising Analytics',
         ],
-        description: 'Used as a landing page for online advertising, this site was targeted at prospective students and parents providing a registration component for new families to sign up for information sessions throughout the country. An interactive and easy to use registration form were design requirements that were accomplished using VueJS to give the user step by step feedback.',
+        description: 'Used as a landing page for online advertising, this site is targeted at prospective students and parents, providing a registration component for new families to sign up for information sessions across the country. An interactive and easy to use registration form were design requirements that were accomplished using VueJS to give the user step-by-step feedback.',
     },
     {
         id: 3,
@@ -65,7 +65,7 @@ const sites = [
             'Websockets', 
             'Google Charts',
         ],
-        description: 'This statistics tracking tool was used for the volleyball program at Brentwood. Using websockets to provide real time feedback without the need for page refreshes was a key design feature. This was accomplished using Laravel\'s broadcasting queue through NodeJS to trigger update events in the browser.',
+        description: 'This statistics tracking tool is used for the volleyball program at Brentwood. Using websockets to provide real time feedback without the need for page refreshes is a key design feature. I accomplished this using Laravel\'s broadcasting queue, through NodeJS, to trigger update events in the browser.',
     },
 ];
 

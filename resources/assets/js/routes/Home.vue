@@ -4,10 +4,10 @@
 
         <div class="content-item">
 
-            <p>For the past 13 years, I have worked as a <strong>web developer and content creator</strong>, the last four creating projects with the <strong>Laravel</strong> framework.</p>
+            <p>For the past 13 years, I have worked as a <strong>web developer and content creator</strong>, the last four years creating projects using the <strong>Laravel</strong> framework.</p>
             <p>In 2014 I co-founded a web development company and launched <strong>BlueHealth</strong>, an electronic medical charting and health management website that is actively managing over 1200 patients and the creation of over 20,000 records annually.</p>
-            <p>In 2005 I joined the Information Technology department at Brentwood College School, one of the world's top boarding schools, and was placed in charge of <strong>web development</strong> for the marketing and student information systems of the school.</p>
-            <p>While at Brentwood I was fortunate to work on a wide variety of projects that allowed me to develop a well rounded, creative and technical skill set.</p>
+            <p>As a memeber of the Information Technology department at Brentwood College School since 2005, one of the world's top boarding schools, I was in charge of <strong>web development</strong> for the marketing and student information systems of the school.</p>
+            <p>In my 13 years at Brentwood I have been fortunate to work on a wide variety of projects that have allowed me to develop a well rounded, creative and technical skill set.</p>
 
         </div>
 

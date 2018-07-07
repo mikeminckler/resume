@@ -14,7 +14,7 @@
 
     --font: 'Source Sans Pro', serif;
     --font-size: 15px;
-    --font-weight: 300;
+    --font-weight: 400;
     --font-weight-bold: 700;
     --font-color: rgba(255,255,255,1);
     --transition-time: .5s;
@@ -42,7 +42,7 @@
 
     --border-radius: 5px;
 
-    --list-item-color: hsla(205,15%, 75%, 1);
+    --list-item-color: hsla(205,15%, 85%, 1);
 
 }
 
@@ -406,8 +406,7 @@ div.top {
     justify-content: space-between;
     align-items: flex-end;
     padding: var(--content-padding);
-    position: relative;
-    z-index: 6;
+    -webkit-transform: translateZ(0px);
 }
 
 div.name-title {

@@ -45,7 +45,7 @@
                         <div class="category-title">
 
                             <transition name="fade" mode="out-in" appear>
-                                <div class="header" v-if="category" :key="category.label">@{{ category.label }}</div>
+                                <div class="header" :class="category ? 'show' : ''" :key="category.label">@{{ category.label }}</div>
                             </transition>
 
                             <transition name="category-icon" mode="out-in" appear>

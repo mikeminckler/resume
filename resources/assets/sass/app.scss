@@ -154,9 +154,15 @@ div.category-title {
     height: 45px;
 
     & div.header {
+        opacity: 0;
         font-size: calc( var(--font-size) + 8px);
         padding: 2px 20% 2px 4px;
         border-bottom: 2px solid var(--theme-color);
+        transition: opacity calc( var(--transition-time) / 2) ease;
+    }
+
+    & div.header.show {
+        opacity: 1;
     }
 }
 

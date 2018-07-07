@@ -406,6 +406,8 @@ div.top {
     justify-content: space-between;
     align-items: flex-end;
     padding: var(--content-padding);
+    position: relative;
+    z-index: 6;
 }
 
 div.name-title {

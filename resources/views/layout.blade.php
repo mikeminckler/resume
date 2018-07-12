@@ -70,5 +70,16 @@
         <script src="{{ mix('/js/app.js') }}"></script>
         <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 
+        @if (app()->environment() == 'production')
+            <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121913220-1"></script>
+            <script>
+              window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', 'UA-121913220-1');
+            </script>
+        @endif
+
     </body>
 </html>

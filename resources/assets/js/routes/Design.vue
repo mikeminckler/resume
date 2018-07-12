@@ -2,21 +2,21 @@
 
     <div class="route">
 
-        <div class="header">Experience</div>
-        <div class="content-item">
-
-            <p>In 2013, I transferred into the marketing department at Brentwood where I took over content creation of promotional materials for the school.</p>
-            <p>Alongside web design, video and photography work, I am also involved in several graphic design projects. These include creating posters, print materials and online advertising.</p>
-            <p>My prefered workflow includes using Photoshop and Illustrator in conjunction with a drawing tablet.</p>
-            <p>Most recently I have been the <strong>lead designer</strong> for the interior design of the new $40 million dollar Athletics Centre. This process includes creating hand draw wall wraps in Photoshop and using 3D animation software to fully visualize the branding and artistic designs of the building.</p>
-        </div>
-
         <div class="header">Skills</div>
         <div class="content-item">
             <grid-list :items="['Photoshop', 'Illustrator', 'SVG', 'Print', 'Posters', '3D modeling']"></grid-list>
         </div>
 
-        <div class="header">Portfolio</div>
+        <div class="header">Experience</div>
+        <div class="content-item">
+
+            <p>In 2013, I transferred into the marketing department at Brentwood where I took over content creation of promotional materials for the school.</p>
+            <p>Alongside web design, video and photography work, I am also involved in graphic design projects. These include creating posters, print materials and online advertising.</p>
+            <p>My prefered workflow uses <strong>Photoshop</strong> and <strong>Illustrator</strong> in conjunction with a drawing tablet.</p>
+            <p>Most recently I have been the <strong>lead designer</strong> for the interior design of the new $40 million dollar Athletics Centre. This process includes creating hand draw wall wraps in Photoshop and using 3D animation software to fully visualize the branding and artistic designs of the building.</p>
+        </div>
+
+        <div class="header">Portfolio <span class="info">click to enlarge</span></div>
         <div class="photos">
 
             <div class="photo" 

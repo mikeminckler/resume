@@ -2,10 +2,19 @@
 
     <div class="route">
 
+        <div class="header">Skills</div>
+        <div class="content-item">
+            <grid-list :items="['Laravel', 'VueJS', 'TDD', 'PHP', 'JS', 'MVC', 'CSS GRID + FLEXBOX', 'Websockets']"></grid-list>
+        </div>
+
         <div class="header">Experience</div>
         <div class="content-item">
 
-            <p>When I joined the IT department at Brentwood in 2005, I was trained to be a <strong>full stack developer</strong> for the school's website and internal student information systems.</p>
+            <p>In the fall of 2014, after eleven years of PHP programming, I began working with the <strong>Laravel</strong> framework. I spent the next ten months developing BlueHealth, a medical charting and management application. BlueHealth is currently used by ten medical professionals to manage over 1200 patients and facilitate appointments, prescriptions, immunizations, conucssion tracking, accounting, and guardian questionnaires.</p>
+            <p>This project implements test driven development, database encryption, two factor authentication, searching, custom form building, event broadcasting, queuing, and websockets. <strong>VueJS</strong> is integrated as the primary javascript framework and is used extensively to provide a highly interactive frontend experience.</p>
+            <p>Nurses, counsellors, athletic therapists, guardians, and accountants are among the user groups using the product.</p>
+
+            <p>In 2005, I joined the IT department at Brentwood College School where I was trained to be a <strong>full stack developer</strong> for the school's website and internal student information systems.</p>
             <p>As lead developer for the school's promotional website, I implemented a content management system to display a custom frontend design while also providing a user-friendly backend.</p>
             <p>During my time overseeing the website, I implemented an 18 month release cycle that produced five unique frontend designs and three content refreshes.</p>
             <p>I also worked on the student information system that managed day-to-day operations of over 100 staff and 500 students. This software was run on an object oriented custom PHP framework. I created several new features for this system including an eventing and calendaring module, a travel management system, and a responsive design upgrade.</p>
@@ -13,13 +22,7 @@
 
         </div>
 
-        <div class="header">Skills</div>
-        <div class="content-item">
-            <grid-list :items="['Laravel', 'VueJS', 'PHP', 'JS', 'MVC', 'CSS GRID + FLEXBOX', 'Websockets']"></grid-list>
-        </div>
-
         <div class="header">Projects</div>
-
         <div class="content-item websites">
 
             <div v-for="(site, index) in sites"

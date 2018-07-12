@@ -2,19 +2,17 @@
 
     <div class="route">
 
+        <div class="header">Skills</div>
+        <div class="content-item">
+            <grid-list :items="['Promotional', 'Live Streaming', 'Sports', 'Theatre', 'Visual Effects', 'Timelapse', 'Music Videos', 'After Effects', 'Titling', 'Interviews']"></grid-list>
+        </div>
+
         <div class="header">Experience</div>
         <div class="content-item">
             <p>I have over 20 years' experince in video production. My post-secondary education was focused on visual effects for video production.</p>
             <p>I have extensive experience producing live streaming events online using multiple cameras, graphical overlays, and sound mixing. Some of the larger events I have worked on include four Brentwood TedX conferences and the annual Brentwood regatta which attracts more than 2,000 viewers over three days.</p>
             <p>I am proficient in Final Cut ProX, Adobe Premiere Pro, and Adobe After Effects.</p>
             <p>My latest work at Brentwood includes an online commercial, a feature on boarding life, a promotional video for wedding rentals, and a profile of one of our famous alumni.</p>
-        </div>
-
-        <div class="header">Skills</div>
-        <div class="content-item">
-
-            <grid-list :items="['Promotional', 'Live Streaming', 'Sports', 'Theatre', 'Visual Effects', 'Timelapse', 'Music Videos', 'After Effects', 'Titling', 'Interviews']"></grid-list>
-
         </div>
 
         <div class="header">Portfolio</div>

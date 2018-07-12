@@ -2,6 +2,11 @@
 
     <div class="route">
 
+        <div class="header">Skills</div>
+        <div class="content-item">
+            <grid-list :items="['Canon DSLR', 'Camera Raw', 'Events', 'Sports', 'Theatre', 'Dance', 'Portraits', 'Travel', 'Architectural']"></grid-list>
+        </div>
+
         <div class="header">Experience</div>
         <div class="content-item">
             <p>Digital photography has been a creative passion of mine since 2004. I am proficient in full frame professional Canon DSLR cameras and L series lenses. I take my photos in camera raw to bring out the best quality in every picture.</p>
@@ -9,12 +14,7 @@
             <p>I am responsible for providing photos for promotional materials such as the website, admissions brochures, and print advertising.</p>
         </div>
 
-        <div class="header">Skills</div>
-        <div class="content-item">
-            <grid-list :items="['Canon DSLR', 'Camera Raw', 'Events', 'Sports', 'Theatre', 'Dance', 'Portraits', 'Travel', 'Architectural']"></grid-list>
-        </div>
-
-        <div class="header">Portfolio</div>
+        <div class="header">Portfolio <span class="info">click to enlarge</span></div>
         <div class="photos">
 
             <div class="photo" 
@@ -22,6 +22,7 @@
                 :key="image"
                 @click="selectImage(image)"
              >
+                 <div class="enlarge-icon"><i class="fas fa-search-plus"></i></div>
                 <img :src="'/images/photography/thumbs/' + image">
             </div>
 

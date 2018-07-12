@@ -383,7 +383,7 @@ div.grid-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     margin-top: 10px;
-    margin-bottom: calc( var(--content-padding) / 2);
+    margin-bottom: var(--content-padding);
     align-items: center;
     grid-gap: 5px;
 }
@@ -660,4 +660,11 @@ div.circle-icon.active {
     & svg {
         transition: all var(--transition-time) ease;
     }
+}
+
+span.info {
+    font-style: italic;
+    font-size: calc( var(--font-size) - 3px);
+    position: relative;
+    left: 25px;
 }

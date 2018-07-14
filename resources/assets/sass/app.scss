@@ -159,6 +159,7 @@ div.category-title {
         padding: 2px 20% 2px 4px;
         border-bottom: 2px solid var(--theme-color);
         transition: opacity calc( var(--transition-time) / 2) ease;
+        flex: 1;
     }
 
     & div.header.show {
@@ -169,14 +170,39 @@ div.category-title {
 div.header-icon {
     position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 60px;
+    justify-content: flex-end;
+    align-items: flex-end;
     transition: all calc( var(--transition-time) / 2) ease;
-    z-index: -1;
     color: rgba(100,100,100,0.5);
-    padding-right: 20px;
     position: relative;
+    top: 35px;
+    z-index: 10;
+    flex: 1;
+}
+
+img.category-image {
+    position: absolute;
+    max-height: 200px;
+    max-width: 250px;
+    transition: all var(--transition-time) ease;
+}
+
+@media (max-width: 700px) { 
+
+    img.category-image {
+        max-width: 200px;
+        max-height: 185px;
+    }
+
+}
+
+@media (max-width: 450px) { 
+
+    img.category-image {
+        max-width: 150px;
+        max-height: 125px;
+    }
+
 }
 
 div.header {
@@ -434,7 +460,6 @@ div.title {
     white-space: nowrap;
     width: 100%;
     overflow: visible;
-    cursor: pointer;
 }
 
 div.sub-title {
@@ -442,7 +467,6 @@ div.sub-title {
     white-space: nowrap;
     width: 90%;
     overflow: visible;
-    cursor: pointer;
 }
 
 div.email-phone {

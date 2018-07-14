@@ -8,6 +8,7 @@ const categories = [
         base: 1,
         visible: false,
         path: '/',
+        image: 'undraw_onboarding_o8mv.svg',
     }, 
     {
         name: 'coding',
@@ -18,6 +19,7 @@ const categories = [
         base: 2,
         visible: false,
         path: '/web-development',
+        image: 'undraw_report_mx0a.svg',
     }, 
     {
         name: 'photography',
@@ -28,6 +30,7 @@ const categories = [
         base: 3,
         visible: false,
         path: '/photography',
+        image: 'undraw_organize_photos_d5nr.svg',
     }, 
     {
         name: 'video',
@@ -38,6 +41,7 @@ const categories = [
         base: 1,
         visible: false,
         path: '/video',
+        image: 'undraw_celebration_0jvk.svg',
     }, 
     {
         name: 'design',
@@ -48,6 +52,7 @@ const categories = [
         base: 2,
         visible: false,
         path: '/design',
+        image: 'undraw_art_lover_yjfr.svg',
     }, 
 ];
 

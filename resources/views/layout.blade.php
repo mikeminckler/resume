@@ -19,7 +19,7 @@
             <div class="content">
 
                 <div class="top" id="top">
-                    <div class="name-title" @click="goHome()">
+                    <div class="name-title">
                         <div class="title">Mike Minckler</div>
                         <div class="sub-title">Web Developer + Content Creator</div>
                         <div class="email-phone">
@@ -48,7 +48,7 @@
 
                             <transition name="category-icon" mode="out-in">
                                 <div class="header-icon" v-if="category.label" :key="category.label">
-                                    <i :class="category.icon"></i>
+                                    <img :src="'/images/categories/' + category.image" class="category-image"/>
                                 </div>
                             </transition>
 

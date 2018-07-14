@@ -10,6 +10,12 @@
         <div class="header">Experience</div>
         <div class="content-item">
 
+            <div class="job-container">
+                <div class="sub-header">Brentwood College School</div>
+                <div class="roles">Marketing</div>
+                <div class="dates">2013 - Present</div>
+            </div>
+
             <p>In 2013, I transferred into the marketing department at Brentwood where I took over content creation of promotional materials for the school.</p>
             <p>Alongside web design, video and photography work, I am also involved in graphic design projects. These include creating posters, print materials and online advertising.</p>
             <p>My prefered workflow uses <strong>Photoshop</strong> and <strong>Illustrator</strong> in conjunction with a drawing tablet.</p>

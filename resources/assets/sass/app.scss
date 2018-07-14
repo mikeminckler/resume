@@ -184,14 +184,21 @@ div.header {
     padding: 3px;
     margin-bottom: calc( var(--margin-bottom) );
     font-weight: var(--header-font-weight);
-    font-size: calc( var(--font-size) + 3px);
+    font-size: calc( var(--font-size) + 4px);
 }
 
 div.sub-header {
     font-weight: var(--header-font-weight);
     margin-bottom: 3px;
     color: var(--sub-header-color);
-    font-size: calc( var(--font-size) + 1px);
+    font-size: calc( var(--font-size) + 2px);
+    border-bottom: 1px solid var(--border-color);
+    display: inline-block;
+    padding-right: 10%;
+}
+
+div.job-container {
+    margin-bottom: calc( var(--margin-bottom) );
 }
 
 div.website-subinfo {
@@ -230,7 +237,6 @@ div.more-info {
     display: flex;
     align-items: center;
     color: var(--link-color);
-    padding: 5px;
 
     background-color: var(--highlight);
 
@@ -252,9 +258,14 @@ div.websites {
 }
 
 div.website {
-
+    
     & div.website-content {
         padding: 5px 0;
+        line-height: 25px;
+
+        & .sub-header {
+            display: block;
+        }
     }
 
 }
@@ -386,6 +397,7 @@ div.grid-list {
     margin-bottom: var(--content-padding);
     align-items: center;
     grid-gap: 5px;
+    line-height: normal;
 }
 
 div.grid-item {

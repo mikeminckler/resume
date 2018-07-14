@@ -9,6 +9,13 @@
 
         <div class="header">Experience</div>
         <div class="content-item">
+
+            <div class="job-container">
+                <div class="sub-header">Brentwood College School</div>
+                <div class="roles">Photographer, Marketing</div>
+                <div class="dates">2010 - Present</div>
+            </div>
+
             <p>Digital photography has been a creative passion of mine since 2004. I am proficient in full frame professional Canon DSLR cameras and L series lenses. I take my photos in camera raw to bring out the best quality in every picture.</p>
             <p>In 2010, I was promoted to <strong>lead event photographer</strong> at Brentwood where I photographed many challenging events such as sports, theatre, and dance.</p>
             <p>I am responsible for providing photos for promotional materials such as the website, admissions brochures, and print advertising.</p>

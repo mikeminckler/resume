@@ -5,7 +5,7 @@ const sites = [
         thumbnail: 'bh.jpg',
         dates: 'October 2014 - Present',
         url: 'demo.bluehealth.ca',
-        role: 'Medical charting and management application',
+        role: 'Medical charting and management application.',
         gridList: [
             'Laravel + VueJS', 
             '1100+ patients', 
@@ -25,7 +25,7 @@ const sites = [
         thumbnail: 'bcs.jpg',
         dates: 'June 2005 - August 2014',
         url: 'www.brentwood.bc.ca',
-        role: 'CMS manager and design lead',
+        role: 'Main promotional website built using Typo3 CMS.',
         gridList: [
             'PHP + JS', 
             'Typo3 CMS', 
@@ -41,7 +41,7 @@ const sites = [
         thumbnail: 'rsvp.jpg',
         dates: 'October 2017 - March 2018',
         url: 'rsvp.brentwood.ca',
-        role: 'Registration system for admission info sessions',
+        role: 'Registration system for admissions information sessions.',
         gridList: [
             'Laravel + VueJS', 
             'Realtime Form Validation',
@@ -57,7 +57,7 @@ const sites = [
         thumbnail: 'vball.jpg',
         dates: 'September 2010 - Present',
         url: 'gamestats.brentwood.bc.ca',
-        role: 'Stat keeping website for volleyball teams.',
+        role: 'Statistics tracking website for volleyball teams.',
         gridList: [
             'Laravel + VueJS', 
             'Single Page Application',

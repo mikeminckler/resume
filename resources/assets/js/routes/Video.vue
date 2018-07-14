@@ -9,6 +9,13 @@
 
         <div class="header">Experience</div>
         <div class="content-item">
+
+            <div class="job-container">
+                <div class="sub-header">Brentwood College School</div>
+                <div class="roles">Video Production, Marketing</div>
+                <div class="dates">2013 - Present</div>
+            </div>
+
             <p>I have over 20 years' experince in video production. My post-secondary education was focused on visual effects for video production.</p>
             <p>I have extensive experience producing live streaming events online using multiple cameras, graphical overlays, and sound mixing. Some of the larger events I have worked on include four Brentwood TedX conferences and the annual Brentwood regatta which attracts more than 2,000 viewers over three days.</p>
             <p>I am proficient in Final Cut ProX, Adobe Premiere Pro, and Adobe After Effects.</p>

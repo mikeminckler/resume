@@ -48,7 +48,7 @@
 
                             <transition name="category-icon" mode="out-in">
                                 <div class="header-icon" v-if="category.label" :key="category.label">
-                                    <img :src="'/images/categories/' + category.image" class="category-image"/>
+                                    <img :src="'/images/categories/' + category.image" class="category-image" :class="category.name == 'home' ? 'home' : ''"/>
                                 </div>
                             </transition>
 

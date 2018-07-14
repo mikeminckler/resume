@@ -190,6 +190,7 @@ img.category-image {
     max-width: 250px;
     transition: all var(--transition-time) ease;
     margin-top: 0px;
+    margin-left: 10px;
 }
 
 @media (max-width: 700px) { 
@@ -206,7 +207,13 @@ img.category-image {
     img.category-image {
         max-width: 150px;
         max-height: 120px;
-        margin-top: 10px;
+        margin-top: 25px;
+    }
+
+    img.category-image.home {
+        max-width: 130px;
+        max-height: 110px;
+        margin-top: 0px;
     }
 
 }

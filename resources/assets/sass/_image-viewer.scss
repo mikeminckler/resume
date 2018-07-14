@@ -48,7 +48,7 @@ div.image-viewer {
     top: 0;
     left: 0;
     display: flex;
-    padding: 15px;
+    padding: 0px;
     width: 100vw;
     height: 100vh;
     overflow: scroll;
@@ -82,17 +82,19 @@ div.image-viewer {
         cursor: pointer;
         font-size: calc( var(--font-size) + 5px);
         z-index: 35;
-        padding: 10px 20px;
+        background-color: rgba(0,0,0,0.1);
+        padding: 10px 15px;
+        border-radius: 100%;
     }
 
     div.image-advance-left {
         top: 50%;
-        left: -10px;
+        left: 0px;
     }
     
     div.image-advance-right {
         top: 50%;
-        right: -10px;
+        right: 0px;
     }
     
     div.image-viewer-close {

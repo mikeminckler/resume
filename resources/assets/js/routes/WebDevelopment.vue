@@ -16,20 +16,20 @@
                 <div class="dates">2014 - Present</div>
             </div>
 
-            <p>In the fall of 2014, after eleven years of PHP programming, I began working with the <strong>Laravel</strong> framework. I spent the next ten months developing <strong>BlueHealth, a medical charting and management application</strong>. BlueHealth is currently used by ten medical professionals to manage over 1200 patients and facilitate appointments, prescriptions, immunizations, conucssion tracking, accounting, and guardian questionnaires.</p>
+            <p>In the fall of 2014, after eleven years of PHP programming, I began working with the <strong>Laravel</strong> framework. I spent the next ten months developing <strong>BlueHealth, a medical charting and management application</strong>. BlueHealth is currently used by ten medical professionals to manage over 1200 patients and facilitate appointments, prescriptions, immunizations, concussion tracking, accounting, and guardian questionnaires.</p>
             <p>This project implements test driven development, database encryption, two factor authentication, searching, custom form building, event broadcasting, queuing, and websockets. <strong>VueJS</strong> is integrated as the primary javascript framework and is used extensively to provide a highly interactive frontend experience.</p>
             <p>Nurses, counsellors, athletic therapists, guardians, and accountants are among the user groups using the product.</p>
 
             <div class="job-container">
                 <div class="sub-header">Brentwood College School</div>
-                <div class="roles">Lead Web Designer, IT</div>
-                <div class="dates">2005 - 2014</div>
+                <div class="roles">Lead Web Designer, IT, Marketing</div>
+                <div class="dates">2005 - Present</div>
             </div>
             <p>In 2005, I joined the IT department at Brentwood College School where I was trained to be a <strong>full stack developer</strong> for the school's website and internal student information systems.</p>
             <p>As lead developer for the school's promotional website, I implemented a content management system to display a custom frontend design while also providing a user-friendly backend.</p>
             <p>During my time overseeing the website, I implemented an 18 month release cycle that produced five unique frontend designs and three content refreshes.</p>
             <p>I also worked on the student information system that managed day-to-day operations of over 100 staff and 500 students. This software was run on an object oriented custom PHP framework. I created several new features for this system including an eventing and calendaring module, a travel management system, and a responsive design upgrade.</p>
-            <p>In have also created several other side projects that have allowed me to learn and practice new design patterns. These projects can be found on my <a href="https://github.com/mikeminckler" target="_blank">GitHub page</a>.</p>
+            <p>I have also created several other side projects that have allowed me to learn and practice new design patterns. These projects can be found on my <a href="https://github.com/mikeminckler" target="_blank">GitHub page</a>.</p>
 
         </div>
 

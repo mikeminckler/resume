@@ -47,7 +47,7 @@
 
                             <div class="content-item">
 
-                                <p>For the past 13 years, I have worked as a web developer and content creator. As a web developer I currently work with Laravel and VueJS creating elegant and intuitive websites. My content creation talents include extensive experience with video production, photography and graphic design.</p>
+                                <p>For the past 13 years, I have worked as a web developer and content creator. I currently work with Laravel and VueJS creating elegant and intuitive websites. My content creation talents include extensive experience with video production, photography and graphic design.</p>
 
                                 <div class="portfolio-link">
                                     <a href="https://minckler.ca" target="_blank" class="portfolio-link">

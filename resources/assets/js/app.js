@@ -262,7 +262,9 @@ const app = new Vue({
                 return category.route == router.currentRoute.name;
             });
             
-            this.$store.dispatch('setCategory', category);
+            if (category) {
+                this.$store.dispatch('setCategory', category);
+            }
 
         },
 

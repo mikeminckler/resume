@@ -11,4 +11,9 @@ class PagesController extends Controller
     {
         return view('layout');
     }
+
+    public function print()
+    {
+        return view('print');
+    }
 }

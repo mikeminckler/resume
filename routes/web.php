@@ -11,4 +11,5 @@
 |
 */
 
+Route::get('print', 'PagesController@print')->name('print');
 Route::get('{catchall}', 'PagesController@home')->name('home')->where('catchall', '(.*)');

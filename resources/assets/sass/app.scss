@@ -105,6 +105,10 @@ a {
     font-weight: var(--font-weight-bold);
 }
 
+.hidden {
+    display: none;
+}
+
 p, ul {
     padding: 0px 0px 15px 0px;
     line-height: 25px;
@@ -718,4 +722,78 @@ span.info {
     font-size: calc( var(--font-size) - 3px);
     position: relative;
     left: 25px;
+}
+
+div.portfolio-link {
+
+    font-size: calc(var(--font-size) + 1px);
+
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 15px;
+
+    & a.portfolio-link {
+        display: flex;
+        align-items: center;
+        color: hsla(205,80%,50%,1) !important;
+
+        & div.portfolio-text {
+            padding-right: 8px;
+        }
+    }
+}
+
+/* PRINT PAGE */
+
+body.print {
+
+    background-color: #fff !important;
+    color: #000 !important;
+
+    & div.content {
+        max-width: 8in !important;
+    }
+
+    & div.middle, div.sub-header {
+        color: #000 !important;
+    }
+
+    & div.content-area {
+        margin-left: 25px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+
+        & p {
+            max-width: none !important;
+        }
+    }
+
+    a, .route-link, div.more-info {
+        color: #000;
+    }
+
+    & div.category {
+        border-left: 2px transparent !important;
+    }
+
+    & div.category-title {
+        margin-bottom: 0px;
+    }
+
+    & div.category.category-active {
+        background-color: transparent !important;
+    }
+
+    & div.header-icon {
+        top: 15px;
+    }
+
+    & div.dates {
+        color: #333 !important;
+    }
+
+    & div.core-skills div.skill-icon svg, div.other-skills div.skill-icon svg, div.grid-item svg {
+        color: #888 !important;
+    }
+
 }

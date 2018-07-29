@@ -51,7 +51,7 @@
 
                                 <div class="portfolio-link">
                                     <a href="https://minckler.ca" target="_blank" class="portfolio-link">
-                                        <div class="portfolio-text">View my online portfolio</div>
+                                        <div class="portfolio-text">View my online portfolio at https://minckler.ca</div>
                                         <div><i class="fas fa-angle-right"></i></div>
                                     </a>
                                 </div>

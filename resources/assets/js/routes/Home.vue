@@ -83,6 +83,30 @@
 
         </div>
 
+        <div class="header">References</div>
+        <div class="content-item">
+
+            <div class="flex">
+
+                <div class="reference">
+                    <div class="sub-header">Brent Lee</div><br/>
+                    Director of Innovation<br/>
+                    Brentwood College School<br/>
+                    brent.lee@brentwood.ca<br/>
+                    +1 250 216 8164 
+                </div>
+                <div class="reference">
+                    <div class="sub-header">Dewi Griffiths</div><br/>
+                    Faculty<br/>
+                    Brentwood College School<br/>
+                    dewi@brentwood.ca<br/>
+                    +1 250 715 6487
+                </div>
+
+            </div>
+
+        </div>
+
     </div>
 
 </template>

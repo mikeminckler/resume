@@ -432,7 +432,8 @@ div.core-skills, div.other-skills {
     }
 }
 
-div.other-skills {
+div.reference {
+    flex: 1;
 }
 
 div.grid-list {
@@ -751,7 +752,7 @@ body.print {
     color: #000 !important;
 
     & div.content {
-        max-width: 8in !important;
+        max-width: 7.5in !important;
     }
 
     & div.middle, div.sub-header {

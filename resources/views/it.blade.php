@@ -30,9 +30,9 @@
 
                 <div class="content-item">
 
-                    <p>For the past 13 years, I have worked in the Information Technology sector focusing on server and network adminstration, helpdesk support, and web server management. At Brentwood College School, a world class private boarding school, I support an organizational user base of over 600 people who possess a wide range of skill and experience.</p>
+                    <p>For the past 13 years, I have worked in the Information Technology sector focusing on server and network adminstration, helpdesk support, and web server management. At Brentwood College School, a world class private boarding school, I support an organizational user base of over 600 people who possess a wide range of skills and experience.</p>
 
-                    <p>I have exceptional problem solving skills and have demonstrated the ability to learn new technologies at a rapid pace. My many years of experince has lead to a broad understanding of the technology powering many IT infastructures.</p>
+                    <p>I have execllent problem solving abilities and have demonstrated throughout my career a capacity to learn new technologies at a rapid pace. My many years of experince has lead to a broad understanding of the latest technologies powering today's IT infastructures.</p>
 
                 </div>
 
@@ -45,8 +45,8 @@
                         <div class="skills bg-row">VmWare, Ubuntu, Digital Ocean, AWS, MySQL, Apache, Nginx, Node, Redis</div>
 
                         <div class="skill-icon bg-row"><div class="fas fa-check-circle"></div></div>
-                        <div class="bg-row">Domain Managment</div>
-                        <div class="skills bg-row">Active Directory, Print Server</div>
+                        <div class="bg-row">Networking</div>
+                        <div class="skills bg-row">Meraki Management of DNS, DHCP, VLANS, Firewall, Wireless</div>
 
                         <div class="skill-icon"><div class="fas fa-check-circle"></div></div>
                         <div>Helpdesk Support</div>
@@ -54,15 +54,15 @@
 
                         <div class="skill-icon bg-row"><div class="fas fa-check-circle"></div></div>
                         <div class="bg-row">Software Training</div>
-                        <div class="skills bg-row">Group training sessions, individual training, Adobe suite, Google Suite</div>
+                        <div class="skills bg-row">Group training sessions, individual training, Adobe Creative Suite, Google Suite</div>
 
                         <div class="skill-icon bg-row"><div class="fas fa-check-circle"></div></div>
                         <div class="bg-row">Software Distribution</div>
                         <div class="skills bg-row">Windows, OSX, iOS</div>
 
                         <div class="skill-icon bg-row"><div class="fas fa-check-circle"></div></div>
-                        <div class="bg-row">Networking</div>
-                        <div class="skills bg-row">Meraki Management of DNS, DHCP, VLANS, Firewall, Wireless</div>
+                        <div class="bg-row">Domain Managment</div>
+                        <div class="skills bg-row">Active Directory, Print Servers</div>
 
                     </div>
 
@@ -79,23 +79,29 @@
 
                     <p>During my 13 years at Brentwood College School, a globally ranked private boarding school, I have worked in the IT department where I have supported a variety of different technologies.</p>
 
-                    <p>The majority of my early years was spent providing helpdesk support. My tasks included software and hardware trouble shooting, software distribution, Active Directory management.Through my time providing front line support I was trained on server management and was subsequently given further responsibilites for managing the school's web server and Active Directory.</p> 
+                    <p>The majority of my early years was spent providing helpdesk support. My tasks included software and hardware trouble shooting, software distribution, and Active Directory management. Throughout my time providing front line support I was trained on server management and was subsequently given further responsibilites for managing the school's web servers.</p>
 
-                    <p>I have also worked on our local network installing, upgrading, and configuring switches and wireless access points. I have experince with the full range of Meraki products along with our older legacy 3com equipment. Most recently I have been the lead tech for all webservers where I manage Apache, Nginx, Laravel, NodeJS, Redis, Wordpres, and Typo3.</p>
+                    <p>I have also worked on our local network installing, upgrading, and configuring switches and wireless access points. I have experince with the full range of Meraki products including management of the firewalls, VLANs, DHCP, SSIDs, and traffic shaping. Most recently I have been the lead tech for all web servers where I manage Apache, Nginx, Laravel, NodeJS, Redis, Wordpres, and Typo3.</p>
 
-                    <p>The most valuable skill I have developed while working at Brentwood has been my ability to adapt to changing technologies and provide a postiive transition to the community through proactive education and communication.</p>
+                    <p>The most valuable skill I have developed while working at Brentwood has been my ability to adapt to changing technologies while providing a postiive transition for the community through proactive education and communication.</p>
 
                 </div>
 
                 <div class="header">Other Experience</div>
                 <div class="content-item">
 
+                    <div class="portfolio-link">
+                        <a href="https://minckler.ca" target="_blank" class="portfolio-link">
+                            <div class="portfolio-text">View my online portfolio at https://minckler.ca</div>
+                            <div><i class="fas fa-angle-right"></i></div>
+                        </a>
+                    </div>
+
                     <div class="other-skills">
 
                         <div class="skill-icon bg-row"><div class="fas fa-check-circle"></div></div>
                         <div class="bg-row">Web Development & Content Creation</div>
-                        <div class="bg-row skills"><a href="https://minckler.ca" target="_blank">Online Portfolio</a>, Programming, Video Production, Photography, Graphic Design</div>
-                        
+                        <div class="bg-row skills">Programming, Video Production, Photography, Graphic Design</div>
                         <div class="skill-icon bg-row"><div class="fas fa-check-circle"></div></div>
                         <div class="bg-row">Coaching</div>
                         <div class="bg-row skills">Volleyball, Football</div>
@@ -104,6 +110,31 @@
 
                 </div>
 
+                <div class="header">References</div>
+                <div class="content-item">
+
+                    <div class="flex">
+
+                        <div class="reference">
+                            <div class="sub-header">Brent Lee</div><br/>
+                            Director of Innovation<br/>
+                            Brentwood College School<br/>
+                            brent.lee@brentwood.ca<br/>
+                            +1 250 216 8164 
+                        </div>
+                        <div class="reference">
+                            <div class="sub-header">Dewi Griffiths</div><br/>
+                            Faculty<br/>
+                            Brentwood College School<br/>
+                            dewi@brentwood.ca<br/>
+                            +1 250 715 6487
+                        </div>
+
+                    </div>
+
+                </div>
+                
+            <!-- end of content -->
 
             </div>
         </div>

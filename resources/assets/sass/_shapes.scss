@@ -1,0 +1,68 @@
+:root {
+
+    --blue-width: 0px;
+    --blue-height: 0px;
+    --blue-x: 0px;
+    --blue-y: 0px;
+    --blue-rotate: 0deg;
+    --blue-origin-x: 50%;
+    --blue-origin-y: 50%;
+    --blue-z-index: 1;
+
+    --orange-width: 0px;
+    --orange-height: 0px;
+    --orange-x: 0px;
+    --orange-y: 0px;
+    --orange-rotate: 0deg;
+    --orange-origin-x: 50%;
+    --orange-origin-y: 50%;
+    --orange-z-index: 1;
+
+    --yellow-width: 0px;
+    --yellow-height: 0px;
+    --yellow-x: 0px;
+    --yellow-y: 0px;
+    --yellow-rotate: 0deg;
+    --yellow-origin-x: 50%;
+    --yellow-origin-y: 50%;
+    --yellow-z-index: 1;
+
+}
+
+div.shapes {
+
+    position: relative;
+
+    & div.blue {
+        background-color: var(--blue);
+        width: var(--blue-width);
+        height: var(--blue-height);
+        transform: translate(var(--blue-x),var(--blue-y)) rotate(var(--blue-rotate));
+        transform-origin: var(--blue-origin-x) var(--blue-origin-y);
+        z-index: var(--blue-z-index);
+    }
+
+    & div.orange {
+        background-color: var(--orange);
+        width: var(--orange-width);
+        height: var(--orange-height);
+        transform: translate(var(--orange-x),var(--orange-y)) rotate(var(--orange-rotate));
+        transform-origin: var(--orange-origin-x) var(--orange-origin-y);
+        z-index: var(--orange-z-index);
+    }
+
+    & div.yellow {
+        background-color: var(--yellow);
+        width: var(--yellow-width);
+        height: var(--yellow-height);
+        transform: translate(var(--yellow-x),var(--yellow-y)) rotate(var(--yellow-rotate));
+        transform-origin: var(--yellow-origin-x) var(--yellow-origin-y);
+        z-index: var(--yellow-z-index);
+    }
+
+    div.shape {
+        transition: all var(--transition-time) ease;
+        position: absolute;
+    }
+
+}

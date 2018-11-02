@@ -1,8 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700');
 
+@import "cv";
+
 @import "categories";
 @import "image-viewer";
 @import "youtube";
+@import "shapes";
 
 @import "print";
 
@@ -797,4 +800,24 @@ body.print {
         color: #888 !important;
     }
 
+}
+
+.cv-fade-enter-active {
+    animation: cv-fade calc(var(--transition-time) * 2) linear;
+}
+
+.cv-fade-leave-active {
+    animation: cv-fade calc(var(--transition-time) * 2) reverse;
+}
+
+@keyframes cv-fade {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100%   {
+        opacity: 1;
+    }
 }

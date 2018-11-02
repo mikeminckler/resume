@@ -21,4 +21,9 @@ class PagesController extends Controller
     {
         return view('it');
     }
+
+    public function cv()
+    {
+        return view('cv');
+    }
 }

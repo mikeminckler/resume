@@ -4,10 +4,10 @@
 
         <div class="content-item">
 
-            <p>For the past 13 years, I have worked as a <strong>web developer and content creator</strong>, the last four years creating projects using the <strong>Laravel</strong> framework.</p>
-            <p>In 2014 I co-founded a web development company and launched <strong>BlueHealth</strong>, an electronic medical charting and health management website that is actively managing over 1200 patients and the creation of over 20,000 records annually.</p>
+            <p>For the past 14 years I have worked as a <strong>web developer and content creator</strong>. During the past five years I have been creating projects using the <strong>Laravel</strong> and <strong>VueJS</strong> frameworks.</p>
+            <p>In the fall of 2018 I began development of <strong>resort management software</strong> for a local destination resort. This product will provide a complete solution to unify their accomodation, marina, campground and tour operation management.</p>
+            <p>In 2014 I co-founded a web development company and launched BlueHealth, an <strong>electronic medical charting and health management application</strong> that is actively managing over 1200 patients and the creation of over 20,000 records annually.</p>
             <p>Since 2005, I have been in charge of <strong>web development</strong> at Brentwood College School, a globally ranked private boarding school. I started in the Information Technology department as a web developer and since 2011 I have overseen all digital content creation for promotional and internal use. </p>
-            <p>In my 13 years at Brentwood I have been fortunate to work on a wide variety of projects that have allowed me to develop a well rounded, creative and technical skill set.</p>
 
         </div>
 
@@ -77,7 +77,7 @@
                 
                 <div class="skill-icon bg-row"><div class="fas fa-check-circle"></div></div>
                 <div class="bg-row">Coaching</div>
-                <div class="bg-row skills">Volleyball, Football</div>
+                <div class="bg-row skills">Volleyball, Soccer</div>
 
             </div>
 

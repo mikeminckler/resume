@@ -1,5 +1,17 @@
 const videos = [
     {
+        'id': 'QWOyo_8pmRg',
+        'title': 'Brentwood Athletics Promo',
+        'thumbnail': 'athletics.jpg',
+        'description': 'A promotional video for the athetlics program at Brentwood.',
+    },
+    {
+        'id': 'aQAz-dzECsQ',
+        'title': 'Brentwood Arts Promo',
+        'thumbnail': 'arts.jpg',
+        'description': 'A promotional video for the arts program at Brentwood.',
+    },
+    {
         'id': 'yVNo5LhSs-M',
         'title': 'Brentwood Commercial',
         'thumbnail': '30sec.jpg',

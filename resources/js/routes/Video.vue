@@ -65,12 +65,20 @@
 
 <script>
 
+    import GridList from '../components/GridList.vue';
+    import YoutubeVideo from '../components/YoutubeVideo.vue';
+
     export default {
 
         data: function() {
             return {
                 selectedVideo: '',
             }
+        },
+
+        components: {
+            'grid-list': GridList,
+            'youtube-video': YoutubeVideo,
         },
 
         computed: {

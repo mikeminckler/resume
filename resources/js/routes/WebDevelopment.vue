@@ -11,9 +11,20 @@
         <div class="content-item">
 
             <div class="job-container">
+                <div class="sub-header">Resort Management Software</div>
+                <div class="roles">Lead Programmer</div>
+                <div class="dates">2018 - Present</div>
+                <div class="link"><a href="https://www.telegraphcoveresort.ca" target="_blank">www.telegraphcoveresort.ca</a></div>
+            </div>
+
+            <p>In the fall of 2018 I began work on resort management software for Telegraph Cove Resort. It features management of accomodation, marina, campground and tour operations, with Stripe integration, calendaring, and accounting.</p>
+            <p>This project has been developed using test driven development with Laravel as the backend framework. VueJS and TailwindCSS are used for the frontend. To create a fast and seamless experience websockets and InertiaJS are used to deliver a single page application while maintaining the features and security of the Laravel backend.</p>
+
+            <div class="job-container">
                 <div class="sub-header">BlueHealth Inc.</div>
                 <div class="roles">Co-Founder, Lead Programmer</div>
                 <div class="dates">2014 - Present</div>
+                <div class="link"><a href="https://demo.bluehealth.ca" target="_blank">demo.bluehealth.ca</a></div>
             </div>
 
             <p>In the fall of 2014, after eleven years of PHP programming, I began working with the <strong>Laravel</strong> framework. I spent the next ten months developing <strong>BlueHealth, a medical charting and management application</strong>. BlueHealth is currently used by ten medical professionals to manage over 1200 patients and facilitate appointments, prescriptions, immunizations, concussion tracking, accounting, and guardian questionnaires.</p>
@@ -102,12 +113,18 @@
 
 <script>
 
+    import GridList from '../components/GridList.vue';
+
     export default {
 
         data: function() {
             return {
                 selectedSite: '',
             }
+        },
+
+        components: {
+            'grid-list': GridList,
         },
 
         computed: {

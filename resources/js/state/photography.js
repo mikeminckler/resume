@@ -1,4 +1,6 @@
 const photography = [
+    'IMG_1498.jpg',
+    'IMG_3874.jpg',
     'IMG_2516.jpg',
     'IMG_3877.jpg',
     'IMG_2147.jpg',

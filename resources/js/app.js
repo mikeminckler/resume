@@ -1,5 +1,4 @@
-
-window.Vue = require('vue');
+import Vue from "vue";
 
 import lodash from 'lodash';    
 Object.defineProperty(Vue.prototype, '$lodash', { value: lodash });
@@ -10,12 +9,26 @@ Vue.use(Vuex);
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
-const axios = require('axios');
-Vue.prototype.$http = axios;
+import axios from "axios";
+Object.defineProperty(Vue.prototype, "$http", { value: axios });
 
-Vue.component('categories', require('./components/Categories.vue'));
-Vue.component('grid-list', require('./components/GridList.vue'));
-Vue.component('youtube-video', require('./components/YoutubeVideo.vue'));
+axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+let token = document.head.querySelector('meta[name="csrf-token"]');
+if (token) {
+    axios.defaults.headers.common["X-CSRF-TOKEN"] = token.content;
+} else {
+    console.error(
+        "CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token"
+    );
+}
+
+import Categories from './components/Categories.vue';
+
+import Home from './routes/Home.vue';
+import WebDevelopment from './routes/WebDevelopment.vue';
+import Photography from './routes/Photography.vue';
+import Video from './routes/Video.vue';
+import Design from './routes/Design.vue';
 
 const router = new VueRouter({
     mode: 'history',
@@ -23,27 +36,27 @@ const router = new VueRouter({
         {
             path: '/',
             name: 'home',
-            component: require('./routes/Home.vue')
+            component: Home,
         },
         {
             path: '/web-development',
             name: 'web-development',
-            component: require('./routes/WebDevelopment.vue')
+            component: WebDevelopment,
         },
         {
             path: '/photography',
             name: 'photography',
-            component: require('./routes/Photography.vue')
+            component: Photography,
         },
         {
             path: '/video',
             name: 'video',
-            component: require('./routes/Video.vue')
+            component: Video,
         },
         {
             path: '/design',
             name: 'design',
-            component: require('./routes/Design.vue')
+            component: Design,
         },
     ]
 })
@@ -188,6 +201,10 @@ const app = new Vue({
     store,
     router,
 
+    components: {
+        'categories': Categories,
+    },
+
     mounted() {
 
         this.setCategory();
@@ -206,9 +223,9 @@ const app = new Vue({
             app.$store.dispatch('setYoutubeReady', true);
         }
 
-            setTimeout(() => {
-                this.loadImages();
-            }, 2000);
+        setTimeout(() => {
+            this.loadImages();
+        }, 2000);
 
     },
 

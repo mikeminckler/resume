@@ -56,12 +56,18 @@
 
 <script>
 
+    import GridList from '../components/GridList.vue';
+
     export default {
 
         data: function() {
             return {
                 selectedImage: '',
             }
+        },
+
+        components: {
+            'grid-list': GridList,
         },
 
         mounted() {

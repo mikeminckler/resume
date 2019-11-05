@@ -10,7 +10,7 @@ const photography = [
     'IMG_4655.jpg',
     'IMG_4550.jpg',
     'IMG_0179.jpg',
-    'IMG_8403.jpg',
+    'IMG_4416.jpg',
     'IMG_3610.jpg',
     'IMG_2724.jpg',
     'P1020703.jpg',

@@ -4,7 +4,7 @@ const sites = [
         name: 'Resort Management',
         thumbnail: 'tcr.jpg',
         dates: 'December 2018 - Present',
-        url: 'www.telegraphcoveresort.ca',
+        url: 'https://dev.telegraphcoveresort.ca/demo?signature=cf3d2089aa50aae39fbb5768b64c2010d2342b5e7dd20686029eef24308fb8a2',
         role: 'Management software for accommodation, marina, campground, and tours.',
         gridList: [
             'Laravel + VueJS + InertiaJs', 

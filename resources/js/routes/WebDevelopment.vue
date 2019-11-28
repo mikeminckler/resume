@@ -14,7 +14,7 @@
                 <div class="sub-header">Resort Management Software</div>
                 <div class="roles">Lead Programmer</div>
                 <div class="dates">2018 - Present</div>
-                <div class="link"><a href="https://www.telegraphcoveresort.ca" target="_blank">www.telegraphcoveresort.ca</a></div>
+                <div class="link"><a href="https://demo.telegraphcoveresort.ca/demo?signature=ff7fdb7e76f6e83efaf3051447fa3c61f86eaefcb9074dfb6943354cb34d4650" target="_blank">www.telegraphcoveresort.ca</a></div>
             </div>
 
             <p>In the fall of 2018 I began work on resort management software for Telegraph Cove Resort. It features management of accomodation, marina, campground and tour operations, with Stripe integration, calendaring, and accounting.</p>
@@ -59,7 +59,7 @@
                 <div class="website-content">
                     <div class="sub-header">{{ site.name }}</div>
                     <div class="dates">{{ site.dates }}</div>
-                    <div class="url"><a :href="'https://' + site.url" target="_blank">{{ site.url }}</a></div>
+                    <div class="url"><a :href="'https://' + site.url" target="_blank">Visit Site</a></div>
                     <div class="role">{{ site.role }}</div>
                     <grid-list width="150px" :items="$lodash.take(site.gridList, 5)"></grid-list>
                     <div class="more-info"> 
@@ -94,7 +94,7 @@
 
                             <div class="website-subinfo">
                                 <div class="dates">{{ selectedSite.dates }}</div>
-                                <div class="url"><a :href="'https://' + selectedSite.url" target="_blank">{{ selectedSite.url }}</a></div>
+                                <div class="url"><a :href="'https://' + selectedSite.url" target="_blank">Visit Demo</a></div>
                             </div>
 
                             <p>{{ selectedSite.description }}</p>

@@ -4,7 +4,7 @@ const sites = [
         name: 'Resort Management',
         thumbnail: 'tcr.jpg',
         dates: 'December 2018 - Present',
-        url: 'https://dev.telegraphcoveresort.ca/demo?signature=cf3d2089aa50aae39fbb5768b64c2010d2342b5e7dd20686029eef24308fb8a2',
+        url: 'demo.telegraphcoveresort.ca/demo?signature=ff7fdb7e76f6e83efaf3051447fa3c61f86eaefcb9074dfb6943354cb34d4650',
         role: 'Management software for accommodation, marina, campground, and tours.',
         gridList: [
             'Laravel + VueJS + InertiaJs', 
@@ -36,8 +36,26 @@ const sites = [
         ],
         description: 'Built on the Laravel PHP framework, BlueHealth features a clean and responsive user interface focused on providing quick and easy data entry, searching, and reporting. Security is provided with an encrypted database, two factor authentication, group page and object permissions. VueJS is used extensively throughout the application for an interactive user experience. Websockets provide real time feedback and event broadcasting.'
     },
+
     {
         id: 2,
+        name: 'Brentwood Landing Page',
+        thumbnail: 'rsvp.jpg',
+        dates: 'January 2020',
+        url: 'rsvp.brentwood.ca',
+        role: 'Featured landing page for online advertising through social media platforms.',
+        gridList: [
+            'Laravel + VueJS', 
+            'Realtime Form Validation',
+            'CSS Grid + Flexbox',
+            'Email Confirmation',
+            'Advertising Analytics',
+        ],
+        description: 'Used as a landing page for online advertising, this site is targeted at prospective students and parents, providing a registration component for new families to sign up for information sessions across the country. An interactive and easy to use registration form were design requirements that were accomplished using VueJS.',
+    },
+
+    {
+        id: 3,
         name: 'Brentwood College School',
         thumbnail: 'bcs.jpg',
         dates: 'June 2005 - August 2014',
@@ -69,7 +87,7 @@ const sites = [
         ],
         description: 'Used as a landing page for online advertising, this site is targeted at prospective students and parents, providing a registration component for new families to sign up for information sessions across the country. An interactive and easy to use registration form were design requirements that were accomplished using VueJS to give the user step-by-step feedback.',
     },
-    */
+
     {
         id: 4,
         name: 'Volleyball Statistics',
@@ -86,6 +104,7 @@ const sites = [
         ],
         description: 'This statistics tracking tool is used for the volleyball program at Brentwood. Using websockets to provide real time feedback without the need for page refreshes is a key design feature. I accomplished this using Laravel\'s broadcasting queue, through NodeJS, to trigger update events in the browser.',
     },
+    */
 ];
 
 export default sites;

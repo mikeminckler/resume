@@ -14,7 +14,7 @@
                 <div class="sub-header">Resort Management Software</div>
                 <div class="roles">Lead Programmer</div>
                 <div class="dates">2018 - Present</div>
-                <div class="link"><a href="https://demo.telegraphcoveresort.ca/demo?signature=ff7fdb7e76f6e83efaf3051447fa3c61f86eaefcb9074dfb6943354cb34d4650" target="_blank">www.telegraphcoveresort.ca</a></div>
+                <div class="link"><a href="https://demo.telegraphcoveresort.ca/demo?signature=ff7fdb7e76f6e83efaf3051447fa3c61f86eaefcb9074dfb6943354cb34d4650" target="_blank">demo.telegraphcoveresort.ca</a></div>
             </div>
 
             <p>In the fall of 2018 I began work on resort management software for Telegraph Cove Resort. It features management of accomodation, marina, campground and tour operations, with Stripe integration, calendaring, and accounting.</p>

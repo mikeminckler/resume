@@ -1,17 +1,27 @@
 <script setup>
 import { ref } from 'vue';
 import { Head } from '@inertiajs/vue3';
+import { useKeys } from '@/Composables/UseKeys.js';
 
-const props = defineProps({
-    
-});
+useKeys([
+    {
+        key: 'Escape',
+        fn: (e) => {
+            selectedImage.value = null
+        }
+    },
+]);
+
+//const props = defineProps({
+    //
+//});
 
 const selectedImage = ref();
 
 const skills = ref([
     {
         title: 'Web Development',
-        description: 'Since 2006, I have been developing websites for both marketing and data management projects. At Brentwood College School I have been the lead developer for all marketing related web content. Since 2014 I have also developed and maintained a health management website.',
+        description: 'Since 2006, I have been developing websites for both marketing and data management projects. At Brentwood College School I have been the lead developer for all marketing related web content and our latest website with responsive design, version control, photo management, blog, staff bios, course descriptions, CSP, intergration with Google groups and Google Calendar. In addition I have developed and maintained a health management website, BlueHealth, since 2014. This website is a fully featured web app that manages charting, appointments, immunization, health form, medications and prescriptions.',
         image: 'undraw_laravel_and_vue_-59-tp.svg',
         keywords: ['web'],
         skills: [
@@ -22,6 +32,10 @@ const skills = ref([
             { name: 'MySQL', icon: 'fa-solid fa-database' },
             { name: 'Tailwind CSS', icon: 'fa-brands fa-css3' },
             { name: 'Websockets', icon: 'fa-solid fa-arrow-right-arrow-left' },
+        ],
+        websites: [
+            { name: 'Brentwood', link: 'https://www.brentwood.ca' },
+            { name: 'Github', link: 'https://github.com/mikeminckler' },
         ],
     },
     {
@@ -35,12 +49,19 @@ const skills = ref([
             { name: 'After Effects' },
         ],
         links: [
-            { name: 'Sample Interview Footage', image: 'luise.jpg', link: 'www.youtube.com/watch?v=3fpHv2LdwiQ' },
+            { name: 'Arts Promo', image: 'arts.jpg', link: 'https://www.youtube.com/watch?v=KeqaOtcf6mI' },
+            { name: 'Athletics Promo', image: 'athletics.jpg', link: 'https://www.youtube.com/watch?v=zy4mEF7AcQw' },
+            { name: '30 Second Ad', image: '30sec.jpg', link: 'https://www.youtube.com/watch?v=PXaL1AzpaBo' },
+            { name: 'Short Documentary', image: '50_years_women.jpg', link: 'https://www.youtube.com/watch?v=mCgpx73bBBU' },
+            { name: 'Sample Interview', image: 'luise.jpg', link: 'https://www.youtube.com/watch?v=3fpHv2LdwiQ' },
+            { name: 'B-roll Rowing', image: 'rowing.jpg', link: 'https://www.youtube.com/watch?v=OFOKcspg588' },
+            { name: 'B-roll Kayaking', image: 'kayaking.jpg', link: 'https://www.youtube.com/watch?v=JFdqjAH68Xk' },
+            //{ name: 'Dance', image: 'heather.jpg', link: 'https://www.youtube.com/watch?v=OOjuRe7iC1s' },
         ],
     },
     {
         title: 'Live Streaming',
-        description: 'Established live streaming at Brentwood in 2013. Multi camera productions, NDI transmission across multiple ',
+        description: 'Established live streaming at Brentwood in 2013. Multi camera productions, NDI video transmission, Dante audio networking, audio mixing, scoreboard integration, YouTube API',
         image: 'undraw_online_video_re_fou2.svg',
         keywords: ['livestream'],
         skills: [
@@ -48,12 +69,18 @@ const skills = ref([
             { name: 'OBS' },
             { name: 'YouTube' },
             { name: 'NDI' },
-            { name: 'Custom Overlays' },
+            { name: 'Websocket Overlays' },
+        ],
+        links: [
+            { name: 'Boys Basketball', image: 'basketball.jpg', link: 'https://www.youtube.com/watch?v=7mpYX_2v5bA' },
+            { name: 'Winter Concert', image: 'cfwe.jpg', link: 'https://www.youtube.com/watch?v=3HJrqXFgYVE' },
+            { name: 'Graduation Ceremony', image: 'grad.jpg', link: 'https://www.youtube.com/watch?v=lFf6_Lu7sf4' },
+            { name: 'Brentwood Regatta', image: 'regatta.jpg', link: 'https://www.youtube.com/watch?v=DM5W2-dIeU0' },
         ],
     },
     {
         title: 'Photography',
-        description: 'Extensive experience taking professional photos at a variety of sporting and artistic events.',
+        description: 'Extensive experience taking professional photos including sports, arts, theatre, portraits, and formal events.',
         image: 'undraw_landscape_photographer_blv1.svg',
         keywords: ['photography'],
         skills: [
@@ -66,12 +93,17 @@ const skills = ref([
             { name: 'Portraits' },
         ],
         links: [
+            { name: 'Brentwood Advertising', image: 'dock_walk.jpg', link: '', expand: true },
+            { name: 'Musical Mamma Mia', image: 'mamma_mia.jpg', link: '', expand: true },
+            { name: 'Dance', image: 'dance_jump.jpg', link: '', expand: true },
+            { name: 'Eagle', image: 'eagle.jpg', link: '', expand: true },
+            { name: 'Music Concert', image: 'music.jpg', link: '', expand: true },
             { name: 'Rowing Sunrise', image: 'rowing_sunrise.jpg', link: '', expand: true },
         ],
     },
     {
         title: 'IT',
-        description: '8 years as an IT systems analyst at Brentwood supporting 500 students and 100 staff. Provided front line support, hardware repair and software troubleshooting including Meraki networking administration.',
+        description: '8 years as an IT systems analyst from 2005 through 2013 at Brentwood. Supported 500 students and 100 staff with front line support, hardware repair, software troubleshooting, Meraki networking administration, Linux and Windows server administration.',
         image: 'undraw_maintenance_re_59vn.svg',
         keywords: ['it'],
         skills: [
@@ -84,23 +116,30 @@ const skills = ref([
     },
     {
         title: 'Marketing',
-        description: '',
+        description: 'Starting in 2013, I have been the digital content creator at Brentwood. Custom built content management, promotional ads, short films, photography. Web analytics and data anylysis, conversions funnels, strategic planning.',
         image: 'undraw_success_factors_re_ce93.svg',
         keywords: ['marketing'],
         skills: [
+            { name: 'Website Design' },
+            { name: 'Promotional Content' },
             { name: 'Analytics' },
-            { name: 'Social Media' },
             { name: 'Digital Ads' },
         ],
     },
     {
         title: 'Graphic Design',
-        description: '',
+        description: 'Design work at Brentwood for a variety of print and digital projects. Athletic murals, theatre posters, dance promotion, branding',
         image: 'undraw_build_wireframe_re_ln7g.svg',
         keywords: ['graphics'],
         skills: [
             { name: 'Photoshop' },
             { name: 'Illustrator' },
+            { name: 'InDesign' },
+        ],
+        links: [
+            { name: 'Athletics Artwork', image: 'vball_art.jpg', link: '', expand: true },
+            { name: 'Dance Artwork', image: 'haze.jpg', link: '', expand: true },
+            { name: 'Dance Reflection', image: 'reflection.jpg', link: '', expand: true },
         ],
     },
 ]);
@@ -111,13 +150,13 @@ const workExperience = ref([
         start_date: '2005',
         items: [
             '9 years in IT department before transition to Marketing technical lead',
-            '15 years as Webmaster launching 6 unqiue versions of content rich marketing website',
-            'Web server Managment, cloud hosting, linux',
-            'Currently lead photographer &amp; videographer',
-            'Video production teacher for 10 years',
-            'Established live streaming in 2013, culminating in over 40 annual events accumilating 34,000 views',
+            '15 years as Webmaster launching 6 unqiue versions of the custom built website',
+            'Lead photographer & videographer',
+            'Live Stream Producer supervising 40 plus annual events',
+            'Web server managment and cloud hosting',
+            '10 years as a Video production teacher',
         ],
-        website: 'www.brentwood.ca',
+        website: 'https://www.brentwood.ca',
     },
     {
         title: 'Bluewind Information Systems Inc.',
@@ -125,8 +164,9 @@ const workExperience = ref([
         items: [
             'Developed an online health management system, BlueHealth',
             'Provided techincal support for 15 nurses and staff',
+            'Third party support with API intergrations and custom data mapping',
         ],
-        website: 'bluewind.ca',
+        website: 'https://bluewind.ca',
     },
 ]);
 
@@ -158,7 +198,7 @@ const workExperience = ref([
                 <FaIcon icon="fa-solid fa-object-group" class="">Graphic Design</FaIcon>
             </div>
 
-            <p>I have a passion for content creation and technology. In a constant state of learning and improving, I embrace problem solving. Excellent inerpersonal and team management skills.</p>
+            <p>I have a passion for content creation and technology. I enjoy constantly learning, improving, and embracing problem solving. My strong inerpersonal and project management skills allow me to work well with clients and team members.</p>
 
             <h2>Skills</h2>
             <div class="rounded-lg px-6 pt-3 pb-4 bg-zinc-50 shadow-lg my-4 -mx-2" v-for="skill in skills">
@@ -167,63 +207,72 @@ const workExperience = ref([
                         <h3>{{ skill.title }}</h3>
                         <p>{{ skill.description }}</p>
 
-                        <div class="grid grid-cols-3 text-bae mt-2 gap-x-2 gap-y-1">
-                            <div class="" v-for="skill in skill.skills">
-                                <FaIcon :icon="skill.icon ? skill.icon : 'fa-regular fa-circle-check'"><span class="text-sm">{{ skill.name }}</span></FaIcon>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-4 mt-4">
-                            <div class="cursor-pointer" v-for="link in skill.links"
-                                    @click="selectedImage = link.image"
-                                >
-                                <img :src="'/images/' + link.image" 
-                                    class="object-cover h-24 w-24 rounded-lg border-white border-2 ring-1 ring-gray-300"
-                                    v-if="link.image"
-                                />
-                            </div>
-                        </div>
 
                     </div>
                     <div class="max-w-40 -mt-5 -mr-8 -ml-2">
-                        <img :src="'/svg/' + skill.image" />
+                        <img :src="'/svg/' + skill.image" class="max-h-32"/>
                     </div>
                 </div>
+
+                <div class="grid grid-cols-3 text-bae mt-2 gap-x-2 gap-y-1">
+                    <div class="" v-for="skill in skill.skills">
+                        <FaIcon :icon="skill.icon ? skill.icon : 'fa-regular fa-circle-check'"><span class="text-sm">{{ skill.name }}</span></FaIcon>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-4 mt-4">
+                    <div :class="link.expand ? 'cursor-pointer' : ''" v-for="link in skill.links"
+                            @click="link.expand ? selectedImage = link.image : null"
+                        >
+                        <img :src="'/images/' + link.image" 
+                            class="object-cover w-full max-h-20 rounded-lg border-white border-2 ring-1 ring-gray-300"
+                            v-if="link.image"
+                        />
+                        <a v-if="!link.image && link.link" :href="link.link" target="_blank" class="whitespace-nowrap">
+                            <FaIcon icon="fa-solid fa-link" size="text-xs"></FaIcon>
+                            <span class="text-sm ml-1">{{ link.link.substring(8) }} </span>
+                        </a>
+                    </div>
+                </div>
+
             </div>
 
             <h2>Work Experince</h2>
             <div class="mt-2 mb-4" v-for="job in workExperience">
                 <h3>
                     {{ job.title }}
-                    <a :href="'https://' + job.website" class="ml-4 inline-flex items-center" target="_blank">
+                    <a :href="job.website" class="ml-4 inline-flex items-center" target="_blank">
                         <FaIcon icon="fa-solid fa-link" size="text-xs"></FaIcon>
-                        <span class="text-sm ml-1">{{ job.website }} </span>
+                        <span class="text-sm ml-1">{{ job.website.substring(8) }} </span>
                     </a>
                 </h3>
                 <div class="opacity-80">
                     <span class="italic"> {{ job.start_date }} <FaIcon icon="fa-solid fa-minus" class="px-1"></FaIcon> Present</span>
                 </div>
                 <div class="mt-2">
-                    <FaIcon icon="fa-solid fa-caret-right" 
-                        v-for="item in job.items"
-                        class="ml-2"
-                        spacing="ml-2"
-                    >{{ item }}</FaIcon>
+                    <div class="" v-for="item in job.items">
+                        <FaIcon icon="fa-solid fa-caret-right" 
+                            class="ml-2"
+                            spacing="ml-2"
+                        >{{ item }}</FaIcon>
+                    </div>
                 </div>
             </div>
 
         </div>
     </div>
 
-    <div class="fixed w-screen h-screen top-0 z-10" v-if="selectedImage">
+    <Transition name="fade">
+        <div class="fixed w-screen h-screen top-0 z-10" v-if="selectedImage">
 
-        <div class="absolute bg-white opacity-75 w-screen h-screen z-[5]" @click="selectedImage = null"></div>
+            <div class="absolute bg-white opacity-75 w-screen h-screen z-[5]" @click="selectedImage = null"></div>
 
-        <div class="relative z-10 w-screen h-screen">
-            <div class="w-full h-full" @click="selectedImage = null">
-                <img :src="'/images/' + selectedImage" class="absolute w-full h-full object-contain pointer-events-none p-8" />
+            <div class="relative z-10 w-screen h-screen">
+                <div class="w-full h-full" @click="selectedImage = null">
+                    <img :src="'/images/' + selectedImage" class="absolute w-full h-full object-contain pointer-events-none p-8" />
+                </div>
             </div>
-        </div>
 
-    </div>
+        </div>
+    </Transition>
 </template>

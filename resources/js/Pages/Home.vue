@@ -21,7 +21,7 @@ const selectedImage = ref();
 const skills = ref([
     {
         title: 'Web Development',
-        description: 'Since 2006, I have been developing websites for both marketing and data management projects. At Brentwood College School I have been the lead developer for all marketing related web content including our latest marketing website which features responsive design, version control, photo management, news and blogs, CSP, intergration with Google groups and Google calendar. In addition I have developed and maintained a health management website, BlueHealth, since 2014. This website is a fully featured web app that manages charting, appointments, immunization, health forms, medications and prescriptions.',
+        description: 'Since 2006, I have been developing websites for both marketing and data management projects. At Brentwood College School I have been the lead developer for all marketing related web content including our latest marketing website which features responsive design, version control, photo management, news and blogs, CSP, integration with Google groups and Google calendar. In addition I have developed and maintained a health management website, BlueHealth, since 2014. This website is a fully featured web app that manages charting, appointments, immunization, health forms, medications and prescriptions.',
         image: 'undraw_laravel_and_vue_-59-tp.svg',
         keywords: ['web'],
         skills: [
@@ -40,7 +40,7 @@ const skills = ref([
     },
     {
         title: 'Video Production',
-        description: 'For the past 25 years I have been creating video content for projects inclusing advertising, documenteries, interviews, social media, and visual effects. I have experiecne using cinema cameras, working in 4k, colour grading raw footage, custom titling, and green screen compositing.',
+        description: 'For the past 25 years I have been creating video content for projects including advertising, documentaries, interviews, social media, and visual effects. I have experience using cinema cameras, working in 4k, colour grading raw footage, custom titling, and green screen compositing.',
         image: 'undraw_developer_activity_re_39tg.svg',
         keywords: ['video'],
         skills: [
@@ -118,7 +118,7 @@ const skills = ref([
     },
     {
         title: 'Marketing',
-        description: 'Starting in 2013, I have been the digital content creator at Brentwood creating website designs, photo and video ads, short films, and promotional photography. In addition I report on web analytics and data anylysis, conversions funnels, and participate in strategic planning.',
+        description: 'Starting in 2013, I have been the digital content creator at Brentwood creating website designs, photo and video ads, short films, and promotional photography. In addition I report on web analytics and data analysis, conversions funnels, and participate in strategic planning.',
         image: 'undraw_success_factors_re_ce93.svg',
         keywords: ['marketing'],
         skills: [
@@ -130,7 +130,7 @@ const skills = ref([
     },
     {
         title: 'Graphic Design',
-        description: 'At Brentwood I have provided graphic desing for a variety of print and digital projects including athletic murals, theatre posters, dance promotion, and company branding.',
+        description: 'At Brentwood I have provided graphic design for a variety of print and digital projects including athletic murals, theatre posters, dance promotion, and company branding.',
         image: 'undraw_build_wireframe_re_ln7g.svg',
         keywords: ['graphics'],
         skills: [
@@ -152,10 +152,10 @@ const workExperience = ref([
         start_date: '2005',
         items: [
             '8 years in the IT department before transition to the marketing technical lead',
-            '15 years as Webmaster launching 6 unqiue versions of the custom built website',
+            '15 years as Webmaster launching 6 unique versions of the custom built website',
             'Lead photographer & videographer',
             'Live Stream Producer supervising 40 plus annual events',
-            'Web server managment and cloud hosting',
+            'Web server management and cloud hosting',
             '10 years as a Video production teacher',
         ],
         website: 'https://www.brentwood.ca',
@@ -165,8 +165,8 @@ const workExperience = ref([
         start_date: '2014',
         items: [
             'Developed an online health management system, BlueHealth',
-            'Provided techincal support for 15 nurses and staff',
-            'BlueHealth third party support with API intergrations and custom data mapping',
+            'Provided technical support for 15 nurses and staff',
+            'BlueHealth third party support with API integrations and custom data mapping',
         ],
         website: 'https://bluewind.ca',
     },
@@ -200,7 +200,7 @@ const workExperience = ref([
                 <FaIcon icon="fa-solid fa-object-group" class="">Graphic Design</FaIcon>
             </div>
 
-            <p>I have a passion for content creation and technology. I enjoy constantly learning, improving, and embracing problem solving. My strong inerpersonal and project management skills allow me to work well with clients and team members.</p>
+            <p>I have a passion for content creation and technology. I enjoy constantly learning, improving, and embracing problem solving. My strong interpersonal and project management skills allow me to work well with clients and team members.</p>
 
             <h2>Skills</h2>
             <div class="rounded-lg px-3 md:px-6 pt-3 pb-4 bg-zinc-50 shadow-lg my-4 -mx-2 relative" v-for="skill in skills">
@@ -242,7 +242,7 @@ const workExperience = ref([
 
             </div>
 
-            <h2>Work Experince</h2>
+            <h2>Work Experience</h2>
             <div class="mt-2 mb-4" v-for="job in workExperience">
                 <div class="md:flex mb-2 md:mb-0">
                     <h3 class="w-full"> {{ job.title }}</h3>

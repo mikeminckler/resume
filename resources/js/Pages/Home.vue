@@ -21,7 +21,7 @@ const selectedImage = ref();
 const skills = ref([
     {
         title: 'Web Development',
-        description: 'Since 2006, I have been developing websites for both marketing and data management projects. At Brentwood College School I have been the lead developer for all marketing related web content and our latest website with responsive design, version control, photo management, blog, staff bios, course descriptions, CSP, intergration with Google groups and Google Calendar. In addition I have developed and maintained a health management website, BlueHealth, since 2014. This website is a fully featured web app that manages charting, appointments, immunization, health form, medications and prescriptions.',
+        description: 'Since 2006, I have been developing websites for both marketing and data management projects. At Brentwood College School I have been the lead developer for all marketing related web content including our latest marketing website which features responsive design, version control, photo management, news and blogs, CSP, intergration with Google groups and Google calendar. In addition I have developed and maintained a health management website, BlueHealth, since 2014. This website is a fully featured web app that manages charting, appointments, immunization, health forms, medications and prescriptions.',
         image: 'undraw_laravel_and_vue_-59-tp.svg',
         keywords: ['web'],
         skills: [
@@ -40,7 +40,7 @@ const skills = ref([
     },
     {
         title: 'Video Production',
-        description: 'I have been creating videos for over 25 years for projects inclusing advertising, documenteries, interviews, social media, and visual effects. I have experiecne using cinema cameras, working in 4k, colour grading raw footage, custom titling, and green screen composting.',
+        description: 'For the past 25 years I have been creating video content for projects inclusing advertising, documenteries, interviews, social media, and visual effects. I have experiecne using cinema cameras, working in 4k, colour grading raw footage, custom titling, and green screen compositing.',
         image: 'undraw_developer_activity_re_39tg.svg',
         keywords: ['video'],
         skills: [
@@ -61,7 +61,7 @@ const skills = ref([
     },
     {
         title: 'Live Streaming',
-        description: 'Established live streaming at Brentwood in 2013. Multi camera productions, NDI video transmission, Dante audio networking, audio mixing, scoreboard integration, YouTube API',
+        description: 'I established live streaming at Brentwood in 2013. These events included multi camera productions, NDI video transmission, Dante audio networking, audio mixing, scoreboard integration, and YouTube API',
         image: 'undraw_online_video_re_fou2.svg',
         keywords: ['livestream'],
         skills: [
@@ -80,7 +80,7 @@ const skills = ref([
     },
     {
         title: 'Photography',
-        description: 'Extensive experience taking professional photos including sports, arts, theatre, portraits, and formal events.',
+        description: 'I have extensive experience taking professional photos for a wide range of events including sports, arts, theatre, portraits, and formal occasions.',
         image: 'undraw_landscape_photographer_blv1.svg',
         keywords: ['photography'],
         skills: [
@@ -99,11 +99,13 @@ const skills = ref([
             { name: 'Eagle', image: 'eagle.jpg', link: '', expand: true },
             { name: 'Music Concert', image: 'music.jpg', link: '', expand: true },
             { name: 'Rowing Sunrise', image: 'rowing_sunrise.jpg', link: '', expand: true },
+            { name: 'Volleyball', image: 'DSC04045.jpg', link: '', expand: true },
+            { name: 'Hope House', image: 'hope_house.jpg', link: '', expand: true },
         ],
     },
     {
         title: 'IT',
-        description: '8 years as an IT systems analyst from 2005 through 2013 at Brentwood. Supported 500 students and 100 staff with front line support, hardware repair, software troubleshooting, Meraki networking administration, Linux and Windows server administration.',
+        description: 'I spent 8 years as an IT systems analyst from 2005 through 2013 at Brentwood. There I supported over 500 students and 100 staff with front line support, hardware repair, software troubleshooting, Meraki networking administration, and server administration.',
         image: 'undraw_maintenance_re_59vn.svg',
         keywords: ['it'],
         skills: [
@@ -116,7 +118,7 @@ const skills = ref([
     },
     {
         title: 'Marketing',
-        description: 'Starting in 2013, I have been the digital content creator at Brentwood. Custom built content management, promotional ads, short films, photography. Web analytics and data anylysis, conversions funnels, strategic planning.',
+        description: 'Starting in 2013, I have been the digital content creator at Brentwood creating website designs, photo and video ads, short films, and promotional photography. In addition I report on web analytics and data anylysis, conversions funnels, and participate in strategic planning.',
         image: 'undraw_success_factors_re_ce93.svg',
         keywords: ['marketing'],
         skills: [
@@ -128,7 +130,7 @@ const skills = ref([
     },
     {
         title: 'Graphic Design',
-        description: 'Design work at Brentwood for a variety of print and digital projects. Athletic murals, theatre posters, dance promotion, branding',
+        description: 'At Brentwood I have provided graphic desing for a variety of print and digital projects including athletic murals, theatre posters, dance promotion, and company branding.',
         image: 'undraw_build_wireframe_re_ln7g.svg',
         keywords: ['graphics'],
         skills: [
@@ -149,7 +151,7 @@ const workExperience = ref([
         title: 'Brentwood College School',
         start_date: '2005',
         items: [
-            '9 years in IT department before transition to Marketing technical lead',
+            '8 years in the IT department before transition to the marketing technical lead',
             '15 years as Webmaster launching 6 unqiue versions of the custom built website',
             'Lead photographer & videographer',
             'Live Stream Producer supervising 40 plus annual events',
@@ -164,7 +166,7 @@ const workExperience = ref([
         items: [
             'Developed an online health management system, BlueHealth',
             'Provided techincal support for 15 nurses and staff',
-            'Third party support with API intergrations and custom data mapping',
+            'BlueHealth third party support with API intergrations and custom data mapping',
         ],
         website: 'https://bluewind.ca',
     },
@@ -174,11 +176,11 @@ const workExperience = ref([
 
 <template>
     <Head title="Mike Minckler - Resume" />
-    <div class="m-4 grid place-items-center">
-        <div class="px-6 pb-4 rounded-xl bg-zinc-100 shadow-xl w-full max-w-prose">
-            <div class="flex justify-between items-center py-2">
+    <div class="m-2 md:m-4 grid place-items-center">
+        <div class="px-3 md:px-6 pb-4 rounded-xl bg-zinc-100 shadow-xl w-full max-w-prose">
+            <div class="md:flex justify-between items-center py-2">
                 <div class="text-3xl">Mike Minckler</div>
-                <div class="text-sm">
+                <div class="text-sm flex justify-between md:block">
                     <a href="mailto:mikeminckler@gmail.com" class="block text-right">
                         <FaIcon icon="fa-solid fa-envelope">mikeminckler@gmail.com</FaIcon>
                     </a>
@@ -188,7 +190,7 @@ const workExperience = ref([
                 </div>
             </div>
 
-            <div class="grid grid-cols-4 text-sm bg-white -mx-6 px-6 py-2 border-b border-t border-emerald-300 gap-1">
+            <div class="grid grid-cols-2 md:grid-cols-4 text-sm bg-white -mx-3 md:-mx-6 px-6 py-2 border-b border-t border-emerald-300 gap-1">
                 <FaIcon icon="fa-solid fa-video" class="">Video Production</FaIcon>
                 <FaIcon icon="fa-solid fa-camera" class="">Photography</FaIcon>
                 <FaIcon icon="fa-solid fa-desktop" class="">IT</FaIcon>
@@ -201,20 +203,18 @@ const workExperience = ref([
             <p>I have a passion for content creation and technology. I enjoy constantly learning, improving, and embracing problem solving. My strong inerpersonal and project management skills allow me to work well with clients and team members.</p>
 
             <h2>Skills</h2>
-            <div class="rounded-lg px-6 pt-3 pb-4 bg-zinc-50 shadow-lg my-4 -mx-2" v-for="skill in skills">
+            <div class="rounded-lg px-3 md:px-6 pt-3 pb-4 bg-zinc-50 shadow-lg my-4 -mx-2 relative" v-for="skill in skills">
                 <div class="flex">
                     <div class="w-full">
                         <h3>{{ skill.title }}</h3>
                         <p>{{ skill.description }}</p>
-
-
                     </div>
-                    <div class="max-w-40 -mt-5 -mr-8 -ml-2">
+                    <div class="max-w-12 md:max-w-40 -mt-3 md:-mt-5 md:-mr-8 md:-ml-2 absolute md:block right-0 md:relative">
                         <img :src="'/svg/' + skill.image" class="max-h-32"/>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-3 text-bae mt-2 gap-x-2 gap-y-1">
+                <div class="grid grid-cols-2 md:grid-cols-4 text-base mt-2 gap-x-2 gap-y-1">
                     <div class="" v-for="skill in skill.skills">
                         <FaIcon :icon="skill.icon ? skill.icon : 'fa-regular fa-circle-check'"><span class="text-sm">{{ skill.name }}</span></FaIcon>
                     </div>
@@ -224,9 +224,14 @@ const workExperience = ref([
                     <div :class="link.expand ? 'cursor-pointer' : ''" v-for="link in skill.links"
                             @click="link.expand ? selectedImage = link.image : null"
                         >
-                        <img :src="'/images/' + link.image" 
-                            class="object-cover w-full max-h-20 rounded-lg border-white border-2 ring-1 ring-gray-300"
-                            v-if="link.image"
+                        <a :href="link.link" v-if="link.image && link.link" target="_blank">
+                            <img :src="'/images/' + link.image" 
+                                class="object-cover w-full h-full max-h-20 rounded-lg border-white border-2 ring-1 ring-gray-300"
+                            />
+                        </a>
+
+                        <img v-if="link.image && !link.link" :src="'/images/' + link.image" 
+                            class="object-cover w-full h-full max-h-20 rounded-lg border-white border-2 ring-1 ring-gray-300"
                         />
                         <a v-if="!link.image && link.link" :href="link.link" target="_blank" class="whitespace-nowrap">
                             <FaIcon icon="fa-solid fa-link" size="text-xs"></FaIcon>
@@ -239,14 +244,14 @@ const workExperience = ref([
 
             <h2>Work Experince</h2>
             <div class="mt-2 mb-4" v-for="job in workExperience">
-                <h3>
-                    {{ job.title }}
-                    <a :href="job.website" class="ml-4 inline-flex items-center" target="_blank">
+                <div class="md:flex mb-2 md:mb-0">
+                    <h3 class="w-full"> {{ job.title }}</h3>
+                    <a :href="job.website" class="md:ml-4 inline-flex items-center" target="_blank">
                         <FaIcon icon="fa-solid fa-link" size="text-xs"></FaIcon>
                         <span class="text-sm ml-1">{{ job.website.substring(8) }} </span>
                     </a>
-                </h3>
-                <div class="opacity-80">
+                </div>
+                <div class="opacity-80 mt-1">
                     <span class="italic"> {{ job.start_date }} <FaIcon icon="fa-solid fa-minus" class="px-1"></FaIcon> Present</span>
                 </div>
                 <div class="mt-2">

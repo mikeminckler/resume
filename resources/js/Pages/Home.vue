@@ -56,6 +56,7 @@ const skills = ref([
             { name: 'Sample Interview', image: 'luise.jpg', link: 'https://www.youtube.com/watch?v=3fpHv2LdwiQ' },
             { name: 'B-roll Rowing', image: 'rowing.jpg', link: 'https://www.youtube.com/watch?v=OFOKcspg588' },
             { name: 'B-roll Kayaking', image: 'kayaking.jpg', link: 'https://www.youtube.com/watch?v=JFdqjAH68Xk' },
+            { name: 'Dance VFX', image: 'helplessly.jpg', link: 'https://www.youtube.com/watch?v=VoiOJa9wLYU' },
             //{ name: 'Dance', image: 'heather.jpg', link: 'https://www.youtube.com/watch?v=OOjuRe7iC1s' },
         ],
     },
@@ -65,11 +66,10 @@ const skills = ref([
         image: 'undraw_online_video_re_fou2.svg',
         keywords: ['livestream'],
         skills: [
-            { name: 'vMix' },
-            { name: 'OBS' },
-            { name: 'YouTube' },
+            { name: 'vMix & OBS' },
+            { name: 'YouTube API' },
             { name: 'NDI' },
-            { name: 'Websocket Overlays' },
+            { name: 'Overlays' },
         ],
         links: [
             { name: 'Boys Basketball', image: 'basketball.jpg', link: 'https://www.youtube.com/watch?v=7mpYX_2v5bA' },
@@ -123,7 +123,7 @@ const skills = ref([
         keywords: ['marketing'],
         skills: [
             { name: 'Website Design' },
-            { name: 'Promotional Content' },
+            { name: 'Promo Content' },
             { name: 'Analytics' },
             { name: 'Digital Ads' },
         ],
@@ -176,11 +176,11 @@ const workExperience = ref([
 
 <template>
     <Head title="Mike Minckler - Resume" />
-    <div class="m-2 md:m-4 grid place-items-center">
-        <div class="px-3 md:px-6 pb-4 rounded-xl bg-zinc-100 shadow-xl w-full max-w-prose">
-            <div class="md:flex justify-between items-center py-2">
+    <div class="m-2 sm:m-4 grid place-items-center">
+        <div class="px-3 sm:px-6 pb-4 rounded-xl bg-zinc-100 shadow-xl w-full max-w-prose print:bg-transparent print:shadow-none print:max-w-2xl">
+            <div class="sm:flex justify-between items-center py-2">
                 <div class="text-3xl">Mike Minckler</div>
-                <div class="text-sm flex justify-between md:block">
+                <div class="text-sm flex justify-between sm:block">
                     <a href="mailto:mikeminckler@gmail.com" class="block text-right">
                         <FaIcon icon="fa-solid fa-envelope">mikeminckler@gmail.com</FaIcon>
                     </a>
@@ -190,7 +190,7 @@ const workExperience = ref([
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-4 text-sm bg-white -mx-3 md:-mx-6 px-6 py-2 border-b border-t border-emerald-300 gap-1">
+            <div class="grid grid-cols-2 sm:grid-cols-4 text-sm bg-white -mx-3 sm:-mx-6 px-6 py-2 border-b border-t border-emerald-300 gap-1 print:bg-transparent">
                 <FaIcon icon="fa-solid fa-video" class="">Video Production</FaIcon>
                 <FaIcon icon="fa-solid fa-camera" class="">Photography</FaIcon>
                 <FaIcon icon="fa-solid fa-desktop" class="">IT</FaIcon>
@@ -203,35 +203,38 @@ const workExperience = ref([
             <p>I have a passion for content creation and technology. I enjoy constantly learning, improving, and embracing problem solving. My strong interpersonal and project management skills allow me to work well with clients and team members.</p>
 
             <h2>Skills</h2>
-            <div class="rounded-lg px-3 md:px-6 pt-3 pb-4 bg-zinc-50 shadow-lg my-4 -mx-2 relative" v-for="skill in skills">
+            <div class="rounded-lg px-3 sm:px-6 pt-3 pb-4 bg-zinc-50 shadow-lg my-4 -mx-2 relative print:bg-transparent print:shadow-none print:px-0 print:mx-0 print:py-0 break-inside-avoid-page" v-for="skill in skills">
                 <div class="flex">
                     <div class="w-full">
                         <h3>{{ skill.title }}</h3>
                         <p>{{ skill.description }}</p>
                     </div>
-                    <div class="max-w-12 md:max-w-40 -mt-3 md:-mt-5 md:-mr-8 md:-ml-2 absolute md:block right-0 md:relative">
-                        <img :src="'/svg/' + skill.image" class="max-h-32"/>
+                    <div class="max-w-12 sm:max-w-40 -mt-3 sm:-mt-5 sm:-mr-8 sm:-ml-2 absolute sm:block right-0 sm:relative print:mt-0">
+                        <img :src="'/svg/' + skill.image" class="max-h-32 print:max-h-28"/>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-2 md:grid-cols-4 text-base mt-2 gap-x-2 gap-y-1">
+                <div class="grid grid-cols-2 sm:grid-cols-4 text-base mt-2 gap-x-2 gap-y-1 print:mt-0">
                     <div class="" v-for="skill in skill.skills">
                         <FaIcon :icon="skill.icon ? skill.icon : 'fa-regular fa-circle-check'"><span class="text-sm">{{ skill.name }}</span></FaIcon>
                     </div>
                 </div>
 
-                <div class="grid grid-cols-4 mt-4">
-                    <div :class="link.expand ? 'cursor-pointer' : ''" v-for="link in skill.links"
+                <div class="mt-4 mb-2 border-b print:hidden" v-if="skill.links?.length">Samples</div>
+                <div class="grid grid-cols-4 gap-2 print:hidden">
+                    <div :class="link.expand ? 'cursor-pointer' : ''" 
+                            v-for="link in skill.links"
                             @click="link.expand ? selectedImage = link.image : null"
                         >
-                        <a :href="link.link" v-if="link.image && link.link" target="_blank">
+                        <a :href="link.link" v-if="link.image && link.link" target="_blank" class="relative block h-full">
+                            <div class="rounded-b-md bg-black bg-opacity-50 px-1 py-0.5 text-white text-xs absolute bottom-0 w-full">{{ link.name }}</div>
                             <img :src="'/images/' + link.image" 
-                                class="object-cover w-full h-full max-h-20 rounded-lg border-white border-2 ring-1 ring-gray-300"
+                                class="object-cover w-full h-full max-h-20 rounded-md"
                             />
                         </a>
 
                         <img v-if="link.image && !link.link" :src="'/images/' + link.image" 
-                            class="object-cover w-full h-full max-h-20 rounded-lg border-white border-2 ring-1 ring-gray-300"
+                            class="object-cover w-full h-full max-h-20 rounded-md"
                         />
                         <a v-if="!link.image && link.link" :href="link.link" target="_blank" class="whitespace-nowrap">
                             <FaIcon icon="fa-solid fa-link" size="text-xs"></FaIcon>
@@ -239,14 +242,18 @@ const workExperience = ref([
                         </a>
                     </div>
                 </div>
+            </div>
 
+            <div class="hidden print:block mb-4">
+                <h2>Samples</h2>
+                <p>Samples of my work can be found by going to my online resume at <a href="https://www.minckler.ca">www.minckler.ca</a></p>
             </div>
 
             <h2>Work Experience</h2>
             <div class="mt-2 mb-4" v-for="job in workExperience">
-                <div class="md:flex mb-2 md:mb-0">
+                <div class="sm:flex mb-2 sm:mb-0">
                     <h3 class="w-full"> {{ job.title }}</h3>
-                    <a :href="job.website" class="md:ml-4 inline-flex items-center" target="_blank">
+                    <a :href="job.website" class="sm:ml-4 inline-flex items-center" target="_blank">
                         <FaIcon icon="fa-solid fa-link" size="text-xs"></FaIcon>
                         <span class="text-sm ml-1">{{ job.website.substring(8) }} </span>
                     </a>
@@ -258,7 +265,6 @@ const workExperience = ref([
                     <div class="" v-for="item in job.items">
                         <FaIcon icon="fa-solid fa-caret-right" 
                             class="ml-2"
-                            spacing="ml-2"
                         >{{ item }}</FaIcon>
                     </div>
                 </div>
@@ -270,7 +276,7 @@ const workExperience = ref([
     <Transition name="fade">
         <div class="fixed w-screen h-screen top-0 z-10" v-if="selectedImage">
 
-            <div class="absolute bg-white opacity-75 w-screen h-screen z-[5]" @click="selectedImage = null"></div>
+            <div class="absolute bg-white opacity-75 w-screen h-screen z-[5] print:bg-transparent" @click="selectedImage = null"></div>
 
             <div class="relative z-10 w-screen h-screen">
                 <div class="w-full h-full" @click="selectedImage = null">

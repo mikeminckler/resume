@@ -10,7 +10,7 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 
 const props = defineProps({
     icon: { type: String, required: true },
-    spacing: { type: String, default: 'ml-1' },
+    spacing: { type: String, default: 'pl-2' },
     size: { type: String, default: 'text-sm' },
 });
 
@@ -77,11 +77,11 @@ library.add(
 </script>
 
 <template>
-    <div class="inline-flex items-start">
-        <div class="opacity-75 leading-relaxed text-emerald-500" :class="size">
+    <div class="inline">
+        <div class="opacity-75 leading-relaxed text-emerald-500 inline" :class="size">
             <font-awesome-icon :icon="icon"></font-awesome-icon>
         </div>
-        <div :class="spacing" v-if="slots.default">
+        <div :class="spacing" class="inline" v-if="slots.default">
             <slot />
         </div>
     </div>

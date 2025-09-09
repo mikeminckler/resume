@@ -21,7 +21,7 @@ const selectedImage = ref();
 const skills = ref([
     {
         title: 'Web Development',
-        description: 'Since 2006, I have been developing websites for both marketing and data management projects. At Brentwood College School I have been the lead developer for all marketing related web content including our latest marketing website which features responsive design, version control, photo management, news and blogs, CSP, integration with Google groups and Google calendar. In addition I have developed and maintained a health management website, BlueHealth, since 2014. This website is a fully featured web app that manages charting, appointments, immunization, health forms, medications and prescriptions.',
+        description: 'Since 2006, I have been developing websites for both data management projects and marketing. At Tecnet, I have been the lead developer for our web application that manages our client\'s assets, recommendation, issues, and tickets. At Brentwood, I was the lead developer for all marketing related web content including their latest marketing website. In addition I have developed and maintained a health management website, BlueHealth, since 2014. This website is a fully featured web app that manages charting, appointments, immunization, health forms, medications and prescriptions.',
         image: 'undraw_laravel_and_vue_-59-tp.svg',
         keywords: ['web'],
         skills: [
@@ -34,8 +34,23 @@ const skills = ref([
             { name: 'Websockets', icon: 'fa-solid fa-arrow-right-arrow-left' },
         ],
         websites: [
+            { name: 'Tecnet', link: 'https://www.tecnet.ca' },
             { name: 'Brentwood', link: 'https://www.brentwood.ca' },
             { name: 'Github', link: 'https://github.com/mikeminckler' },
+        ],
+    },
+    {
+        title: 'IT',
+        description: 'I spent 8 years as an IT systems analyst from 2005 through 2013 at Brentwood. There I supported over 500 students and 100 staff with front line support, hardware repair, software troubleshooting, Meraki networking administration, and server administration.',
+        image: 'undraw_maintenance_re_59vn.svg',
+        keywords: ['it'],
+        skills: [
+            { name: 'Microsoft Entra' },
+            { name: 'Azure' },
+            { name: 'Meraki' },
+            { name: 'Server Admin' },
+            { name: 'Linux' },
+            { name: 'Cloud Hosting' },
         ],
     },
     {
@@ -104,21 +119,8 @@ const skills = ref([
         ],
     },
     {
-        title: 'IT',
-        description: 'I spent 8 years as an IT systems analyst from 2005 through 2013 at Brentwood. There I supported over 500 students and 100 staff with front line support, hardware repair, software troubleshooting, Meraki networking administration, and server administration.',
-        image: 'undraw_maintenance_re_59vn.svg',
-        keywords: ['it'],
-        skills: [
-            { name: 'Client Support' },
-            { name: 'Meraki' },
-            { name: 'Server Admin' },
-            { name: 'Linux' },
-            { name: 'Cloud Hosting' },
-        ],
-    },
-    {
         title: 'Marketing',
-        description: 'Starting in 2013, I have been the digital content creator at Brentwood creating website designs, photo and video ads, short films, and promotional photography. In addition I report on web analytics and data analysis, conversions funnels, and participate in strategic planning.',
+        description: 'For 10 years, I was the digital content creator at Brentwood creating website designs, photo and video ads, short films, and promotional photography. In addition I report on web analytics and data analysis, conversions funnels, and participate in strategic planning.',
         image: 'undraw_success_factors_re_ce93.svg',
         keywords: ['marketing'],
         skills: [
@@ -130,7 +132,7 @@ const skills = ref([
     },
     {
         title: 'Graphic Design',
-        description: 'At Brentwood I have provided graphic design for a variety of print and digital projects including athletic murals, theatre posters, dance promotion, and company branding.',
+        description: 'I have provided graphic design for a variety of print and digital projects including athletic murals, theatre posters, dance promotion, and company branding.',
         image: 'undraw_build_wireframe_re_ln7g.svg',
         keywords: ['graphics'],
         skills: [
@@ -148,8 +150,21 @@ const skills = ref([
 
 const workExperience = ref([
     {
+        title: 'Tecnet Canada Inc.',
+        start_date: '2024',
+        end_date: 'Present',
+        items: [
+            'Web developement and IT support for a variety of clients',
+            'Created a web application that manages asset lifecycles and ticket requests',
+            'Worked with LABC to develop a web application for managing user and groups in Microsoft Entra and Exchange Online',
+            'Head of the Tools and Intergrations team',
+        ],
+        website: 'https://www.tecnet.ca',
+    },
+    {
         title: 'Brentwood College School',
         start_date: '2005',
+        end_date: '2024',
         items: [
             '8 years in the IT department before transition to the marketing technical lead',
             '15 years as Webmaster launching 6 unique versions of the custom built website',
@@ -163,6 +178,7 @@ const workExperience = ref([
     {
         title: 'Bluewind Information Systems Inc.',
         start_date: '2014',
+        end_date: 'Present',
         items: [
             'Developed an online health management system, BlueHealth',
             'Provided technical support for 15 nurses and staff',
@@ -185,22 +201,23 @@ const workExperience = ref([
                         <FaIcon icon="fa-solid fa-envelope">mikeminckler@gmail.com</FaIcon>
                     </a>
                     <a href="tel:12507017414" class="block text-right">
-                        <FaIcon icon="fa-solid fa-mobile-screen-button">(250) 701-7414</FaIcon>
+                        <FaIcon icon="fa-solid fa-mobile-screen-button">(778) 966-4343</FaIcon>
                     </a>
                 </div>
             </div>
 
             <div class="grid grid-cols-2 sm:grid-cols-4 text-sm bg-white -mx-3 sm:-mx-6 px-6 py-2 border-b border-t border-emerald-300 gap-1 print:bg-transparent">
+                <FaIcon icon="fa-solid fa-globe" class="">Web Development</FaIcon>
+                <FaIcon icon="fa-solid fa-database" class="">Data Management</FaIcon>
+                <FaIcon icon="fa-solid fa-desktop" class="">IT</FaIcon>
                 <FaIcon icon="fa-solid fa-video" class="">Video Production</FaIcon>
                 <FaIcon icon="fa-solid fa-camera" class="">Photography</FaIcon>
-                <FaIcon icon="fa-solid fa-desktop" class="">IT</FaIcon>
-                <FaIcon icon="fa-solid fa-globe" class="">Web Development</FaIcon>
                 <FaIcon icon="fa-brands fa-youtube" class="">Live Streaming</FaIcon>
                 <FaIcon icon="fa-solid fa-chart-line" class="">Marketing</FaIcon>
                 <FaIcon icon="fa-solid fa-object-group" class="">Graphic Design</FaIcon>
             </div>
 
-            <p>I have a passion for content creation and technology. I enjoy constantly learning, improving, and embracing problem solving. My strong interpersonal and project management skills allow me to work well with clients and team members.</p>
+            <p>I have a passion for web development, data management, and technology. I enjoy constantly learning, improving, and embracing problem solving. My strong interpersonal and project management skills allow me to work well with clients and team members.</p>
 
             <h2>Skills</h2>
             <div class="rounded-lg px-3 sm:px-6 pt-3 pb-4 bg-zinc-50 shadow-lg my-4 -mx-2 relative print:bg-transparent print:shadow-none print:px-0 print:mx-0 print:py-0 break-inside-avoid-page" v-for="skill in skills">
@@ -209,7 +226,7 @@ const workExperience = ref([
                         <h3>{{ skill.title }}</h3>
                         <p>{{ skill.description }}</p>
                     </div>
-                    <div class="max-w-12 sm:max-w-40 -mt-3 sm:-mt-5 sm:-mr-8 sm:-ml-2 absolute sm:block right-0 sm:relative print:mt-0">
+                    <div class="max-w-12 sm:max-w-40 -mt-3 sm:-mt-5 sm:-mr-12 sm:-ml-2 absolute sm:block right-0 sm:relative print:mt-0">
                         <img :src="'/svg/' + skill.image" class="max-h-32 print:max-h-28"/>
                     </div>
                 </div>
@@ -244,7 +261,7 @@ const workExperience = ref([
                 </div>
             </div>
 
-            <div class="hidden print:block mb-4">
+            <div class="hidden mb-4">
                 <h2>Samples</h2>
                 <p>Samples of my work can be found by going to my online resume at <a href="https://www.minckler.ca">www.minckler.ca</a></p>
             </div>
@@ -259,13 +276,18 @@ const workExperience = ref([
                     </a>
                 </div>
                 <div class="opacity-80 mt-1">
-                    <span class="italic"> {{ job.start_date }} <FaIcon icon="fa-solid fa-minus" class="px-1"></FaIcon> Present</span>
+                    <span class="italic"> {{ job.start_date }} <FaIcon icon="fa-solid fa-minus" class="px-1"></FaIcon> {{ job.end_date }}</span>
                 </div>
-                <div class="mt-2">
-                    <div class="" v-for="item in job.items">
-                        <FaIcon icon="fa-solid fa-caret-right" 
-                            class="ml-2"
-                        >{{ item }}</FaIcon>
+                <div class="grid grid-cols-[0fr_auto] mt-2">
+                    <div class="grid grid-cols-subgrid col-span-full gap-1" v-for="item in job.items">
+                        <div>
+                            <FaIcon icon="fa-solid fa-caret-right" 
+                                class="ml-2"
+                            ></FaIcon>
+                        </div>
+                        <div class="">
+                            {{ item }}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -70,6 +70,7 @@ library.add(
     faChartLine,
     faObjectGroup,
     faArrowRightArrowLeft,
+    faDatabase,
 
     farCircleCheck,
     farFileVideo,
